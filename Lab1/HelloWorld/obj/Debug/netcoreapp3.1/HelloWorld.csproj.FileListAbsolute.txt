@@ -1,0 +1,13 @@
+/config/workspace/UTS_.NetApplicationDev_2020/Lab1/HelloWorld/obj/Debug/netcoreapp3.1/HelloWorld.csprojAssemblyReference.cache
+/config/workspace/UTS_.NetApplicationDev_2020/Lab1/HelloWorld/obj/Debug/netcoreapp3.1/HelloWorld.AssemblyInfoInputs.cache
+/config/workspace/UTS_.NetApplicationDev_2020/Lab1/HelloWorld/obj/Debug/netcoreapp3.1/HelloWorld.AssemblyInfo.cs
+/config/workspace/UTS_.NetApplicationDev_2020/Lab1/HelloWorld/obj/Debug/netcoreapp3.1/HelloWorld.csproj.CoreCompileInputs.cache
+/config/workspace/UTS_.NetApplicationDev_2020/Lab1/HelloWorld/bin/Debug/netcoreapp3.1/HelloWorld
+/config/workspace/UTS_.NetApplicationDev_2020/Lab1/HelloWorld/bin/Debug/netcoreapp3.1/HelloWorld.deps.json
+/config/workspace/UTS_.NetApplicationDev_2020/Lab1/HelloWorld/bin/Debug/netcoreapp3.1/HelloWorld.runtimeconfig.json
+/config/workspace/UTS_.NetApplicationDev_2020/Lab1/HelloWorld/bin/Debug/netcoreapp3.1/HelloWorld.runtimeconfig.dev.json
+/config/workspace/UTS_.NetApplicationDev_2020/Lab1/HelloWorld/bin/Debug/netcoreapp3.1/HelloWorld.dll
+/config/workspace/UTS_.NetApplicationDev_2020/Lab1/HelloWorld/bin/Debug/netcoreapp3.1/HelloWorld.pdb
+/config/workspace/UTS_.NetApplicationDev_2020/Lab1/HelloWorld/obj/Debug/netcoreapp3.1/HelloWorld.dll
+/config/workspace/UTS_.NetApplicationDev_2020/Lab1/HelloWorld/obj/Debug/netcoreapp3.1/HelloWorld.pdb
+/config/workspace/UTS_.NetApplicationDev_2020/Lab1/HelloWorld/obj/Debug/netcoreapp3.1/HelloWorld.genruntimeconfig.cache
