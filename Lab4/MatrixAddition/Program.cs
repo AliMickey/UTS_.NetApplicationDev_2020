@@ -41,27 +41,27 @@ namespace Week5LabProgram
         public Matrix()
         {
             Console.Write("Enter the dimension of the Square Matrix: ");
-            string userInput = Console.ReadLine(); /*Complete the code*/
-            dimension = Convert.ToInt32(userInput); /*Complete the code*/
-            matrix = ; /*Complete the code*/
+            string userInput = Console.ReadLine(); 
+            dimension = Convert.ToInt32(userInput); 
+            matrix = ;
 
             for (int outerLoop = 0; outerLoop < dimension; outerLoop++)
             {
                 for(int innerLoop = 0; innerLoop < 2; innerLoop++)
                 {
                     Console.Write("\nEnter the value of ({0}, {1})", outerLoop, innerLoop);
-                    userInput = Console.ReadLine(); /*Complete the code*/
-                    matrix[, ] = ; /*Complete the code*/
+                    userInput = Console.ReadLine(); 
+                    matrix[outerLoop, innerLoop] = Convert.ToInt32(userInput); 
                 }
                 Console.WriteLine();
             }
         }
 
         // Write code for  Overloaded constructor
-        public Matrix(int dim)
+         public Matrix(int dim)
         {
-            this.matrix = ; /*Complete the code*/
-            this.dimension = dim; /*Complete the code*/
+            this.matrix = ;
+            this.dimension = dim; 
         }
 
         // Write code for Operator Overloading 
@@ -74,7 +74,7 @@ namespace Week5LabProgram
                 for (int innerLoop = 0; innerLoop < 2; innerLoop++)
                 {
                     /*Write code to add the matix and store in a temporay matrix*/
-                    tempMatrix.matrix[, ] = mat1.matrix[ innerLoop] + mat2.[innerLoop];
+                    tempMatrix.matrix[outerLoop, innerLoop] = mat1.matrix[outerLoop, innerLoop] + mat2.matrix[outerLoop, innerLoop];
                 }
             }
             return tempMatrix;
@@ -115,7 +115,7 @@ namespace Week5LabProgram
             Matrix result = new Matrix();
 
             // Complete the code Add Matrix 1 and 2
-            result = (mat1, mat2);
+            result = mat1 + mat2;
 
             // Complete the code Display the matrices and the addition result
             Console.WriteLine("Input matrices are:");
