@@ -43,7 +43,7 @@ namespace Week5LabProgram
             Console.Write("Enter the dimension of the Square Matrix: ");
             string userInput = Console.ReadLine(); 
             dimension = Convert.ToInt32(userInput); 
-            matrix = ;
+            matrix = new int[dimension, dimension];
 
             for (int outerLoop = 0; outerLoop < dimension; outerLoop++)
             {
@@ -60,7 +60,7 @@ namespace Week5LabProgram
         // Write code for  Overloaded constructor
          public Matrix(int dim)
         {
-            this.matrix = ;
+            this.matrix = new int [dim, dim];
             this.dimension = dim; 
         }
 
@@ -68,7 +68,7 @@ namespace Week5LabProgram
         public static Matrix operator +(Matrix mat1, Matrix mat2)
         {
             // Write code to create tempMatrix
-            Matrix tempMatrix = new Matrix();
+            Matrix tempMatrix = new Matrix(mat1.dimension);
             for (int outerLoop = 0; outerLoop < mat1.dimension; outerLoop++)
             {
                 for (int innerLoop = 0; innerLoop < 2; innerLoop++)
@@ -112,7 +112,7 @@ namespace Week5LabProgram
             // Complete the code to Create the matrices
             Matrix mat1 = new Matrix();
             Matrix mat2 = new Matrix();
-            Matrix result = new Matrix();
+            Matrix result = new Matrix(mat1.Dimension);
 
             // Complete the code Add Matrix 1 and 2
             result = mat1 + mat2;
