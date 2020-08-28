@@ -1,0 +1,14 @@
+F:\UTS\Teaching\Spring 2018\DotnetProgramming\Week6\Tutorial Programs\Program2\Program2\bin\Debug\Program2.exe.config
+F:\UTS\Teaching\Spring 2018\DotnetProgramming\Week6\Tutorial Programs\Program2\Program2\bin\Debug\Program2.exe
+F:\UTS\Teaching\Spring 2018\DotnetProgramming\Week6\Tutorial Programs\Program2\Program2\bin\Debug\Program2.pdb
+F:\UTS\Teaching\Spring 2018\DotnetProgramming\Week6\Tutorial Programs\Program2\Program2\obj\Debug\Program2.csprojAssemblyReference.cache
+F:\UTS\Teaching\Spring 2018\DotnetProgramming\Week6\Tutorial Programs\Program2\Program2\obj\Debug\Program2.csproj.CoreCompileInputs.cache
+F:\UTS\Teaching\Spring 2018\DotnetProgramming\Week6\Tutorial Programs\Program2\Program2\obj\Debug\Program2.exe
+F:\UTS\Teaching\Spring 2018\DotnetProgramming\Week6\Tutorial Programs\Program2\Program2\obj\Debug\Program2.pdb
+C:\Users\ad312\Downloads\Tutorial lab 5 ProgrammingQuestion\Program2\Program2\bin\Debug\Program2.exe.config
+C:\Users\ad312\Downloads\Tutorial lab 5 ProgrammingQuestion\Program2\Program2\bin\Debug\Program2.exe
+C:\Users\ad312\Downloads\Tutorial lab 5 ProgrammingQuestion\Program2\Program2\bin\Debug\Program2.pdb
+C:\Users\ad312\Downloads\Tutorial lab 5 ProgrammingQuestion\Program2\Program2\obj\Debug\Program2.csprojAssemblyReference.cache
+C:\Users\ad312\Downloads\Tutorial lab 5 ProgrammingQuestion\Program2\Program2\obj\Debug\Program2.csproj.CoreCompileInputs.cache
+C:\Users\ad312\Downloads\Tutorial lab 5 ProgrammingQuestion\Program2\Program2\obj\Debug\Program2.exe
+C:\Users\ad312\Downloads\Tutorial lab 5 ProgrammingQuestion\Program2\Program2\obj\Debug\Program2.pdb
