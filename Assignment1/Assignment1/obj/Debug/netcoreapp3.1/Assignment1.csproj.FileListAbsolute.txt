@@ -1,0 +1,13 @@
+D:\Programming\Git\UTS_.NetApplicationDev_Spring_2020\Assignment1\Assignment1\bin\Debug\netcoreapp3.1\Assignment1.exe
+D:\Programming\Git\UTS_.NetApplicationDev_Spring_2020\Assignment1\Assignment1\bin\Debug\netcoreapp3.1\Assignment1.deps.json
+D:\Programming\Git\UTS_.NetApplicationDev_Spring_2020\Assignment1\Assignment1\bin\Debug\netcoreapp3.1\Assignment1.runtimeconfig.json
+D:\Programming\Git\UTS_.NetApplicationDev_Spring_2020\Assignment1\Assignment1\bin\Debug\netcoreapp3.1\Assignment1.runtimeconfig.dev.json
+D:\Programming\Git\UTS_.NetApplicationDev_Spring_2020\Assignment1\Assignment1\bin\Debug\netcoreapp3.1\Assignment1.dll
+D:\Programming\Git\UTS_.NetApplicationDev_Spring_2020\Assignment1\Assignment1\bin\Debug\netcoreapp3.1\Assignment1.pdb
+D:\Programming\Git\UTS_.NetApplicationDev_Spring_2020\Assignment1\Assignment1\obj\Debug\netcoreapp3.1\Assignment1.AssemblyInfoInputs.cache
+D:\Programming\Git\UTS_.NetApplicationDev_Spring_2020\Assignment1\Assignment1\obj\Debug\netcoreapp3.1\Assignment1.AssemblyInfo.cs
+D:\Programming\Git\UTS_.NetApplicationDev_Spring_2020\Assignment1\Assignment1\obj\Debug\netcoreapp3.1\Assignment1.csproj.CoreCompileInputs.cache
+D:\Programming\Git\UTS_.NetApplicationDev_Spring_2020\Assignment1\Assignment1\obj\Debug\netcoreapp3.1\Assignment1.dll
+D:\Programming\Git\UTS_.NetApplicationDev_Spring_2020\Assignment1\Assignment1\obj\Debug\netcoreapp3.1\Assignment1.pdb
+D:\Programming\Git\UTS_.NetApplicationDev_Spring_2020\Assignment1\Assignment1\obj\Debug\netcoreapp3.1\Assignment1.genruntimeconfig.cache
+D:\Programming\Git\UTS_.NetApplicationDev_Spring_2020\Assignment1\Assignment1\obj\Debug\netcoreapp3.1\Assignment1.csprojAssemblyReference.cache

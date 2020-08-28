@@ -10,3 +10,10 @@ D:\Teaching\Spring 2018\31927 Net programming\Lectures-pptx\Week-4\Lab Work\New 
 D:\Teaching\Spring 2018\31927 Net programming\Lectures-pptx\Week-4\Lab Work\New folder\Shapes\Shapes\bin\Debug\Shapes.exe
 D:\Teaching\Spring 2018\31927 Net programming\Lectures-pptx\Week-4\Lab Work\New folder\Shapes\Shapes\bin\Debug\Shapes.pdb
 D:\Teaching\Spring 2018\31927 Net programming\Lectures-pptx\Week-4\Lab Work\New folder\Shapes\Shapes\obj\Debug\Shapes.csprojResolveAssemblyReference.cache
+D:\Programming\Git\UTS_.NetApplicationDev_Spring_2020\Lab5\Shapes\Shapes\bin\Debug\Shapes.exe.config
+D:\Programming\Git\UTS_.NetApplicationDev_Spring_2020\Lab5\Shapes\Shapes\bin\Debug\Shapes.exe
+D:\Programming\Git\UTS_.NetApplicationDev_Spring_2020\Lab5\Shapes\Shapes\bin\Debug\Shapes.pdb
+D:\Programming\Git\UTS_.NetApplicationDev_Spring_2020\Lab5\Shapes\Shapes\obj\Debug\Shapes.csprojAssemblyReference.cache
+D:\Programming\Git\UTS_.NetApplicationDev_Spring_2020\Lab5\Shapes\Shapes\obj\Debug\Shapes.csproj.CoreCompileInputs.cache
+D:\Programming\Git\UTS_.NetApplicationDev_Spring_2020\Lab5\Shapes\Shapes\obj\Debug\Shapes.exe
+D:\Programming\Git\UTS_.NetApplicationDev_Spring_2020\Lab5\Shapes\Shapes\obj\Debug\Shapes.pdb
