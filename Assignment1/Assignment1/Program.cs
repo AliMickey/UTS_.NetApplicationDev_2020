@@ -8,26 +8,12 @@ namespace Assignment1
     {
         static void Main(string[] args)
         {
-            //String userName;
-            //String password;
-            //Console.WriteLine("╔════════════════════════════════════╗");
-            //Console.WriteLine("║  WELCOME TO SIMPLE BANKING SYSTEM  ║");
-            //Console.WriteLine("║════════════════════════════════════║");
-            //Console.WriteLine("║          LOGIN TO START            ║");
-            //Console.WriteLine("║                                    ║");
-            //Console.Write("║   USER NAME: ");
-            //userName = Console.ReadLine();
-            //Console.WriteLine("║                                    ║");
-            //Console.Write("║   PASSWORD: ");
-            //password =  Console.ReadLine();
-            //Console.WriteLine("║                                    ║");
-            //Console.WriteLine("╚════════════════════════════════════╝");
-
             try
             {
 
                 string[] userID = File.ReadAllLines("login.txt");
                 Boolean valid = false;
+                Bank bank = new Bank();
                 String userName;
                 String password;
                 Console.WriteLine("╔════════════════════════════════════╗");
@@ -53,6 +39,7 @@ namespace Assignment1
                             Console.WriteLine("Valid credentials!.. Please enter.");
                             valid = true;
                             Console.ReadKey();
+                            bank.MainMenu();
                             break;
                         }
                         else
@@ -64,7 +51,7 @@ namespace Assignment1
                 }
             }
 
-            catch (FileNotFoundException e)
+            catch (Exception e)
             {
                 Console.WriteLine(e);
                 Console.ReadKey();
