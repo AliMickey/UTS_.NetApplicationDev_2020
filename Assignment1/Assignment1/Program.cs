@@ -17,7 +17,7 @@ namespace Assignment1
                 Boolean valid = false;
                 Bank bank = new Bank();
                 String userName;
-                String password = null;
+                String password;
                 Console.WriteLine("╔════════════════════════════════════╗");
                 Console.WriteLine("║  WELCOME TO SIMPLE BANKING SYSTEM  ║");
                 Console.WriteLine("║════════════════════════════════════║");
@@ -30,6 +30,7 @@ namespace Assignment1
                     Console.Write("USER NAME: ");
                     userName = Console.ReadLine();
                     Console.Write("PASSWORD: ");
+                    password = null;
                     while (true)
                     {
                         var key = Console.ReadKey(true);
@@ -41,7 +42,6 @@ namespace Assignment1
                         password += key.KeyChar;
                         Console.Write("*");
                     }
-
                     foreach (string i in userID)
                     {
                         string[] tempID = i.Split('|');
