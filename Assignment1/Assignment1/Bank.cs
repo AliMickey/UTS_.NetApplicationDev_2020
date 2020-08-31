@@ -144,24 +144,7 @@ namespace Assignment1
                         string currentAccount = GetAccount(number);
                         if (currentAccount != "Null")
                         {
-                            string[] accountFile = File.ReadAllLines(currentAccount);
-                            for (int j = 0; j < accountFile.Count(); j++)
-                            {
-                                accountFile[j] = accountFile[j].Substring(accountFile[j].IndexOf(@"|") + 1);
-                            }
-                            Console.WriteLine(" ");
-                            Console.WriteLine("Account found!");
-                            Console.WriteLine("╔════════════════════════════════════╗");
-                            Console.WriteLine("║          ACCOUNT DETAILS           ║");
-                            Console.WriteLine("╚════════════════════════════════════╝");
-                            Console.WriteLine("Account No: {0}", accountFile[5]);
-                            Console.WriteLine("Account Balance: ${0}", accountFile[6]);
-                            Console.WriteLine("First Name: {0}", accountFile[0]);
-                            Console.WriteLine("Last Name: {0}", accountFile[1]);
-                            Console.WriteLine("Address: {0}", accountFile[2]);
-                            Console.WriteLine("Phone: {0}", accountFile[3]);
-                            Console.WriteLine("Email: {0}", accountFile[4]);
-                            Console.WriteLine(" ");
+                            DisplayAccount(currentAccount);
                             if (YNChoice("Check another account (y/n)?"))
                             {
                                 SearchAccount();
@@ -320,6 +303,12 @@ namespace Assignment1
         public void Statement()
         {
             Console.Clear();
+            Console.WriteLine("╔════════════════════════════════════╗");
+            Console.WriteLine("║             STATEMENT              ║");
+            Console.WriteLine("║════════════════════════════════════║");
+            Console.WriteLine("║         ENTER THE DETAILS          ║");
+            Console.WriteLine("╚════════════════════════════════════╝");
+
         }
 
         public void Delete()
@@ -341,24 +330,7 @@ namespace Assignment1
                         string currentAccount = GetAccount(number);
                         if (currentAccount != "Null")
                         {
-                            string[] accountFile = File.ReadAllLines(currentAccount);
-                            for (int j = 0; j < accountFile.Count(); j++)
-                            {
-                                accountFile[j] = accountFile[j].Substring(accountFile[j].IndexOf(@"|") + 1);
-                            }
-                            Console.WriteLine(" ");
-                            Console.WriteLine("Account found!");
-                            Console.WriteLine("╔════════════════════════════════════╗");
-                            Console.WriteLine("║          ACCOUNT DETAILS           ║");
-                            Console.WriteLine("╚════════════════════════════════════╝");
-                            Console.WriteLine("Account No: {0}", accountFile[5]);
-                            Console.WriteLine("Account Balance: ${0}", accountFile[6]);
-                            Console.WriteLine("First Name: {0}", accountFile[0]);
-                            Console.WriteLine("Last Name: {0}", accountFile[1]);
-                            Console.WriteLine("Address: {0}", accountFile[2]);
-                            Console.WriteLine("Phone: {0}", accountFile[3]);
-                            Console.WriteLine("Email: {0}", accountFile[4]);
-                            Console.WriteLine(" ");
+                            DisplayAccount(currentAccount);
                             if (YNChoice("Delete (y/n)?"))
                             {
                                 File.Delete(currentAccount);
@@ -480,6 +452,28 @@ namespace Assignment1
                 }
             }
             return ("Null");
+        }
+
+        public void DisplayAccount(string accNo)
+        {
+            string[] accountFile = File.ReadAllLines(accNo);
+            for (int j = 0; j < accountFile.Count(); j++)
+            {
+                accountFile[j] = accountFile[j].Substring(accountFile[j].IndexOf(@"|") + 1);
+            }
+            Console.WriteLine(" ");
+            Console.WriteLine("Account found!");
+            Console.WriteLine("╔════════════════════════════════════╗");
+            Console.WriteLine("║          ACCOUNT DETAILS           ║");
+            Console.WriteLine("╚════════════════════════════════════╝");
+            Console.WriteLine("Account No: {0}", accountFile[5]);
+            Console.WriteLine("Account Balance: ${0}", accountFile[6]);
+            Console.WriteLine("First Name: {0}", accountFile[0]);
+            Console.WriteLine("Last Name: {0}", accountFile[1]);
+            Console.WriteLine("Address: {0}", accountFile[2]);
+            Console.WriteLine("Phone: {0}", accountFile[3]);
+            Console.WriteLine("Email: {0}", accountFile[4]);
+            Console.WriteLine(" ");
         }
     }
 }
