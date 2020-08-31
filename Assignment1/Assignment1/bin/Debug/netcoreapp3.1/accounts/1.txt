@@ -1,0 +1,7 @@
+fName|a
+lName|b
+address|c
+phone|4
+email|he@uts.edu.au
+accountNo|1
+balance|0
