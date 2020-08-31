@@ -88,14 +88,14 @@ namespace Assignment1
             string address = Console.ReadLine();
 
             Console.Write("Phone: ");
-            string phone = Console.ReadLine();
-            while (phone.Length > 10 || !phone.All(char.IsDigit))
+            string phoneTemp = Console.ReadLine();
+            while (phoneTemp.Length > 10 || phoneTemp.Length < 1 || !phoneTemp.All(char.IsDigit))
             {
                 Console.WriteLine("Invalid input, try again.");
                 Console.Write("Phone: ");
-                phone = Console.ReadLine();
+                phoneTemp = Console.ReadLine();
             }
-            int phoneInt = Convert.ToInt32(phone);
+            int phone = Convert.ToInt32(phoneTemp);
 
             Console.Write("Email: ");
             string email = Console.ReadLine();
