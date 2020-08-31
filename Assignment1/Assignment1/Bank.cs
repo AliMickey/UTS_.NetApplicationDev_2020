@@ -209,8 +209,11 @@ namespace Assignment1
                                 amountTemp = Console.ReadLine();
                             }
                             //Replace the balance line in the account file with the updated balance information. 
+                            //Add a log into account file.
                             int amount = Convert.ToInt32(amountTemp);
-                            replaceLine("balance|" + BalanceUpdate(currentAccount, amount, true), currentAccount, 6);
+                            int balance = BalanceUpdate(currentAccount, amount, true);
+                            ReplaceLine("balance|" + balance, currentAccount, 6);
+                            WriteToAccountFile(currentAccount, "Deposit", amount, balance);
                             Console.WriteLine("Deposit Successful!");
                             Console.ReadKey();
                             MainMenu();
@@ -267,8 +270,8 @@ namespace Assignment1
                                 amountTemp = Console.ReadLine();
                             }
                             int amount = Convert.ToInt32(amountTemp);
-                            int tempBalance = BalanceUpdate(currentAccount, amount, false);
-                            if (tempBalance == -1)
+                            int balance = BalanceUpdate(currentAccount, amount, false);
+                            if (balance == -1)
                             {
                                 Console.WriteLine("You do not have sufficient funds.");
                                 Console.ReadKey();
@@ -277,7 +280,9 @@ namespace Assignment1
                             else
                             {
                                 //Replace the balance line in the account file with the updated balance information. 
-                                replaceLine("balance|" + tempBalance, currentAccount, 6);
+                                //Add a log into account file.
+                                ReplaceLine("balance|" + balance, currentAccount, 6);
+                                WriteToAccountFile(currentAccount, "Withdraw", amount, balance);
                                 Console.WriteLine("Withdraw Successful!");
                                 Console.ReadKey();
                                 MainMenu();
@@ -413,7 +418,7 @@ namespace Assignment1
                 }
             }
         }
-        public void replaceLine(string text, string file, int lineNumber)
+        public void ReplaceLine(string text, string file, int lineNumber)
         {
             //Replace the line with provided arguments.
             string[] tempArray = File.ReadAllLines(file);
@@ -485,6 +490,13 @@ namespace Assignment1
             Console.WriteLine("Phone: {0}", accountFile[3]);
             Console.WriteLine("Email: {0}", accountFile[4]);
             Console.WriteLine(" ");
+        }
+
+        public void WriteToAccountFile(string accNo, string type, int amount, int balance)
+        {
+            string date = DateTime.Now.ToString("dd.MM.yyyy");
+            using StreamWriter file = new StreamWriter(accNo, true);
+            file.WriteLine("{0}|{1}|{2}|{3}", date, type, amount, balance);
         }
     }
 }
