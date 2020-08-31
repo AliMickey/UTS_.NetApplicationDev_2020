@@ -6,11 +6,11 @@ using System.Reflection.Metadata.Ecma335;
 
 namespace Assignment1
 {
-	class Bank
-	{
-		public void MainMenu()
+    class Bank
+    {
+        public void MainMenu()
         {
-			Console.Clear();
+            Console.Clear();
             Console.WriteLine("╔════════════════════════════════════╗");
             Console.WriteLine("║  WELCOME TO SIMPLE BANKING SYSTEM  ║");
             Console.WriteLine("║════════════════════════════════════║");
@@ -108,11 +108,10 @@ namespace Assignment1
                 email = Console.ReadLine();
             }
 
-
             if (YNChoice("Is the information correct? (y/n)"))
             {
                 int accNo = GenerateAccountNumber();
-                string[] tempText = { "fName|" + fName, "lName|" + lName, "address|" + address, "phone|" + phone, "email|" + email, "accountNo|" + accNo, "balance|0"};
+                string[] tempText = { "fName|" + fName, "lName|" + lName, "address|" + address, "phone|" + phone, "email|" + email, "accountNo|" + accNo, "balance|0" };
                 File.WriteAllLines("accounts/" + accNo + ".txt", tempText);
                 Console.WriteLine("Account Created! Details will be provided by email.");
                 Console.WriteLine("Account Number is: {0}", accNo);
@@ -142,38 +141,35 @@ namespace Assignment1
                     string number = Console.ReadLine();
                     if (Int32.TryParse(number, out _) && (number.Length > 0 && number.Length < 11))
                     {
-                        string[] accounts = Directory.GetFiles("accounts");
-                        foreach (string i in accounts) {
-                            string currentAccount = "accounts\\" + number + ".txt";
-                            if (i == currentAccount)
+                        string currentAccount = GetAccount(number);
+                        if (currentAccount != "Null")
+                        {
+                            string[] accountFile = File.ReadAllLines(currentAccount);
+                            for (int j = 0; j < accountFile.Count(); j++)
                             {
-                                string[] accountFile = File.ReadAllLines(currentAccount);
-                                for (int j = 0; j < accountFile.Count(); j++)
-                                {
-                                    accountFile[j] = accountFile[j].Substring(accountFile[j].IndexOf(@"|") + 1);     
-                                }
-                                Console.WriteLine(" ");
-                                Console.WriteLine("Account found!");
-                                Console.WriteLine("╔════════════════════════════════════╗");
-                                Console.WriteLine("║          ACCOUNT DETAILS           ║");
-                                Console.WriteLine("╚════════════════════════════════════╝");
-                                Console.WriteLine("Account No: {0}", accountFile[5]);
-                                Console.WriteLine("Account Balance: ${0}", accountFile[6]); 
-                                Console.WriteLine("First Name: {0}", accountFile[0]);
-                                Console.WriteLine("Last Name: {0}", accountFile[1]);
-                                Console.WriteLine("Address: {0}", accountFile[2]);
-                                Console.WriteLine("Phone: {0}", accountFile[3]);
-                                Console.WriteLine("Email: {0}", accountFile[4]);
-                                Console.WriteLine(" ");
-                                if (YNChoice("Check another account (y/n)?"))
-                                {
-                                    SearchAccount();
-                                }
-                                else
-                                {
-                                    MainMenu();
-                                }
-                            }                      
+                                accountFile[j] = accountFile[j].Substring(accountFile[j].IndexOf(@"|") + 1);
+                            }
+                            Console.WriteLine(" ");
+                            Console.WriteLine("Account found!");
+                            Console.WriteLine("╔════════════════════════════════════╗");
+                            Console.WriteLine("║          ACCOUNT DETAILS           ║");
+                            Console.WriteLine("╚════════════════════════════════════╝");
+                            Console.WriteLine("Account No: {0}", accountFile[5]);
+                            Console.WriteLine("Account Balance: ${0}", accountFile[6]);
+                            Console.WriteLine("First Name: {0}", accountFile[0]);
+                            Console.WriteLine("Last Name: {0}", accountFile[1]);
+                            Console.WriteLine("Address: {0}", accountFile[2]);
+                            Console.WriteLine("Phone: {0}", accountFile[3]);
+                            Console.WriteLine("Email: {0}", accountFile[4]);
+                            Console.WriteLine(" ");
+                            if (YNChoice("Check another account (y/n)?"))
+                            {
+                                SearchAccount();
+                            }
+                            else
+                            {
+                                MainMenu();
+                            }
                         }
                         Console.WriteLine("Account not found!");
                         if (YNChoice("Check another account (y/n)?"))
@@ -195,7 +191,6 @@ namespace Assignment1
                     Console.WriteLine(e);
                 }
             }
-                        
         }
 
         public void Deposit()
@@ -214,29 +209,24 @@ namespace Assignment1
                     string number = Console.ReadLine();
                     if (Int32.TryParse(number, out _) && (number.Length > 0 && number.Length < 11))
                     {
-                        string[] accounts = Directory.GetFiles("accounts");
-                        foreach (string i in accounts)
+                        string currentAccount = GetAccount(number);
+                        if (currentAccount != "Null")
                         {
-                            string currentAccount = "accounts\\" + number + ".txt";
-                            if (i == currentAccount)
+                            Console.WriteLine(" ");
+                            Console.WriteLine("Account found!");
+                            Console.Write("Enter the amount: ");
+                            string amountTemp = Console.ReadLine();
+                            while (!amountTemp.All(char.IsDigit))
                             {
-                                Console.WriteLine(" ");
-                                Console.WriteLine("Account found!");
+                                Console.WriteLine("Invalid input, try again.");
                                 Console.Write("Enter the amount: ");
-                                string amountTemp = Console.ReadLine();
-                                while (!amountTemp.All(char.IsDigit))
-                                {
-                                    Console.WriteLine("Invalid input, try again.");
-                                    Console.Write("Enter the amount: ");
-                                    amountTemp = Console.ReadLine();
-                                }
-                                int amount = Convert.ToInt32(amountTemp);
-                                replaceLine("balance|" + BalanceUpdate(currentAccount, amount, true), currentAccount, 6);
-                                Console.WriteLine("Deposit Successful!");
-                                Console.ReadKey();
-                                MainMenu();
-
+                                amountTemp = Console.ReadLine();
                             }
+                            int amount = Convert.ToInt32(amountTemp);
+                            replaceLine("balance|" + BalanceUpdate(currentAccount, amount, true), currentAccount, 6);
+                            Console.WriteLine("Deposit Successful!");
+                            Console.ReadKey();
+                            MainMenu();
                         }
                         Console.WriteLine("Account not found!");
                         if (YNChoice("Check another account (y/n)?"))
@@ -276,39 +266,35 @@ namespace Assignment1
                     string number = Console.ReadLine();
                     if (Int32.TryParse(number, out _) && (number.Length > 0 && number.Length < 11))
                     {
-                        string[] accounts = Directory.GetFiles("accounts");
-                        foreach (string i in accounts)
+                        string currentAccount = GetAccount(number);
+                        if (currentAccount != "Null")
                         {
-                            string currentAccount = "accounts\\" + number + ".txt";
-                            if (i == currentAccount)
+                            Console.WriteLine(" ");
+                            Console.WriteLine("Account found!");
+                            Console.Write("Enter the amount: ");
+                            string amountTemp = Console.ReadLine();
+                            while (!amountTemp.All(char.IsDigit))
                             {
-                                Console.WriteLine(" ");
-                                Console.WriteLine("Account found!");
+                                Console.WriteLine("Invalid input, try again.");
                                 Console.Write("Enter the amount: ");
-                                string amountTemp = Console.ReadLine();
-                                while (!amountTemp.All(char.IsDigit))
-                                {
-                                    Console.WriteLine("Invalid input, try again.");
-                                    Console.Write("Enter the amount: ");
-                                    amountTemp = Console.ReadLine();
-                                }
-                                int amount = Convert.ToInt32(amountTemp);
-                                int tempBalance = BalanceUpdate(currentAccount, amount, false);
-                                if (tempBalance == -1)
-                                {
-                                    Console.WriteLine("You do not sufficient funds.");
-                                    Console.ReadKey();
-                                    Withdraw();
-                                }
-                                else
-                                {
-                                    replaceLine("balance|" + tempBalance, currentAccount, 6);
-                                    Console.WriteLine("Withdraw Successful!");
-                                    Console.ReadKey();
-                                    MainMenu();
-                                }                           
+                                amountTemp = Console.ReadLine();
                             }
-                        }
+                            int amount = Convert.ToInt32(amountTemp);
+                            int tempBalance = BalanceUpdate(currentAccount, amount, false);
+                            if (tempBalance == -1)
+                            {
+                                Console.WriteLine("You do not have sufficient funds.");
+                                Console.ReadKey();
+                                Withdraw();
+                            }
+                            else
+                            {
+                                replaceLine("balance|" + tempBalance, currentAccount, 6);
+                                Console.WriteLine("Withdraw Successful!");
+                                Console.ReadKey();
+                                MainMenu();
+                            }
+                         }      
                         Console.WriteLine("Account not found!");
                         if (YNChoice("Check another account (y/n)?"))
                         {
@@ -330,7 +316,6 @@ namespace Assignment1
                 }
             }
         }
-    
 
         public void Statement()
         {
@@ -353,51 +338,41 @@ namespace Assignment1
                     string number = Console.ReadLine();
                     if (Int32.TryParse(number, out _) && (number.Length > 0 && number.Length < 11))
                     {
-                        string[] accounts = Directory.GetFiles("accounts");
-                        foreach (string i in accounts)
+                        string currentAccount = GetAccount(number);
+                        if (currentAccount != "Null")
                         {
-                            string currentAccount = "accounts\\" + number + ".txt";
-                            if (i == currentAccount)
+                            string[] accountFile = File.ReadAllLines(currentAccount);
+                            for (int j = 0; j < accountFile.Count(); j++)
                             {
-                                string[] accountFile = File.ReadAllLines(currentAccount);
-                                string balance = "0";
-                                for (int j = 0; j < accountFile.Count(); j++)
-                                {
-                                    accountFile[j] = accountFile[j].Substring(accountFile[j].IndexOf(@"|") + 1);
-
-                                    if ("balance".Contains(accountFile[j]))
-                                    {
-                                        balance = accountFile[6];
-                                    }
-                                }
-                                Console.WriteLine(" ");
-                                Console.WriteLine("Account found!");
-                                Console.WriteLine("╔════════════════════════════════════╗");
-                                Console.WriteLine("║          ACCOUNT DETAILS           ║");
-                                Console.WriteLine("╚════════════════════════════════════╝");
-                                Console.WriteLine("Account No: {0}", accountFile[5]);
-                                Console.WriteLine("Account Balance: ${0}", balance);
-                                Console.WriteLine("First Name: {0}", accountFile[0]);
-                                Console.WriteLine("Last Name: {0}", accountFile[1]);
-                                Console.WriteLine("Address: {0}", accountFile[2]);
-                                Console.WriteLine("Phone: {0}", accountFile[3]);
-                                Console.WriteLine("Email: {0}", accountFile[4]);
-                                Console.WriteLine(" ");
-                                if (YNChoice("Delete (y/n)?"))
-                                {
-                                    File.Delete(currentAccount);
-                                    MainMenu();
-                                }
-                                else
-                                {
-                                    MainMenu();
-                                }
+                                accountFile[j] = accountFile[j].Substring(accountFile[j].IndexOf(@"|") + 1);
+                            }
+                            Console.WriteLine(" ");
+                            Console.WriteLine("Account found!");
+                            Console.WriteLine("╔════════════════════════════════════╗");
+                            Console.WriteLine("║          ACCOUNT DETAILS           ║");
+                            Console.WriteLine("╚════════════════════════════════════╝");
+                            Console.WriteLine("Account No: {0}", accountFile[5]);
+                            Console.WriteLine("Account Balance: ${0}", accountFile[6]);
+                            Console.WriteLine("First Name: {0}", accountFile[0]);
+                            Console.WriteLine("Last Name: {0}", accountFile[1]);
+                            Console.WriteLine("Address: {0}", accountFile[2]);
+                            Console.WriteLine("Phone: {0}", accountFile[3]);
+                            Console.WriteLine("Email: {0}", accountFile[4]);
+                            Console.WriteLine(" ");
+                            if (YNChoice("Delete (y/n)?"))
+                            {
+                                File.Delete(currentAccount);
+                                MainMenu();
+                            }
+                            else
+                            {
+                                MainMenu();
                             }
                         }
                         Console.WriteLine("Account not found!");
                         if (YNChoice("Check another account (y/n)?"))
                         {
-                            SearchAccount();
+                            Delete();
                         }
                         else
                         {
@@ -485,9 +460,26 @@ namespace Assignment1
                 }
                 else
                 {
-                   return balance -= amount;
-                }   
+                    return balance -= amount;
+                }
             }
+        }
+
+        public string GetAccount(string accNo)
+        {
+            string[] accounts = Directory.GetFiles("accounts");
+            foreach (string i in accounts)
+            {
+                if (i == "accounts\\" + accNo + ".txt")
+                {
+                    return i;
+                }
+                else
+                {
+                    return ("Null");
+                }
+            }
+            return ("Null");
         }
     }
 }
