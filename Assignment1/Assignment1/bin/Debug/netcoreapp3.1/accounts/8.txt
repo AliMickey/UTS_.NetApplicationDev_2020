@@ -1,7 +1,0 @@
-fName|t
-lName|t
-address|tt
-phone|443433
-email|@uts.edu.aud
-accountNo|83845849
-3232

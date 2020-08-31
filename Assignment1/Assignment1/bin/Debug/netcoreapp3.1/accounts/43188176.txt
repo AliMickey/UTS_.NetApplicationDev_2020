@@ -1,6 +1,0 @@
-fName|t
-lName|t
-address|t
-phone|434
-email|fsdfsdf@uts.edu.au
-accountNo|43188176

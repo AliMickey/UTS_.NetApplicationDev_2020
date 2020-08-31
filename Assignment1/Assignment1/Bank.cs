@@ -110,10 +110,6 @@ namespace Assignment1
             if (YNChoice("Is the information correct? (y/n)"))
             {
                 int accNo = GenerateAccountNumber();
-                if (File.Exists("accounts/" + accNo + ".txt"))
-                {
-                    accNo = GenerateAccountNumber();
-                }
                 string[] tempText = { "fName|" + fName, "lName|" + lName, "address|" + address, "phone|" + phone, "email|" + email, "accountNo|" + accNo };
                 File.WriteAllLines("accounts/" + accNo + ".txt", tempText);
                 Console.WriteLine("Account Created! Details will be provided by email.");
@@ -144,7 +140,6 @@ namespace Assignment1
                     string number = Console.ReadLine();
                     if (Int32.TryParse(number, out _) && (number.Length > 0 && number.Length < 11))
                     {
-                        int accountNumber = Convert.ToInt32(number);
                         string[] accounts = Directory.GetFiles("accounts");
                         foreach (string i in accounts) {
                             string currentAccount = "accounts\\" + number + ".txt";
@@ -230,7 +225,16 @@ namespace Assignment1
         public int GenerateAccountNumber()
         {
             Random rnd = new Random();
-            return rnd.Next(100000, 99999999);
+            int number = rnd.Next(100000, 99999999);
+            string[] accounts = Directory.GetFiles("accounts");
+            foreach (string i in accounts)
+            {
+                if (i == "accounts\\" + number + ".txt")
+                {
+                    GenerateAccountNumber();
+                }
+            }
+            return number;
         }
 
         public bool YNChoice(string question)

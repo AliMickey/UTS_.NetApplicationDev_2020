@@ -1,0 +1,6 @@
+fName|t
+lName|t
+address|t
+phone|4
+email|@uts.edu.au
+accountNo|86044429
