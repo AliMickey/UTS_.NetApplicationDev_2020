@@ -2,7 +2,6 @@
 using System.Linq;
 using System.IO;
 using System.Collections.Generic;
-using System.Reflection.Metadata.Ecma335;
 
 namespace Assignment1
 {
@@ -23,6 +22,7 @@ namespace Assignment1
             Console.WriteLine("║     7. Exit                        ║");
             Console.WriteLine("╚════════════════════════════════════╝");
 
+            //Switch command to take user input, validate it and then call the appropiate method.
             while (true)
             {
                 try
@@ -89,6 +89,7 @@ namespace Assignment1
             Console.Write("Address: ");
             string address = Console.ReadLine();
 
+            //Validation to check if length constraints and whether it is an integer.
             Console.Write("Phone: ");
             string phoneTemp = Console.ReadLine();
             while (phoneTemp.Length > 10 || phoneTemp.Length < 1 || !phoneTemp.All(char.IsDigit))
@@ -99,6 +100,7 @@ namespace Assignment1
             }
             int phone = Convert.ToInt32(phoneTemp);
 
+            //Check if the '@' symbol exists, also check if the uts domain is in email.
             Console.Write("Email: ");
             string email = Console.ReadLine();
             while (!email.Contains('@') || !email.Contains("uts.edu.au"))
@@ -110,8 +112,9 @@ namespace Assignment1
 
             if (YNChoice("Is the information correct? (y/n)"))
             {
+                //Add provided information to file with '|' as delimiter in a set format and order.
                 int accNo = GenerateAccountNumber();
-                string[] tempText = { "fName|" + fName, "lName|" + lName, "address|" + address, "phone|" + phone, "email|" + email, "accountNo|" + accNo, "balance|0" };
+                string[] tempText = {"fName|" + fName, "lName|" + lName, "address|" + address, "phone|" + phone, "email|" + email, "accountNo|" + accNo, "balance|0"};
                 File.WriteAllLines("accounts/" + accNo + ".txt", tempText);
                 Console.WriteLine("Account Created! Details will be provided by email.");
                 Console.WriteLine("Account Number is: {0}", accNo);
@@ -205,6 +208,7 @@ namespace Assignment1
                                 Console.Write("Enter the amount: ");
                                 amountTemp = Console.ReadLine();
                             }
+                            //Replace the balance line in the account file with the updated balance information. 
                             int amount = Convert.ToInt32(amountTemp);
                             replaceLine("balance|" + BalanceUpdate(currentAccount, amount, true), currentAccount, 6);
                             Console.WriteLine("Deposit Successful!");
@@ -272,6 +276,7 @@ namespace Assignment1
                             }
                             else
                             {
+                                //Replace the balance line in the account file with the updated balance information. 
                                 replaceLine("balance|" + tempBalance, currentAccount, 6);
                                 Console.WriteLine("Withdraw Successful!");
                                 Console.ReadKey();
@@ -365,6 +370,7 @@ namespace Assignment1
 
         public int GenerateAccountNumber()
         {
+            //Generate a unique random number that isn't already used by an account.
             Random rnd = new Random();
             int number = rnd.Next(100000, 99999999);
             string[] accounts = Directory.GetFiles("accounts");
@@ -380,6 +386,7 @@ namespace Assignment1
 
         public bool YNChoice(string question)
         {
+            //Take a string as an argument and provide the user a y/n option.
             while (true)
             {
                 try
@@ -408,6 +415,7 @@ namespace Assignment1
         }
         public void replaceLine(string text, string file, int lineNumber)
         {
+            //Replace the line with provided arguments.
             string[] tempArray = File.ReadAllLines(file);
             List<string> tempList = tempArray.ToList();
             tempList.RemoveAt(lineNumber);
@@ -417,6 +425,7 @@ namespace Assignment1
 
         public int BalanceUpdate(string account, int amount, bool deposit)
         {
+            //Either add or subtract the balance from provided amount based on boolean.
             string balanceLine = File.ReadLines(account).Skip(6).Take(1).First();
             balanceLine = balanceLine.Substring(balanceLine.IndexOf(@"|") + 1);
             int balance = Convert.ToInt32(balanceLine);
@@ -439,6 +448,7 @@ namespace Assignment1
 
         public string GetAccount(string accNo)
         {
+            //Get the account dir location.
             string[] accounts = Directory.GetFiles("accounts");
             foreach (string i in accounts)
             {
@@ -456,6 +466,7 @@ namespace Assignment1
 
         public void DisplayAccount(string accNo)
         {
+            //Display the account details from a file location.
             string[] accountFile = File.ReadAllLines(accNo);
             for (int j = 0; j < accountFile.Count(); j++)
             {
