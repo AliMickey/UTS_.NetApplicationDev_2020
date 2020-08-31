@@ -1,6 +1,0 @@
-fName|Nabin
-lName|Sharma
-address|Uts, Broadway, NSW 2007
-phone|450977815
-email|Nabin.Sharma@uts.edu.au
-accountNo|38811628

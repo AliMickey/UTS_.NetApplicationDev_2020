@@ -220,6 +220,80 @@ namespace Assignment1
         public void Delete()
         {
             Console.Clear();
+            Console.WriteLine("╔════════════════════════════════════╗");
+            Console.WriteLine("║          DELETE AN ACCOUNT         ║");
+            Console.WriteLine("║════════════════════════════════════║");
+            Console.WriteLine("║         ENTER THE DETAILS          ║");
+            Console.WriteLine("╚════════════════════════════════════╝");
+            while (true)
+            {
+                try
+                {
+                    Console.Write("Account Number: ");
+                    string number = Console.ReadLine();
+                    if (Int32.TryParse(number, out _) && (number.Length > 0 && number.Length < 11))
+                    {
+                        string[] accounts = Directory.GetFiles("accounts");
+                        foreach (string i in accounts)
+                        {
+                            string currentAccount = "accounts\\" + number + ".txt";
+                            if (i == currentAccount)
+                            {
+                                string[] accountFile = File.ReadAllLines(currentAccount);
+                                string balance = "0";
+                                for (int j = 0; j < accountFile.Count(); j++)
+                                {
+                                    accountFile[j] = accountFile[j].Substring(accountFile[j].IndexOf(@"|") + 1);
+
+                                    if ("balance".Contains(accountFile[j]))
+                                    {
+                                        balance = accountFile[6];
+                                    }
+                                }
+                                Console.WriteLine(" ");
+                                Console.WriteLine("Account found!");
+                                Console.WriteLine("╔════════════════════════════════════╗");
+                                Console.WriteLine("║          ACCOUNT DETAILS           ║");
+                                Console.WriteLine("╚════════════════════════════════════╝");
+                                Console.WriteLine("Account No: {0}", accountFile[5]);
+                                Console.WriteLine("Account Balance: ${0}", balance);
+                                Console.WriteLine("First Name: {0}", accountFile[0]);
+                                Console.WriteLine("Last Name: {0}", accountFile[1]);
+                                Console.WriteLine("Address: {0}", accountFile[2]);
+                                Console.WriteLine("Phone: {0}", accountFile[3]);
+                                Console.WriteLine("Email: {0}", accountFile[4]);
+                                Console.WriteLine(" ");
+                                if (YNChoice("Delete (y/n)?"))
+                                {
+                                    File.Delete(currentAccount);
+                                    MainMenu();
+                                }
+                                else
+                                {
+                                    MainMenu();
+                                }
+                            }
+                        }
+                        Console.WriteLine("Account not found!");
+                        if (YNChoice("Check another account (y/n)?"))
+                        {
+                            SearchAccount();
+                        }
+                        else
+                        {
+                            MainMenu();
+                        }
+                    }
+                    else
+                    {
+                        Console.WriteLine("Invalid input, try again.");
+                    }
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e);
+                }
+            }
         }
 
         public int GenerateAccountNumber()

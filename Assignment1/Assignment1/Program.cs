@@ -8,6 +8,8 @@ namespace Assignment1
     {
         static void Main(string[] args)
         {
+            //https://github.com/AliMickey/UTS_.NetApplicationDev_Spring_2020/commits/master
+
             try
             {
 
@@ -20,7 +22,6 @@ namespace Assignment1
                 Console.WriteLine("║  WELCOME TO SIMPLE BANKING SYSTEM  ║");
                 Console.WriteLine("║════════════════════════════════════║");
                 Console.WriteLine("║          LOGIN TO START            ║");
-                Console.WriteLine("║                                    ║");
                 Console.WriteLine("║                                    ║");
                 Console.WriteLine("║                                    ║");
                 Console.WriteLine("╚════════════════════════════════════╝");
