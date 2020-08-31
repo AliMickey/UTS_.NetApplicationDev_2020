@@ -21,42 +21,53 @@ namespace Assignment1
             Console.WriteLine("║     7. Exit                        ║");
             Console.WriteLine("╚════════════════════════════════════╝");
 
-            Console.Write("Enter your choice (1-7): ");
-            string inputChoice = Console.ReadLine();
-
-            while (!Int32.TryParse(inputChoice, out _) || (Convert.ToInt32(inputChoice) < 1 && Convert.ToInt32(inputChoice) > 7))
+            while (true)
             {
-                Console.WriteLine("Invalid input, try again.");
-                Console.Write("Enter your choice (1-7): ");
-                inputChoice = Console.ReadLine();
+                try
+                {
+                    Console.Write("Enter your choice (1-7): ");
+                    string inputChoice = Console.ReadLine();
+                    if (Int32.TryParse(inputChoice, out _) && (Convert.ToInt32(inputChoice) > 0 && Convert.ToInt32(inputChoice) < 8))
+                    {
+                        switch (Convert.ToInt32(inputChoice))
+                        {
+                            case 1:
+                                CreateAccount();
+                                break;
+                            case 2:
+                                SearchAccount();
+                                break;
+                            case 3:
+                                Deposit();
+                                break;
+                            case 4:
+                                Withdraw();
+                                break;
+                            case 5:
+                                Statement();
+                                break;
+                            case 6:
+                                Delete();
+                                break;
+                            case 7:
+                                Environment.Exit(1);
+                                break;
+                        }
+                        Console.ReadKey();
+                        break;
+                    }
+                    else
+                    {
+                        Console.WriteLine("Invalid input, try again.");
+                    }
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e);
+                    Console.ReadKey();
+                }
             }
-            int choice = Convert.ToInt32(inputChoice);
-            switch (choice)
-            {
-                case 1:
-                    CreateAccount();
-                    break;
-                case 2:
-                    SearchAccount();
-                    break;
-                case 3:
-                    Deposit();
-                    break;
-                case 4:
-                    Withdraw();
-                    break;
-                case 5:
-                    Statement();
-                    break;
-                case 6:
-                    Delete();
-                    break;
-                case 7:
-                    Environment.Exit(1);
-                    break;
-            }
-            Console.ReadKey();
-		}
+        }
 
         public void CreateAccount()
         {
