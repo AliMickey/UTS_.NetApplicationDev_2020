@@ -106,29 +106,93 @@ namespace Assignment1
                 email = Console.ReadLine();
             }
 
+
+            if (YNChoice("Is the information correct? (y/n)"))
+            {
+                int accNo = GenerateAccountNumber();
+                if (File.Exists("accounts/" + accNo + ".txt"))
+                {
+                    accNo = GenerateAccountNumber();
+                }
+                string[] tempText = { "fName|" + fName, "lName|" + lName, "address|" + address, "phone|" + phone, "email|" + email, "accountNo|" + accNo };
+                File.WriteAllLines("accounts/" + accNo + ".txt", tempText);
+                Console.WriteLine("Account Created! Details will be provided by email.");
+                Console.WriteLine("Account Number is: {0}", accNo);
+            }
+            else
+            {
+                MainMenu();
+            }
+
+            Console.ReadKey();
+            MainMenu();
+        }
+
+        public void SearchAccount()
+        {
+            Console.Clear();
+            Console.WriteLine("╔════════════════════════════════════╗");
+            Console.WriteLine("║          SEARCH AN ACCOUNT         ║");
+            Console.WriteLine("║════════════════════════════════════║");
+            Console.WriteLine("║         ENTER THE DETAILS          ║");
+            Console.WriteLine("╚════════════════════════════════════╝");
             while (true)
             {
                 try
                 {
-                    Console.WriteLine("Is the information correct? (y/n)");
-                    string correctInput = Console.ReadLine();
-                    if (correctInput.Length >= 1 && correctInput[0] == 'y')
+                    Console.Write("Account Number: ");
+                    string number = Console.ReadLine();
+                    if (Int32.TryParse(number, out _) && (number.Length > 0 && number.Length < 11))
                     {
-                        int accNo = GenerateAccountNumber();
-                        if (File.Exists(accNo + ".txt"))
-                        {
-                            File.Delete(accNo + ".txt");
+                        int accountNumber = Convert.ToInt32(number);
+                        string[] accounts = Directory.GetFiles("accounts");
+                        foreach (string i in accounts) {
+                            string currentAccount = "accounts\\" + number + ".txt";
+                            if (i == currentAccount)
+                            {
+                                string[] accountFile = File.ReadAllLines(currentAccount);
+                                string balance = "0";
+                                for (int j = 0; j < accountFile.Count(); j++)
+                                {
+                                    accountFile[j] = accountFile[j].Substring(accountFile[j].IndexOf(@"|") + 1);
+
+                                    if ("balance".Contains(accountFile[j]))
+                                    {
+                                        balance = accountFile[6];
+                                    }
+                                }
+                                Console.WriteLine(" ");
+                                Console.WriteLine("Account found!");
+                                Console.WriteLine("╔════════════════════════════════════╗");
+                                Console.WriteLine("║          ACCOUNT DETAILS           ║");
+                                Console.WriteLine("╚════════════════════════════════════╝");
+                                Console.WriteLine("Account No: {0}", accountFile[5]);
+                                Console.WriteLine("Account Balance: ${0}", balance); 
+                                Console.WriteLine("First Name: {0}", accountFile[0]);
+                                Console.WriteLine("Last Name: {0}", accountFile[1]);
+                                Console.WriteLine("Address: {0}", accountFile[2]);
+                                Console.WriteLine("Phone: {0}", accountFile[3]);
+                                Console.WriteLine("Email: {0}", accountFile[4]);
+                                Console.WriteLine(" ");
+                                if (YNChoice("Check another account (y/n)?"))
+                                {
+                                    SearchAccount();
+                                }
+                                else
+                                {
+                                    MainMenu();
+                                }
+                            }                      
                         }
-                        string[] tempText = { "fName|" + fName, "lName|" + lName, "address|" + address, "phone|" + phone, "email|" + email };
-                        File.WriteAllLines(accNo + ".txt", tempText);
-                        Console.WriteLine("Account Created! Details will be provided by email.");
-                        Console.WriteLine("Account Number is: {0}", accNo);
-                        break;
-                    }
-                    else if (correctInput.Length >= 1 && correctInput[0] == 'n')
-                    {
-                        MainMenu();
-                        break;
+                        Console.WriteLine("Account not found!");
+                        if (YNChoice("Check another account (y/n)?"))
+                        {
+                            SearchAccount();
+                        }
+                        else
+                        {
+                            MainMenu();
+                        }
                     }
                     else
                     {
@@ -138,16 +202,9 @@ namespace Assignment1
                 catch (Exception e)
                 {
                     Console.WriteLine(e);
-                    Console.ReadKey();
                 }
             }
-            Console.ReadKey();
-            MainMenu();
-        }
-
-        public void SearchAccount()
-        {
-            Console.Clear();
+                        
         }
 
         public void Deposit()
@@ -175,5 +232,34 @@ namespace Assignment1
             Random rnd = new Random();
             return rnd.Next(100000, 99999999);
         }
-	}
+
+        public bool YNChoice(string question)
+        {
+            while (true)
+            {
+                try
+                {
+                    Console.WriteLine(question);
+                    string correctInput = Console.ReadLine();
+                    if (correctInput.Length >= 1 && correctInput[0] == 'y')
+                    {
+                        return true;
+                    }
+                    else if (correctInput.Length >= 1 && correctInput[0] == 'n')
+                    {
+                        return false;
+                    }
+                    else
+                    {
+                        Console.WriteLine("Invalid input, try again.");
+                    }
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e);
+                    Console.ReadKey();
+                }
+            }
+        }
+    }
 }
