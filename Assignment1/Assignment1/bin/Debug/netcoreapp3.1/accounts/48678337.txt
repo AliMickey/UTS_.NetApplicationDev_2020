@@ -1,7 +1,0 @@
-fName|test
-lName|23
-address|fdf43 3
-phone|4343
-email|nqy81376@bcaoo.com
-accountNo|48678337
-balance|0

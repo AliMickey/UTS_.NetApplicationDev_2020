@@ -1,8 +1,0 @@
-fName|gth
-lName|434
-address|4343
-phone|3434
-email|nqy81376@bcaoo.com
-accountNo|77276739
-balance|8
-01.09.2020 - Deposit - 8 - 8

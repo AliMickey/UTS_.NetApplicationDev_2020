@@ -413,11 +413,15 @@ namespace Assignment1
                         {
                             string[] accountDetails = GetAccount(currentAccount);
                             DisplayAccount(currentAccount);
-                            Console.WriteLine("Last 5 Transactions:");
-                            Console.WriteLine("Date - Type - Amount - Balance");
-                            for (int i = accountDetails.Count()-1; i > accountDetails.Count()-6; i--)
+                            //If transaction history exists display last 5 transactions.
+                            if (accountDetails.Count() > 7)
                             {
-                                Console.WriteLine(accountDetails[i]);
+                                Console.WriteLine("Last 5 Transactions:");
+                                Console.WriteLine("Date - Type - Amount - Balance");
+                                for (int i = accountDetails.Count() - 1; i > accountDetails.Count() - 6; i--)
+                                {
+                                    Console.WriteLine(accountDetails[i]);
+                                }
                             }
                             Console.WriteLine();
                             if (YNChoice("Email Statement (y/n)?"))
