@@ -1,0 +1,7 @@
+fName|test
+lName|hello
+address|324 43,43 
+phone|343434
+email|kwwwmiookaeffsbfal@kiabws.online
+accountNo|54797418
+balance|0

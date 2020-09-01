@@ -423,6 +423,8 @@ namespace Assignment1
                             if (YNChoice("Email Statement (y/n)?"))
                             {
                                 SendEmail(GetAccount(currentAccount)[4], accountDetails);
+                                Console.ReadKey();
+                                MainMenu();
                             }
                             else
                             {
@@ -642,20 +644,20 @@ namespace Assignment1
             {
                 string password = "utsnetprogtemp";
                 MailMessage mail = new MailMessage();
-                SmtpClient SmtpServer = new SmtpClient("smtp.yandex.com");
-                mail.From = new MailAddress("utsnetprog@yandex.com");
+                SmtpClient SmtpServer = new SmtpClient("smtp.gmail.com");
+                mail.From = new MailAddress("utsnetprog@gmail.com");
                 mail.To.Add(address);
                 mail.Subject = "Account Details";
-                mail.Body = "Please find following details for your new bank account. \n Account Number: " + details[5] + "\n First Name: " + details[0] + "\n Last Name: " + details[1] + "\n Address: " + details[2] + "\n Phone: " + details[3] + "\n Email: " + details[4] + "\n Balance: $" + details[6];
+                mail.Body = "Please find following details for your new bank account. \n\n Account Number: " + details[5] + "\n First Name: " + details[0] + "\n Last Name: " + details[1] + "\n Address: " + details[2] + "\n Phone: " + details[3] + "\n Email: " + details[4] + "\n Balance: $" + details[6];
                 SmtpServer.Port = 587;
-                SmtpServer.Credentials = new System.Net.NetworkCredential("utsnetprog@yandex.com", password);
+                SmtpServer.Credentials = new System.Net.NetworkCredential("utsnetprog@gmail.com", password);
                 SmtpServer.EnableSsl = true;
                 SmtpServer.Send(mail);
                 Console.WriteLine("Sent!");
             }
             catch (SmtpException e)
             {
-                Console.WriteLine("You tried to send too many emails, try again later");
+                Console.WriteLine("Mail send error, try again later.");
                 Console.WriteLine(e);
 
             }
