@@ -1,0 +1,7 @@
+fName|r
+lName|r
+address|r
+phone|4
+email|gj@ed.com
+accountNo|23389230
+balance|0

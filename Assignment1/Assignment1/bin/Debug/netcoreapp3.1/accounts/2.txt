@@ -1,0 +1,7 @@
+fName|sedat
+lName|dogramaci
+address|402 pitt town road
+phone|411193323
+email|oilsandgreases@gmail.com
+accountNo|13668954
+balance|0

@@ -71,7 +71,6 @@ namespace Assignment1
                 }
             }
         }
-
         public void CreateAccount()
         {
             Console.Clear();
@@ -127,10 +126,8 @@ namespace Assignment1
             {
                 MainMenu();
             }
-
             Console.ReadKey();
             MainMenu();
-            
         }
 
         public void SearchAccount()
@@ -513,11 +510,8 @@ namespace Assignment1
             {
                 if (i == "accounts\\" + accNo + ".txt")
                 {
+                   
                     return i;
-                }
-                else
-                {
-                    return ("Null");
                 }
             }
             return ("Null");
@@ -574,7 +568,6 @@ namespace Assignment1
                 mail.To.Add(address);
                 mail.Subject = "Account Details";
                 mail.Body = "Please find following details for your new bank account. \n Account Number: " + details[5] + "\n First Name: " + details[0] + "\n Last Name: " + details[1] + "\n Address: " + details[2] + "\n Phone: " + details[3] + "\n Email: " + details[4] + "\n Balance: $" + details[6];
-
                 SmtpServer.Port = 587;
                 SmtpServer.Credentials = new System.Net.NetworkCredential("utsnetprog@yandex.com", password);
                 SmtpServer.EnableSsl = true;
@@ -583,7 +576,7 @@ namespace Assignment1
             }
             catch (SmtpException e)
             {
-                Console.WriteLine("You tried to send to many emails, try again later");
+                Console.WriteLine("You tried to send too many emails, try again later");
                 Console.WriteLine(e);
 
             }
