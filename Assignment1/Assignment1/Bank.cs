@@ -8,6 +8,86 @@ namespace Assignment1
 {
     class Bank
     {
+        public void LoginInit()
+        {
+            Console.Clear();
+            Console.WriteLine("╔════════════════════════════════════╗");
+            Console.WriteLine("║  WELCOME TO SIMPLE BANKING SYSTEM  ║");
+            Console.WriteLine("║════════════════════════════════════║");
+            Console.WriteLine("║          LOGIN TO START            ║");
+            Console.WriteLine("║                                    ║");
+            Console.WriteLine("╚════════════════════════════════════╝");
+            Login();
+        }
+
+        public void Login()
+        {
+            try
+            {
+                string[] userID = File.ReadAllLines("login.txt");
+                Boolean valid = false;
+                Bank bank = new Bank();
+                String userName;
+                String password;
+                while (valid == false)
+                {
+                    Console.Write("USER NAME: ");
+                    userName = Console.ReadLine();
+                    Console.Write("PASSWORD: ");
+                    password = null;
+                    //Mask password characters.
+                    while (true)
+                    {
+                        var key = Console.ReadKey(true);
+                        if (key.Key == ConsoleKey.Enter)
+                        {
+                            Console.WriteLine();
+                            break;
+                        }
+                        //Backspace removes the '*' and removes last character from password.
+                        if (key.Key == ConsoleKey.Backspace && password.Length > 0)
+                        {
+                            Console.Write("\b \b");
+                            password = password.Substring(0, password.Length - 1);
+                        }
+                        else if (key.Key != ConsoleKey.Backspace)
+                        {
+                            password += key.KeyChar;
+                            Console.Write("*");
+                        }
+                    }
+                    //Go through each entry and check for validity.
+                    foreach (string i in userID)
+                    {
+                        string[] tempID = i.Split('|');
+                        if (userName == tempID[0] && password == tempID[1])
+                        {
+                            Console.WriteLine("Valid credentials!.. Please enter.");
+                            valid = true;
+                            Console.ReadKey();
+                            MainMenu();
+                            break;
+                        }
+                    }
+                    Console.WriteLine("Invalid credentials!.. Please try again\n");
+                    //Append new credentials to file and return to login menu.
+                    if (bank.YNChoice("Username: " + userName + ", Password: " + password + "\nCreate a new user using supplied information (y/n)?"))
+                    {
+                        using StreamWriter file = new StreamWriter("login.txt", true);
+                        file.WriteLine(userName + "|" + password);
+                        Console.WriteLine("Account created...");
+                        Console.ReadKey();
+                    }
+                    LoginInit();
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                Console.ReadKey();
+            }
+        }
+
         public void MainMenu()
         {
             Console.Clear();
@@ -53,7 +133,7 @@ namespace Assignment1
                                 Delete();
                                 break;
                             case 7:
-                                Environment.Exit(1);
+                                LoginInit();
                                 break;
                         }
                         Console.ReadKey();
@@ -510,7 +590,6 @@ namespace Assignment1
             {
                 if (i == "accounts\\" + accNo + ".txt")
                 {
-                   
                     return i;
                 }
             }
