@@ -1,4 +1,4 @@
-#UTS_.NetApplicationDev_Spring_2020 - Assignment 1
+# UTS_.NetApplicationDev_Spring_2020 - Assignment 1
 
 
 1. Download the latest release.
