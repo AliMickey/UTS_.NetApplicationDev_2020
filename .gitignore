@@ -1,2 +1,7 @@
 *.csproj
 **.vs
+**Release
+**/bin/Release/**
+**/obj/Release/**
+**/obj/publish/**
+**/PublishProfiles/**
