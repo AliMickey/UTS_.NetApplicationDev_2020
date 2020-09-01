@@ -2,7 +2,7 @@ fName|a
 lName|b
 address|c
 phone|4
-email|aft58350@eoopy.com
+email|random@hkjdhrthjkrghee.com
 accountNo|1
 balance|5654
 31.08.2020 - Deposit - 50 - 50

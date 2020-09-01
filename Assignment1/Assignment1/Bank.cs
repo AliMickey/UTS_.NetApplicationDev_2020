@@ -426,6 +426,7 @@ namespace Assignment1
                             Console.WriteLine();
                             if (YNChoice("Email Statement (y/n)?"))
                             {
+                                Console.WriteLine("Please wait, sending email...");
                                 SendEmail(GetAccount(currentAccount)[4], accountDetails);
                                 Console.ReadKey();
                                 MainMenu();
