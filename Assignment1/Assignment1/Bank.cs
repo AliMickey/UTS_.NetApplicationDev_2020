@@ -3,6 +3,8 @@ using System.Linq;
 using System.IO;
 using System.Collections.Generic;
 using System.Net.Mail;
+using System.Globalization;
+using System.Text.RegularExpressions;
 
 namespace Assignment1
 {
@@ -19,6 +21,8 @@ namespace Assignment1
             Console.WriteLine("╚════════════════════════════════════╝");
             Login();
         }
+
+        
 
         public void Login()
         {
@@ -180,10 +184,10 @@ namespace Assignment1
             }
             int phone = Convert.ToInt32(phoneTemp);
 
-            //Check if the '@' symbol exists, also check if the uts domain is in email.
+            //Check if the domain is valid.
             Console.Write("Email: ");
             string email = Console.ReadLine();
-            while (!email.Contains('@')) /*|| !email.Contains("uts.edu.au"))*/
+            while (!RegexUtilities.IsValidEmail(email))
             {
                 Console.WriteLine("Invalid input, try again.");
                 Console.Write("Email: ");
@@ -665,6 +669,48 @@ namespace Assignment1
                 Console.WriteLine("Mail send error, try again later.");
                 Console.WriteLine(e);
 
+            }
+        }
+        public class RegexUtilities
+        {
+            //https://docs.microsoft.com/en-us/dotnet/standard/base-types/how-to-verify-that-strings-are-in-valid-email-format
+            public static bool IsValidEmail(string email)
+            {
+                if (string.IsNullOrWhiteSpace(email))
+                    return false;
+                try
+                {
+                    // Normalize the domain
+                    email = Regex.Replace(email, @"(@)(.+)$", DomainMapper, RegexOptions.None, TimeSpan.FromMilliseconds(200));
+                    // Examines the domain part of the email and normalizes it.
+                    string DomainMapper(Match match)
+                    {
+                        // Use IdnMapping class to convert Unicode domain names.
+                        var idn = new IdnMapping();
+                        // Pull out and process domain name (throws ArgumentException on invalid)
+                        var domainName = idn.GetAscii(match.Groups[2].Value);
+                        return match.Groups[1].Value + domainName;
+                    }
+                }
+                catch (RegexMatchTimeoutException e)
+                {
+                    return false;
+                }
+                catch (ArgumentException e)
+                {
+                    return false;
+                }
+                try
+                {
+                    return Regex.IsMatch(email,
+                        @"^(?("")("".+?(?<!\\)""@)|(([0-9a-z]((\.(?!\.))|[-!#\$%&'\*\+/=\?\^`\{\}\|~\w])*)(?<=[0-9a-z])@))" +
+                        @"(?(\[)(\[(\d{1,3}\.){3}\d{1,3}\])|(([0-9a-z][-0-9a-z]*[0-9a-z]*\.)+[a-z0-9][\-a-z0-9]{0,22}[a-z0-9]))$",
+                        RegexOptions.IgnoreCase, TimeSpan.FromMilliseconds(250));
+                }
+                catch (RegexMatchTimeoutException)
+                {
+                    return false;
+                }
             }
         }
     }
