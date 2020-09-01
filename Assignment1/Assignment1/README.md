@@ -1,7 +1,7 @@
 # UTS_.NetApplicationDev_Spring_2020 - Assignment 1
 
 
-1. Download the latest release.
+1. Download the latest [release](https://github.com/AliMickey/UTS_.NetApplicationDev_Spring_2020/releases).
 2. Extract and run the .exe file.
 
 OR 
