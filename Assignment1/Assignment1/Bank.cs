@@ -22,8 +22,6 @@ namespace Assignment1
             Login();
         }
 
-        
-
         public void Login()
         {
             try
@@ -75,13 +73,17 @@ namespace Assignment1
                     }
                     Console.WriteLine("Invalid credentials!.. Please try again\n");
                     //Append new credentials to file and return to login menu.
-                    if (bank.YNChoice("Username: " + userName + ", Password: " + password + "\nCreate a new user using supplied information (y/n)?"))
+                    if (YNChoice("Create a new user (y/n)?"))
                     {
-                        using StreamWriter file = new StreamWriter("login.txt", true);
-                        file.WriteLine(userName + "|" + password);
-                        Console.WriteLine("Account created...");
-                        Console.ReadKey();
+                        if (YNChoice("Username: " + userName + ", Password: " + password + "\nAbove credentials are correct (y/n)?"))
+                        {
+                            using StreamWriter file = new StreamWriter("login.txt", true);
+                            file.WriteLine(userName + "|" + password);
+                            Console.WriteLine("Account created...");
+                            Console.ReadKey();
+                        }
                     }
+                    
                     LoginInit();
                 }
             }
@@ -538,7 +540,7 @@ namespace Assignment1
             {
                 try
                 {
-                    Console.WriteLine(question);
+                    Console.Write(question + " ");
                     string correctInput = Console.ReadLine();
                     if (correctInput.Length >= 1 && correctInput[0] == 'y')
                     {
