@@ -1,0 +1,11 @@
+C:\Users\130410\AppLockerExceptions\Tutorial lab 6 ProgrammingQuestion\Week6Program1\Week6Program1\obj\Debug\Week6Program1.csprojAssemblyReference.cache
+C:\Users\130410\AppLockerExceptions\Tutorial lab 6 ProgrammingQuestion\Week6Program1\Week6Program1\obj\Debug\Week6Program1.csproj.CoreCompileInputs.cache
+C:\Users\130410\AppLockerExceptions\Tutorial lab 6 ProgrammingQuestion\Week6Program1\Week6Program1\obj\Debug\Week7Program1.exe
+C:\Users\130410\AppLockerExceptions\Tutorial lab 6 ProgrammingQuestion\Week6Program1\Week6Program1\obj\Debug\Week7Program1.pdb
+D:\Programming\Git\UTS_.NetApplicationDev_Spring_2020\Lab6\Week6Program1\Week6Program1\obj\Debug\Week6Program1.csprojAssemblyReference.cache
+D:\Programming\Git\UTS_.NetApplicationDev_Spring_2020\Lab6\Week6Program1\Week6Program1\obj\Debug\Week6Program1.csproj.CoreCompileInputs.cache
+D:\Programming\Git\UTS_.NetApplicationDev_Spring_2020\Lab6\Week6Program1\Week6Program1\obj\Debug\Week7Program1.exe
+D:\Programming\Git\UTS_.NetApplicationDev_Spring_2020\Lab6\Week6Program1\Week6Program1\obj\Debug\Week7Program1.pdb
+D:\Programming\Git\UTS_.NetApplicationDev_Spring_2020\Lab6\Week6Program1\Week6Program1\bin\Debug\Week7Program1.exe.config
+D:\Programming\Git\UTS_.NetApplicationDev_Spring_2020\Lab6\Week6Program1\Week6Program1\bin\Debug\Week7Program1.exe
+D:\Programming\Git\UTS_.NetApplicationDev_Spring_2020\Lab6\Week6Program1\Week6Program1\bin\Debug\Week7Program1.pdb

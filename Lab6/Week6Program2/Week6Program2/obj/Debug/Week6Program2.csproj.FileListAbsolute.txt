@@ -1,0 +1,13 @@
+C:\Users\130410\OneDrive - UTS\D-Drive\Teaching\Spring 2020\32998-31927-Application Development with DotNet\Subject Materials\Week6\Tutorial\Tutorial lab 7 ProgrammingQuestion\Week7Program2\Week7Program2\obj\Debug\Week6Program2.csprojAssemblyReference.cache
+C:\Users\130410\OneDrive - UTS\D-Drive\Teaching\Spring 2020\32998-31927-Application Development with DotNet\Subject Materials\Week6\Tutorial\Tutorial lab 7 ProgrammingQuestion\Week7Program2\Week7Program2\obj\Debug\Week6Program2.csproj.CoreCompileInputs.cache
+C:\Users\130410\OneDrive - UTS\D-Drive\Teaching\Spring 2020\32998-31927-Application Development with DotNet\Subject Materials\Week6\Tutorial\Tutorial lab 7 ProgrammingQuestion\Week7Program2\Week7Program2\obj\Debug\Week7Program2.exe
+C:\Users\130410\OneDrive - UTS\D-Drive\Teaching\Spring 2020\32998-31927-Application Development with DotNet\Subject Materials\Week6\Tutorial\Tutorial lab 7 ProgrammingQuestion\Week7Program2\Week7Program2\obj\Debug\Week7Program2.pdb
+C:\Users\130410\AppLockerExceptions\Tutorial lab 6 ProgrammingQuestion\Week6Program2\Week6Program2\obj\Debug\Week6Program2.csprojAssemblyReference.cache
+C:\Users\130410\AppLockerExceptions\Tutorial lab 6 ProgrammingQuestion\Week6Program2\Week6Program2\obj\Debug\Week6Program2.csproj.CoreCompileInputs.cache
+D:\Programming\Git\UTS_.NetApplicationDev_Spring_2020\Lab6\Week6Program2\Week6Program2\bin\Debug\Week6Program2.exe.config
+D:\Programming\Git\UTS_.NetApplicationDev_Spring_2020\Lab6\Week6Program2\Week6Program2\bin\Debug\Week6Program2.exe
+D:\Programming\Git\UTS_.NetApplicationDev_Spring_2020\Lab6\Week6Program2\Week6Program2\bin\Debug\Week6Program2.pdb
+D:\Programming\Git\UTS_.NetApplicationDev_Spring_2020\Lab6\Week6Program2\Week6Program2\obj\Debug\Week6Program2.csprojAssemblyReference.cache
+D:\Programming\Git\UTS_.NetApplicationDev_Spring_2020\Lab6\Week6Program2\Week6Program2\obj\Debug\Week6Program2.csproj.CoreCompileInputs.cache
+D:\Programming\Git\UTS_.NetApplicationDev_Spring_2020\Lab6\Week6Program2\Week6Program2\obj\Debug\Week6Program2.exe
+D:\Programming\Git\UTS_.NetApplicationDev_Spring_2020\Lab6\Week6Program2\Week6Program2\obj\Debug\Week6Program2.pdb

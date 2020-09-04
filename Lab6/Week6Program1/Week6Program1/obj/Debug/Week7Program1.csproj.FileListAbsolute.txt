@@ -1,0 +1,9 @@
+D:\Teaching\Spring 2018\31927 Net programming\Lectures-pptx\Week-7\Tutorial\Week7Program1\Week7Program1\bin\Debug\Week7Program1.exe.config
+D:\Teaching\Spring 2018\31927 Net programming\Lectures-pptx\Week-7\Tutorial\Week7Program1\Week7Program1\bin\Debug\Week7Program1.exe
+D:\Teaching\Spring 2018\31927 Net programming\Lectures-pptx\Week-7\Tutorial\Week7Program1\Week7Program1\bin\Debug\Week7Program1.pdb
+D:\Teaching\Spring 2018\31927 Net programming\Lectures-pptx\Week-7\Tutorial\Week7Program1\Week7Program1\obj\Debug\Week7Program1.csprojResolveAssemblyReference.cache
+D:\Teaching\Spring 2018\31927 Net programming\Lectures-pptx\Week-7\Tutorial\Week7Program1\Week7Program1\obj\Debug\Week7Program1.exe
+D:\Teaching\Spring 2018\31927 Net programming\Lectures-pptx\Week-7\Tutorial\Week7Program1\Week7Program1\obj\Debug\Week7Program1.pdb
+D:\Teaching\Spring 2018\31927 Net programming\Lectures-pptx\Week-7\Tutorial\Tutorial lab 5 ProgrammingQuestion\Week7Program1\Week7Program1\bin\Debug\Week7Program1.exe.config
+D:\Teaching\Spring 2018\31927 Net programming\Lectures-pptx\Week-7\Tutorial\Tutorial lab 5 ProgrammingQuestion\Week7Program1\Week7Program1\obj\Debug\Week7Program1.exe
+D:\Teaching\Spring 2018\31927 Net programming\Lectures-pptx\Week-7\Tutorial\Tutorial lab 5 ProgrammingQuestion\Week7Program1\Week7Program1\obj\Debug\Week7Program1.pdb

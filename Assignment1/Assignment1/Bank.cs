@@ -15,11 +15,12 @@ namespace Assignment1
             Console.Clear();
             Console.WriteLine("╔════════════════════════════════════╗");
             Console.WriteLine("║  WELCOME TO SIMPLE BANKING SYSTEM  ║");
-            Console.WriteLine("║════════════════════════════════════║");
+            Console.WriteLine("╠═══════════════════════════════════╣");
             Console.WriteLine("║          LOGIN TO START            ║");
             Console.WriteLine("║                                    ║");
             Console.WriteLine("╚════════════════════════════════════╝");
             Login();
+            
         }
 
         public void Login()
@@ -37,7 +38,7 @@ namespace Assignment1
                     userName = Console.ReadLine();
                     Console.Write("PASSWORD: ");
                     password = null;
-                    //Mask password characters.
+                    // Mask password characters.
                     while (true)
                     {
                         var key = Console.ReadKey(true);
@@ -46,7 +47,7 @@ namespace Assignment1
                             Console.WriteLine();
                             break;
                         }
-                        //Backspace removes the '*' and removes last character from password.
+                        // Backspace removes the '*' and removes last character from password.
                         if (key.Key == ConsoleKey.Backspace && password.Length > 0)
                         {
                             Console.Write("\b \b");
@@ -58,7 +59,7 @@ namespace Assignment1
                             Console.Write("*");
                         }
                     }
-                    //Go through each entry and check for validity.
+                    // Go through each entry and check for validity.
                     foreach (string i in userID)
                     {
                         string[] tempID = i.Split('|');
@@ -72,7 +73,7 @@ namespace Assignment1
                         }
                     }
                     Console.WriteLine("Invalid credentials!.. Please try again\n");
-                    //Append new credentials to file and return to login menu.
+                    // Append new credentials to file and return to login menu.
                     if (YNChoice("Create a new user (y/n)?"))
                     {
                         if (YNChoice("Username: " + userName + ", Password: " + password + "\nAbove credentials are correct (y/n)?"))
@@ -99,7 +100,7 @@ namespace Assignment1
             Console.Clear();
             Console.WriteLine("╔════════════════════════════════════╗");
             Console.WriteLine("║  WELCOME TO SIMPLE BANKING SYSTEM  ║");
-            Console.WriteLine("║════════════════════════════════════║");
+            Console.WriteLine("╠════════════════════════════════════╣");
             Console.WriteLine("║     1. Create a new account        ║");
             Console.WriteLine("║     2. Search for an account       ║");
             Console.WriteLine("║     3. Deposit                     ║");
@@ -107,13 +108,16 @@ namespace Assignment1
             Console.WriteLine("║     5. A/C Statement               ║");
             Console.WriteLine("║     6. Delete Account              ║");
             Console.WriteLine("║     7. Exit                        ║");
+            Console.WriteLine("╠════════════════════════════════════╣");
+            Console.WriteLine("║                                    ║");
             Console.WriteLine("╚════════════════════════════════════╝");
 
-            //Switch command to take user input, validate it and then call the appropiate method.
+            // Switch command to take user input, validate it and then call the appropiate method.
             while (true)
             {
                 try
                 {
+                    Console.SetCursorPosition(7,11);
                     Console.Write("Enter your choice (1-7): ");
                     string inputChoice = Console.ReadLine();
                     if (Int32.TryParse(inputChoice, out _) && (Convert.ToInt32(inputChoice) > 0 && Convert.ToInt32(inputChoice) < 8))
@@ -147,7 +151,8 @@ namespace Assignment1
                     }
                     else
                     {
-                        Console.WriteLine("Invalid input, try again.");
+                        //Console.WriteLine("Invalid input, try again.");
+                        MainMenu();
                     }
                 }
                 catch (Exception e)
@@ -162,7 +167,7 @@ namespace Assignment1
             Console.Clear();
             Console.WriteLine("╔════════════════════════════════════╗");
             Console.WriteLine("║        CREATE A NEW ACCOUNT        ║");
-            Console.WriteLine("║════════════════════════════════════║");
+            Console.WriteLine("╠════════════════════════════════════╣");
             Console.WriteLine("║         ENTER THE DETAILS          ║");
             Console.WriteLine("╚════════════════════════════════════╝");
 
@@ -175,7 +180,7 @@ namespace Assignment1
             Console.Write("Address: ");
             string address = Console.ReadLine();
 
-            //Validation to check if length constraints and whether it is an integer.
+            // Validation to check if length constraints and whether it is an integer.
             Console.Write("Phone: ");
             string phoneTemp = Console.ReadLine();
             while (phoneTemp.Length > 10 || phoneTemp.Length < 1 || !phoneTemp.All(char.IsDigit))
@@ -186,7 +191,7 @@ namespace Assignment1
             }
             int phone = Convert.ToInt32(phoneTemp);
 
-            //Check if the domain is valid.
+            // Check if the domain is valid.
             Console.Write("Email: ");
             string email = Console.ReadLine();
             while (!RegexUtilities.IsValidEmail(email))
@@ -198,7 +203,7 @@ namespace Assignment1
 
             if (YNChoice("Is the information correct? (y/n)"))
             {
-                //Add provided information to file with '|' as delimiter in a set format and order.
+                // Add provided information to file with '|' as delimiter in a set format and order.
                 int accNo = GenerateAccountNumber();
                 string[] tempText = { "fName|" + fName, "lName|" + lName, "address|" + address, "phone|" + phone, "email|" + email, "accountNo|" + accNo, "balance|0" };
                 File.WriteAllLines("accounts/" + accNo + ".txt", tempText);
@@ -221,7 +226,7 @@ namespace Assignment1
             Console.Clear();
             Console.WriteLine("╔════════════════════════════════════╗");
             Console.WriteLine("║          SEARCH AN ACCOUNT         ║");
-            Console.WriteLine("║════════════════════════════════════║");
+            Console.WriteLine("╠════════════════════════════════════╣");
             Console.WriteLine("║         ENTER THE DETAILS          ║");
             Console.WriteLine("╚════════════════════════════════════╝");
             while (true)
@@ -236,6 +241,7 @@ namespace Assignment1
                         if (currentAccount != "Null")
                         {
                             DisplayAccount(currentAccount);
+                            Console.WriteLine();
                             if (YNChoice("Check another account (y/n)?"))
                             {
                                 SearchAccount();
@@ -272,7 +278,7 @@ namespace Assignment1
             Console.Clear();
             Console.WriteLine("╔════════════════════════════════════╗");
             Console.WriteLine("║               DEPOSIT              ║");
-            Console.WriteLine("║════════════════════════════════════║");
+            Console.WriteLine("╠════════════════════════════════════╣");
             Console.WriteLine("║          ENTER THE DETAILS         ║");
             Console.WriteLine("╚════════════════════════════════════╝");
             while (true)
@@ -296,8 +302,8 @@ namespace Assignment1
                                 Console.Write("Enter the amount: ");
                                 amountTemp = Console.ReadLine();
                             }
-                            //Replace the balance line in the account file with the updated balance information. 
-                            //Add a log into account file.
+                            // Replace the balance line in the account file with the updated balance information. 
+                            // Add a log into account file.
                             int amount = Convert.ToInt32(amountTemp);
                             int balance = BalanceUpdate(currentAccount, amount, true);
                             ReplaceLine("balance|" + balance, currentAccount, 6);
@@ -333,7 +339,7 @@ namespace Assignment1
             Console.Clear();
             Console.WriteLine("╔════════════════════════════════════╗");
             Console.WriteLine("║              WITHDRAW              ║");
-            Console.WriteLine("║════════════════════════════════════║");
+            Console.WriteLine("╠════════════════════════════════════╣");
             Console.WriteLine("║          ENTER THE DETAILS         ║");
             Console.WriteLine("╚════════════════════════════════════╝");
             while (true)
@@ -351,7 +357,7 @@ namespace Assignment1
                             Console.WriteLine("Account found!");
                             Console.Write("Enter the amount: ");
                             string amountTemp = Console.ReadLine();
-                            while (!amountTemp.All(char.IsDigit))
+                            while (!amountTemp.All(char.IsDigit) || Convert.ToInt32(amountTemp) == 0)
                             {
                                 Console.WriteLine("Invalid input, try again.");
                                 Console.Write("Enter the amount: ");
@@ -367,8 +373,8 @@ namespace Assignment1
                             }
                             else
                             {
-                                //Replace the balance line in the account file with the updated balance information. 
-                                //Add a log into account file.
+                                // Replace the balance line in the account file with the updated balance information. 
+                                // Add a log into account file.
                                 ReplaceLine("balance|" + balance, currentAccount, 6);
                                 WriteToAccountFile(currentAccount, "Withdraw", amount, balance);
                                 Console.WriteLine("Withdraw Successful!");
@@ -403,7 +409,7 @@ namespace Assignment1
             Console.Clear();
             Console.WriteLine("╔════════════════════════════════════╗");
             Console.WriteLine("║             STATEMENT              ║");
-            Console.WriteLine("║════════════════════════════════════║");
+            Console.WriteLine("╠════════════════════════════════════╣");
             Console.WriteLine("║         ENTER THE DETAILS          ║");
             Console.WriteLine("╚════════════════════════════════════╝");
             while (true)
@@ -419,7 +425,7 @@ namespace Assignment1
                         {
                             string[] accountDetails = GetAccount(currentAccount);
                             DisplayAccount(currentAccount);
-                            //If transaction history exists display last 5 transactions.
+                            // If transaction history exists display last 5 transactions.
                             if (accountDetails.Count() > 7)
                             {
                                 Console.WriteLine("Last 5 Transactions:");
@@ -470,7 +476,7 @@ namespace Assignment1
             Console.Clear();
             Console.WriteLine("╔════════════════════════════════════╗");
             Console.WriteLine("║          DELETE AN ACCOUNT         ║");
-            Console.WriteLine("║════════════════════════════════════║");
+            Console.WriteLine("╠════════════════════════════════════╣");
             Console.WriteLine("║         ENTER THE DETAILS          ║");
             Console.WriteLine("╚════════════════════════════════════╝");
             while (true)
@@ -485,6 +491,7 @@ namespace Assignment1
                         if (currentAccount != "Null")
                         {
                             DisplayAccount(currentAccount);
+                            Console.WriteLine();
                             if (YNChoice("Delete (y/n)?"))
                             {
                                 File.Delete(currentAccount);
@@ -519,7 +526,7 @@ namespace Assignment1
 
         public int GenerateAccountNumber()
         {
-            //Generate a unique random number that isn't already used by an account.
+            // Generate a unique random number that isn't already used by an account.
             Random rnd = new Random();
             int number = rnd.Next(100000, 99999999);
             string[] accounts = Directory.GetFiles("accounts");
@@ -535,7 +542,7 @@ namespace Assignment1
 
         public bool YNChoice(string question)
         {
-            //Take a string as an argument and provide the user a y/n option.
+            // Take a string as an argument and provide the user a y/n option.
             while (true)
             {
                 try
@@ -564,7 +571,7 @@ namespace Assignment1
         }
         public void ReplaceLine(string text, string file, int lineNumber)
         {
-            //Replace the line with provided arguments.
+            // Replace the line with provided arguments.
             string[] tempArray = File.ReadAllLines(file);
             List<string> tempList = tempArray.ToList();
             tempList.RemoveAt(lineNumber);
@@ -574,7 +581,7 @@ namespace Assignment1
 
         public int BalanceUpdate(string account, int amount, bool deposit)
         {
-            //Either add or subtract the balance from provided amount based on boolean.
+            // Either add or subtract the balance from provided amount based on boolean.
             string balanceLine = File.ReadLines(account).Skip(6).Take(1).First();
             balanceLine = balanceLine.Substring(balanceLine.IndexOf(@"|") + 1);
             int balance = Convert.ToInt32(balanceLine);
@@ -597,7 +604,7 @@ namespace Assignment1
 
         public string GetAccountLocation(string accNo)
         {
-            //Get the account dir location.
+            // Get the account dir location.
             string[] accounts = Directory.GetFiles("accounts");
             foreach (string i in accounts)
             {
@@ -611,7 +618,7 @@ namespace Assignment1
 
         public void DisplayAccount(string accNo)
         {
-            //Display the account details from a file location.
+            // Display the account details from a file location.
             string[] accountFile = File.ReadAllLines(accNo);
             for (int j = 0; j < accountFile.Count(); j++)
             {
@@ -621,14 +628,31 @@ namespace Assignment1
             Console.WriteLine("Account found!");
             Console.WriteLine("╔════════════════════════════════════╗");
             Console.WriteLine("║          ACCOUNT DETAILS           ║");
+            Console.WriteLine("╠════════════════════════════════════╣");
+            Console.WriteLine("║                                    ║");
+            Console.WriteLine("║                                    ║");
+            Console.WriteLine("║                                    ║");
+            Console.WriteLine("║                                    ║");
+            Console.WriteLine("║                                    ║");
+            Console.WriteLine("║                                    ║");
+            Console.WriteLine("║                                    ║");
+            Console.WriteLine("║                                    ║");
             Console.WriteLine("╚════════════════════════════════════╝");
+            Console.SetCursorPosition(3, 12);
             Console.WriteLine("Account No: {0}", accountFile[5]);
+            Console.SetCursorPosition(3, 13);
             Console.WriteLine("Account Balance: ${0}", accountFile[6]);
+            Console.SetCursorPosition(3, 14);
             Console.WriteLine("First Name: {0}", accountFile[0]);
+            Console.SetCursorPosition(3, 15);
             Console.WriteLine("Last Name: {0}", accountFile[1]);
+            Console.SetCursorPosition(3, 16);
             Console.WriteLine("Address: {0}", accountFile[2]);
+            Console.SetCursorPosition(3, 17);
             Console.WriteLine("Phone: {0}", accountFile[3]);
+            Console.SetCursorPosition(3, 18);
             Console.WriteLine("Email: {0}", accountFile[4]);
+            Console.SetCursorPosition(3, 19);
             Console.WriteLine();
         }
 
@@ -664,18 +688,17 @@ namespace Assignment1
                 SmtpServer.Credentials = new System.Net.NetworkCredential("utsnetprog@gmail.com", password);
                 SmtpServer.EnableSsl = true;
                 SmtpServer.Send(mail);
-                Console.WriteLine("Sent!");
+                Console.WriteLine("Sent! Continue...");
             }
             catch (SmtpException e)
             {
-                Console.WriteLine("Mail send error, try again later.");
-                Console.WriteLine(e);
+                Console.WriteLine("Mail send error, try again later.\n{0}", e);
 
             }
         }
         public class RegexUtilities
         {
-            //https://docs.microsoft.com/en-us/dotnet/standard/base-types/how-to-verify-that-strings-are-in-valid-email-format
+            // https://docs.microsoft.com/en-us/dotnet/standard/base-types/how-to-verify-that-strings-are-in-valid-email-format
             public static bool IsValidEmail(string email)
             {
                 if (string.IsNullOrWhiteSpace(email))
@@ -694,11 +717,11 @@ namespace Assignment1
                         return match.Groups[1].Value + domainName;
                     }
                 }
-                catch (RegexMatchTimeoutException e)
+                catch (RegexMatchTimeoutException)
                 {
                     return false;
                 }
-                catch (ArgumentException e)
+                catch (ArgumentException)
                 {
                     return false;
                 }
