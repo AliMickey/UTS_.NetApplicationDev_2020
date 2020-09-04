@@ -548,12 +548,12 @@ namespace Assignment1
                 try
                 {
                     Console.Write(question + " ");
-                    string correctInput = Console.ReadLine();
-                    if (correctInput.Length >= 1 && correctInput[0] == 'y')
+                    string input = Console.ReadLine();
+                    if (input.Length == 1 && input[0] == 'y')
                     {
                         return true;
                     }
-                    else if (correctInput.Length >= 1 && correctInput[0] == 'n')
+                    else if (input.Length == 1 && input[0] == 'n')
                     {
                         return false;
                     }
