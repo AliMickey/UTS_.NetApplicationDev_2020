@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Week8Program2
+namespace Week7Program2
 {
     public partial class Form1 : Form
     {
@@ -16,30 +16,28 @@ namespace Week8Program2
         {
             InitializeComponent();
         }
-
-        // Write code to Method to create the payment receipt 
         
         public string GetReceipt()
         {
             // Write code to Initialize the variables for total proice and the recipt string
-            double ;
-            string ;
+            double totalPrice = 0.0;
+            string receipt = "Student Restaurant\n\nYour Order Details:\n\n";
 
             // Write code to Process each selected food item and calculate the total price
-            foreach (int items in )
+            foreach (int items in itemsList.SelectedIndices)
             {
                 // Write code to Concatenate the selected food items and their price.
-                receipt = receipt +
+                receipt = receipt + itemsList.Items[items] + " : $" + priceList.Items[items] + "\n";
 
                 // Write code to Calculate the total price
-                totalPrice += ;
+                totalPrice += Convert.ToDouble(priceList.Items[items]);
                
             }
             // Write code to Add the total price to the Receipt
-            receipt = receipt + ;
+            receipt = receipt + "\nTotal Price : $" + totalPrice;
 
             // Write code to Return receipt
-            return ;
+            return receipt;
         }
 
 
@@ -48,6 +46,19 @@ namespace Week8Program2
 
         }
 
-      
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            receiptlbl.Text = GetReceipt();
+        }
     }
 }

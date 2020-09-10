@@ -1,0 +1,10 @@
+D:\Programming\Git\UTS_.NetApplicationDev_Spring_2020\Lab7\Week7Program2\Week7Program2\bin\Debug\Week7Program2.exe.config
+D:\Programming\Git\UTS_.NetApplicationDev_Spring_2020\Lab7\Week7Program2\Week7Program2\bin\Debug\Week7Program2.exe
+D:\Programming\Git\UTS_.NetApplicationDev_Spring_2020\Lab7\Week7Program2\Week7Program2\bin\Debug\Week7Program2.pdb
+D:\Programming\Git\UTS_.NetApplicationDev_Spring_2020\Lab7\Week7Program2\Week7Program2\obj\Debug\Week7Program2.csprojAssemblyReference.cache
+D:\Programming\Git\UTS_.NetApplicationDev_Spring_2020\Lab7\Week7Program2\Week7Program2\obj\Debug\Week7Program2.Form1.resources
+D:\Programming\Git\UTS_.NetApplicationDev_Spring_2020\Lab7\Week7Program2\Week7Program2\obj\Debug\Week7Program2.Properties.Resources.resources
+D:\Programming\Git\UTS_.NetApplicationDev_Spring_2020\Lab7\Week7Program2\Week7Program2\obj\Debug\Week7Program2.csproj.GenerateResource.cache
+D:\Programming\Git\UTS_.NetApplicationDev_Spring_2020\Lab7\Week7Program2\Week7Program2\obj\Debug\Week7Program2.csproj.CoreCompileInputs.cache
+D:\Programming\Git\UTS_.NetApplicationDev_Spring_2020\Lab7\Week7Program2\Week7Program2\obj\Debug\Week7Program2.exe
+D:\Programming\Git\UTS_.NetApplicationDev_Spring_2020\Lab7\Week7Program2\Week7Program2\obj\Debug\Week7Program2.pdb
