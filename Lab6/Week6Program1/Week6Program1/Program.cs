@@ -16,7 +16,6 @@ namespace Week6LabProgram
     {
         public string name;
         public string address;
-       // public double[] marks;
 
         public Person(string personName, string personAddress)
         {
@@ -36,12 +35,13 @@ namespace Week6LabProgram
     {
         private string standard;
         private string roll;
-        private double[] marks;
+        private double[] mark;
 
         public Student(string name, string address, string standard, string roll) : base(name, address) 
         {
             this.standard = standard;
             this.roll = roll;
+            this.mark = new double[5];
 
         }
         
@@ -49,17 +49,16 @@ namespace Week6LabProgram
         {
             for(int loopVar = 0; loopVar < 5; loopVar++)
             {
-                Console.Write("Enter Marks for Subject-{0}: ", loopVar);
-                
-                marks[loopVar] = Convert.ToInt32(Console.ReadLine());
+                Console.Write("Enter Marks for Subject-{0}: ", loopVar+1);
+                string userInput = Console.ReadLine();
+                this.mark[loopVar] = Convert.ToDouble(userInput);
             }
         }
 
         public string CalculateResult()
         {
-            double totalMarksObtained = marks.Sum();
-            double average = totalMarksObtained / 5;
-            if (average < 40)
+            double totalMarksObtained = mark.Sum();
+            if (totalMarksObtained / 5 < 40)
                 return "Fail";
             else
                 return "Pass";
@@ -70,19 +69,18 @@ namespace Week6LabProgram
             Console.WriteLine("---------------------------------------------");
             Console.WriteLine("\t\tMark Sheet");
             Console.WriteLine("---------------------------------------------");
-            Console.WriteLine("Name: {0}\nClass: {1}\nRoll: {2}\nAddress: {3}", this.name, this.standard, this.roll, this.address);
-            Console.WriteLine("Marks Obtained:");
-
-            double average = 0;
-            for (int i = 0; i < marks.Length; i++)
+            Console.WriteLine("Name: {0}", this.name);
+            Console.WriteLine("Class: {0}", this.standard);
+            Console.WriteLine("Roll: {0}", this.roll);
+            Console.WriteLine("Address: {0}", this.address);
+            Console.WriteLine("\nMarks Obtained:");
+            for (int loopVar = 0; loopVar < 5; loopVar++)
             {
-                average += marks[i];
-                Console.WriteLine("Subject-{0}: {1}", i, marks[i]);
+                Console.WriteLine("Subject-{0}: {1}", loopVar, this.mark[loopVar] + 1);
             }
-            average /= 5;
-
-            Console.WriteLine("Average Marks: {0}", average);
-            Console.WriteLine("Final Grade: {0}", CalculateResult());
+            Console.WriteLine("\nAverage Marks: {0}", this.mark.Average());
+            Console.WriteLine("Final Grade: {0}", this.CalculateResult());
+            Console.WriteLine("---------------------------------------------");
         }
 
     }
