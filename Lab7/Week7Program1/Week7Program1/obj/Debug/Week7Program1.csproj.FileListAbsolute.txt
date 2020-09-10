@@ -1,0 +1,24 @@
+C:\Users\130410\AppLockerExceptions\32998-31927\Tutorial lab 7ProgrammingQuestions\Week7Program1\Week8Program1\obj\Debug\Week7Program1.csprojAssemblyReference.cache
+C:\Users\130410\AppLockerExceptions\32998-31927\Tutorial lab 7ProgrammingQuestions\Week7Program1\Week8Program1\obj\Debug\Week8Program1.Form1.resources
+C:\Users\130410\AppLockerExceptions\32998-31927\Tutorial lab 7ProgrammingQuestions\Week7Program1\Week8Program1\obj\Debug\Week8Program1.Properties.Resources.resources
+C:\Users\130410\AppLockerExceptions\32998-31927\Tutorial lab 7ProgrammingQuestions\Week7Program1\Week8Program1\obj\Debug\Week7Program1.csproj.GenerateResource.cache
+C:\Users\130410\AppLockerExceptions\32998-31927\Tutorial lab 7ProgrammingQuestions\Week7Program1\Week8Program1\obj\Debug\Week7Program1.csproj.CoreCompileInputs.cache
+C:\Users\130410\AppLockerExceptions\32998-31927\Tutorial lab 7ProgrammingQuestions\Week7Program1\Week8Program1\obj\Debug\Week8Program1.exe
+C:\Users\130410\AppLockerExceptions\32998-31927\Tutorial lab 7ProgrammingQuestions\Week7Program1\Week8Program1\obj\Debug\Week8Program1.pdb
+C:\Users\130410\AppLockerExceptions\32998-31927\Tutorial lab 7ProgrammingQuestions\Week7Program1\Week7Program1\obj\Debug\Week7Program1.csprojAssemblyReference.cache
+C:\Users\130410\AppLockerExceptions\32998-31927\Tutorial lab 7ProgrammingQuestions\Week7Program1\Week7Program1\obj\Debug\Week8Program1.Form1.resources
+C:\Users\130410\AppLockerExceptions\32998-31927\Tutorial lab 7ProgrammingQuestions\Week7Program1\Week7Program1\obj\Debug\Week8Program1.Properties.Resources.resources
+C:\Users\130410\AppLockerExceptions\32998-31927\Tutorial lab 7ProgrammingQuestions\Week7Program1\Week7Program1\obj\Debug\Week7Program1.csproj.GenerateResource.cache
+C:\Users\130410\AppLockerExceptions\32998-31927\Tutorial lab 7ProgrammingQuestions\Week7Program1\Week7Program1\obj\Debug\Week7Program1.csproj.CoreCompileInputs.cache
+C:\Users\130410\AppLockerExceptions\32998-31927\Tutorial lab 7ProgrammingQuestions\Week7Program1\Week7Program1\obj\Debug\Week8Program1.exe
+C:\Users\130410\AppLockerExceptions\32998-31927\Tutorial lab 7ProgrammingQuestions\Week7Program1\Week7Program1\obj\Debug\Week8Program1.pdb
+D:\Programming\Git\UTS_.NetApplicationDev_Spring_2020\Lab7\Week7Program1\Week7Program1\obj\Debug\Week7Program1.csprojAssemblyReference.cache
+D:\Programming\Git\UTS_.NetApplicationDev_Spring_2020\Lab7\Week7Program1\Week7Program1\obj\Debug\Week8Program1.Properties.Resources.resources
+D:\Programming\Git\UTS_.NetApplicationDev_Spring_2020\Lab7\Week7Program1\Week7Program1\obj\Debug\Week7Program1.csproj.GenerateResource.cache
+D:\Programming\Git\UTS_.NetApplicationDev_Spring_2020\Lab7\Week7Program1\Week7Program1\obj\Debug\Week7Program1.csproj.CoreCompileInputs.cache
+D:\Programming\Git\UTS_.NetApplicationDev_Spring_2020\Lab7\Week7Program1\Week7Program1\obj\Debug\Week8Program1.exe
+D:\Programming\Git\UTS_.NetApplicationDev_Spring_2020\Lab7\Week7Program1\Week7Program1\obj\Debug\Week8Program1.pdb
+D:\Programming\Git\UTS_.NetApplicationDev_Spring_2020\Lab7\Week7Program1\Week7Program1\bin\Debug\Week8Program1.exe.config
+D:\Programming\Git\UTS_.NetApplicationDev_Spring_2020\Lab7\Week7Program1\Week7Program1\bin\Debug\Week8Program1.exe
+D:\Programming\Git\UTS_.NetApplicationDev_Spring_2020\Lab7\Week7Program1\Week7Program1\bin\Debug\Week8Program1.pdb
+D:\Programming\Git\UTS_.NetApplicationDev_Spring_2020\Lab7\Week7Program1\Week7Program1\obj\Debug\Week7Program1.Form1.resources

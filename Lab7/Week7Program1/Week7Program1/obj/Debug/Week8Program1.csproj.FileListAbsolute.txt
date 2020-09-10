@@ -1,0 +1,18 @@
+D:\Teaching\Spring 2018\31927 Net programming\Lectures-pptx\Week-8\Tutorial\Week8Program1\Week8Program1\bin\Debug\Week8Program1.exe.config
+D:\Teaching\Spring 2018\31927 Net programming\Lectures-pptx\Week-8\Tutorial\Week8Program1\Week8Program1\bin\Debug\Week8Program1.exe
+D:\Teaching\Spring 2018\31927 Net programming\Lectures-pptx\Week-8\Tutorial\Week8Program1\Week8Program1\bin\Debug\Week8Program1.pdb
+D:\Teaching\Spring 2018\31927 Net programming\Lectures-pptx\Week-8\Tutorial\Week8Program1\Week8Program1\obj\Debug\Week8Program1.csprojResolveAssemblyReference.cache
+D:\Teaching\Spring 2018\31927 Net programming\Lectures-pptx\Week-8\Tutorial\Week8Program1\Week8Program1\obj\Debug\Week8Program1.Form1.resources
+D:\Teaching\Spring 2018\31927 Net programming\Lectures-pptx\Week-8\Tutorial\Week8Program1\Week8Program1\obj\Debug\Week8Program1.Properties.Resources.resources
+D:\Teaching\Spring 2018\31927 Net programming\Lectures-pptx\Week-8\Tutorial\Week8Program1\Week8Program1\obj\Debug\Week8Program1.csproj.GenerateResource.Cache
+D:\Teaching\Spring 2018\31927 Net programming\Lectures-pptx\Week-8\Tutorial\Week8Program1\Week8Program1\obj\Debug\Week8Program1.exe
+D:\Teaching\Spring 2018\31927 Net programming\Lectures-pptx\Week-8\Tutorial\Week8Program1\Week8Program1\obj\Debug\Week8Program1.pdb
+D:\Teaching\Spring 2018\31927 Net programming\Lectures-pptx\Week-8\Tutorial\Tutorial lab 7ProgrammingQuestions\Week8Program1\Week8Program1\bin\Debug\Week8Program1.exe.config
+D:\Teaching\Spring 2018\31927 Net programming\Lectures-pptx\Week-8\Tutorial\Tutorial lab 7ProgrammingQuestions\Week8Program1\Week8Program1\obj\Debug\Week8Program1.exe
+D:\Teaching\Spring 2018\31927 Net programming\Lectures-pptx\Week-8\Tutorial\Tutorial lab 7ProgrammingQuestions\Week8Program1\Week8Program1\obj\Debug\Week8Program1.pdb
+D:\Teaching\Spring 2018\31927 Net programming\Lectures-pptx\Week-8\Tutorial\Tutorial lab 7ProgrammingQuestions\Week8Program1\Week8Program1\bin\Debug\Week8Program1.exe
+D:\Teaching\Spring 2018\31927 Net programming\Lectures-pptx\Week-8\Tutorial\Tutorial lab 7ProgrammingQuestions\Week8Program1\Week8Program1\bin\Debug\Week8Program1.pdb
+D:\Teaching\Spring 2018\31927 Net programming\Lectures-pptx\Week-8\Tutorial\Tutorial lab 7ProgrammingQuestions\Week8Program1\Week8Program1\obj\Debug\Week8Program1.csprojResolveAssemblyReference.cache
+D:\Teaching\Spring 2018\31927 Net programming\Lectures-pptx\Week-8\Tutorial\Tutorial lab 7ProgrammingQuestions\Week8Program1\Week8Program1\obj\Debug\Week8Program1.Form1.resources
+D:\Teaching\Spring 2018\31927 Net programming\Lectures-pptx\Week-8\Tutorial\Tutorial lab 7ProgrammingQuestions\Week8Program1\Week8Program1\obj\Debug\Week8Program1.Properties.Resources.resources
+D:\Teaching\Spring 2018\31927 Net programming\Lectures-pptx\Week-8\Tutorial\Tutorial lab 7ProgrammingQuestions\Week8Program1\Week8Program1\obj\Debug\Week8Program1.csproj.GenerateResource.Cache

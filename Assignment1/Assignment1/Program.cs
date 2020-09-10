@@ -8,7 +8,7 @@ namespace Assignment1
     {
         static void Main(string[] args)
         {
-            //https://github.com/AliMickey/UTS_.NetApplicationDev_Spring_2020/commits/master
+            // https://github.com/AliMickey/UTS_.NetApplicationDev_Spring_2020/commits/master
             Bank bank = new Bank();
             bank.LoginInit();
         }      

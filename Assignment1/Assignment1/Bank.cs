@@ -84,7 +84,6 @@ namespace Assignment1
                             Console.ReadKey();
                         }
                     }
-                    
                     LoginInit();
                 }
             }
@@ -526,7 +525,7 @@ namespace Assignment1
 
         public int GenerateAccountNumber()
         {
-            // Generate a unique random number that isn't already used by an account.
+            // Generate a unique random number that isn't already used by an account between 6-8 digits.
             Random rnd = new Random();
             int number = rnd.Next(100000, 99999999);
             string[] accounts = Directory.GetFiles("accounts");
