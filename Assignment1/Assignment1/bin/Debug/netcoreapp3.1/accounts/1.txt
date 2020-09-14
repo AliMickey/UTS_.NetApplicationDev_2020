@@ -4,7 +4,7 @@ address|c
 phone|4
 email|random@hkjdhrthjkrghee.com
 accountNo|1
-balance|5653
+balance|9997
 31.08.2020 - Deposit - 50 - 50
 31.08.2020 - Deposit - 250 - 300
 31.08.2020 - Withdraw - 50 - 250
@@ -14,3 +14,7 @@ balance|5653
 04.09.2020 - Withdraw - 0 - 5654
 04.09.2020 - Withdraw - 0 - 5654
 04.09.2020 - Withdraw - 1 - 5653
+15.09.2020|Deposit |4|5657
+15.09.2020|Withdraw|1|5656
+15.09.2020|Deposit |4344|10000
+15.09.2020|Withdraw|3|9997

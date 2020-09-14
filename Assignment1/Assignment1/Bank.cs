@@ -293,9 +293,9 @@ namespace Assignment1
                         {
                             Console.WriteLine();
                             Console.WriteLine("Account found!");
-                            Console.Write("Enter the amount: ");
+                            Console.Write("Enter the amount: $");
                             string amountTemp = Console.ReadLine();
-                            while (!amountTemp.All(char.IsDigit))
+                            while (!Int32.TryParse(amountTemp, out _) | amountTemp.Length == 0)
                             {
                                 Console.WriteLine("Invalid input, try again.");
                                 Console.Write("Enter the amount: $");
@@ -356,7 +356,7 @@ namespace Assignment1
                             Console.WriteLine("Account found!");
                             Console.Write("Enter the amount: $");
                             string amountTemp = Console.ReadLine();
-                            while (!amountTemp.All(char.IsDigit) || Convert.ToInt32(amountTemp) == 0)
+                            while ((!Int32.TryParse(amountTemp, out _) | amountTemp.Length == 0) || Convert.ToInt32(amountTemp) == 0)
                             {
                                 Console.WriteLine("Invalid input, try again.");
                                 Console.Write("Enter the amount: ");
