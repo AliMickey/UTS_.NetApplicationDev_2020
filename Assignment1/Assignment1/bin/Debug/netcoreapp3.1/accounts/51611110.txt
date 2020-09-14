@@ -1,0 +1,7 @@
+fName|Nabin
+lName|Sharma
+address|UTS, Building-11, Sydney
+phone|95141835
+email|Nabin@uts.edu.au
+accountNo|51611110
+balance|0

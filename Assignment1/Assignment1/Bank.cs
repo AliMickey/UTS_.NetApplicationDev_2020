@@ -15,7 +15,7 @@ namespace Assignment1
             Console.Clear();
             Console.WriteLine("╔════════════════════════════════════╗");
             Console.WriteLine("║  WELCOME TO SIMPLE BANKING SYSTEM  ║");
-            Console.WriteLine("╠═══════════════════════════════════╣");
+            Console.WriteLine("╠════════════════════════════════════╣");
             Console.WriteLine("║          LOGIN TO START            ║");
             Console.WriteLine("║                                    ║");
             Console.WriteLine("╚════════════════════════════════════╝");
@@ -207,7 +207,7 @@ namespace Assignment1
                 string[] tempText = { "fName|" + fName, "lName|" + lName, "address|" + address, "phone|" + phone, "email|" + email, "accountNo|" + accNo, "balance|0" };
                 File.WriteAllLines("accounts/" + accNo + ".txt", tempText);
                 Console.WriteLine();
-                Console.WriteLine("Account Created! Details will be provided by email.");
+                Console.WriteLine("Account Created! Details will be provided by email.\n");
                 Console.WriteLine("Account Number is: {0}", accNo);
                 Console.WriteLine("Please wait, sending email...");
                 SendEmail(email, GetAccount("accounts/" + accNo + ".txt"));
@@ -298,7 +298,7 @@ namespace Assignment1
                             while (!amountTemp.All(char.IsDigit))
                             {
                                 Console.WriteLine("Invalid input, try again.");
-                                Console.Write("Enter the amount: ");
+                                Console.Write("Enter the amount: $");
                                 amountTemp = Console.ReadLine();
                             }
                             // Replace the balance line in the account file with the updated balance information. 
@@ -306,7 +306,7 @@ namespace Assignment1
                             int amount = Convert.ToInt32(amountTemp);
                             int balance = BalanceUpdate(currentAccount, amount, true);
                             ReplaceLine("balance|" + balance, currentAccount, 6);
-                            WriteToAccountFile(currentAccount, "Deposit", amount, balance);
+                            WriteToAccountFile(currentAccount, "Deposit ", amount, balance);
                             Console.WriteLine("Deposit Successful!");
                             Console.ReadKey();
                             MainMenu();
@@ -354,7 +354,7 @@ namespace Assignment1
                         {
                             Console.WriteLine();
                             Console.WriteLine("Account found!");
-                            Console.Write("Enter the amount: ");
+                            Console.Write("Enter the amount: $");
                             string amountTemp = Console.ReadLine();
                             while (!amountTemp.All(char.IsDigit) || Convert.ToInt32(amountTemp) == 0)
                             {
@@ -422,16 +422,27 @@ namespace Assignment1
                         string currentAccount = GetAccountLocation(number);
                         if (currentAccount != "Null")
                         {
-                            string[] accountDetails = GetAccount(currentAccount);
                             DisplayAccount(currentAccount);
+                            Console.WriteLine();
+                            //string[] accountDetails = GetAccount(currentAccount);
+                            string[] accountDetails = File.ReadAllLines(currentAccount);
                             // If transaction history exists display last 5 transactions.
                             if (accountDetails.Count() > 7)
                             {
                                 Console.WriteLine("Last 5 Transactions:");
-                                Console.WriteLine("Date - Type - Amount - Balance");
-                                for (int i = accountDetails.Count() - 1; i > accountDetails.Count() - 6; i--)
+                                Console.WriteLine("Date         Type       Amount        Balance");
+                                for (int i = accountDetails.Count() - 1; i > accountDetails.Count() - 5; i--)
                                 {
-                                    Console.WriteLine(accountDetails[i]);
+                                    if (accountDetails[i].Contains("Deposit") || accountDetails[i].Contains("Withdraw"))
+                                    {
+                                        string[] tempDetails = accountDetails[i].Split('|');
+                                        Console.Write(tempDetails[0] + " - " + tempDetails[1] + " - $" + tempDetails[2]);
+                                        for (int j = tempDetails[2].Length; j < 11; j++) {
+                                            Console.Write(" ");
+                                        }
+                                        Console.Write("- $" + tempDetails[3]);
+                                        Console.WriteLine();
+                                    }
                                 }
                             }
                             Console.WriteLine();
@@ -637,21 +648,21 @@ namespace Assignment1
             Console.WriteLine("║                                    ║");
             Console.WriteLine("║                                    ║");
             Console.WriteLine("╚════════════════════════════════════╝");
-            Console.SetCursorPosition(3, 12);
+            Console.SetCursorPosition(3, Console.CursorTop - 8);
             Console.WriteLine("Account No: {0}", accountFile[5]);
-            Console.SetCursorPosition(3, 13);
+            Console.SetCursorPosition(3, Console.CursorTop);
             Console.WriteLine("Account Balance: ${0}", accountFile[6]);
-            Console.SetCursorPosition(3, 14);
+            Console.SetCursorPosition(3, Console.CursorTop);
             Console.WriteLine("First Name: {0}", accountFile[0]);
-            Console.SetCursorPosition(3, 15);
+            Console.SetCursorPosition(3, Console.CursorTop);
             Console.WriteLine("Last Name: {0}", accountFile[1]);
-            Console.SetCursorPosition(3, 16);
+            Console.SetCursorPosition(3, Console.CursorTop);
             Console.WriteLine("Address: {0}", accountFile[2]);
-            Console.SetCursorPosition(3, 17);
+            Console.SetCursorPosition(3, Console.CursorTop);
             Console.WriteLine("Phone: {0}", accountFile[3]);
-            Console.SetCursorPosition(3, 18);
+            Console.SetCursorPosition(3, Console.CursorTop);
             Console.WriteLine("Email: {0}", accountFile[4]);
-            Console.SetCursorPosition(3, 19);
+            Console.SetCursorPosition(3, Console.CursorTop);
             Console.WriteLine();
         }
 
@@ -669,7 +680,7 @@ namespace Assignment1
         {
             string date = DateTime.Now.ToString("dd.MM.yyyy");
             using StreamWriter file = new StreamWriter(accNo, true);
-            file.WriteLine("{0} - {1} - {2} - {3}", date, type, amount, balance);
+            file.WriteLine("{0}|{1}|{2}|{3}", date, type, amount, balance);
         }
 
         public void SendEmail(string address, string[] details)

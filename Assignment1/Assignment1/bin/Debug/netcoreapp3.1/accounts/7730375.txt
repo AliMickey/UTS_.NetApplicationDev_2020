@@ -1,0 +1,9 @@
+fName|f
+lName|f
+address|f
+phone|332
+email|test@uts.edu.au
+accountNo|7730375
+balance|354
+15.09.2020|Withdraw|1000000|11
+15.09.2020|Deposit |43|354
