@@ -1,0 +1,7 @@
+fName|
+lName|
+address|
+phone|6564
+email|5454@kjfdf.com
+accountNo|96183824
+balance|0

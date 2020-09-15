@@ -1,9 +1,0 @@
-fName|a
-lName|a
-address|a
-phone|33232
-email|test@test123.com
-accountNo|1
-balance|25
-15.09.2020|Deposit |50|50
-15.09.2020|Withdraw|25|25

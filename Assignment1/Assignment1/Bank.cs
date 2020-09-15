@@ -318,7 +318,7 @@ namespace Assignment1
                         Console.WriteLine("Account not found!");
                         if (YNChoice("Check another account (y/n)?"))
                         {
-                            SearchAccount();
+                            Deposit();
                         }
                         else
                         {
@@ -390,7 +390,7 @@ namespace Assignment1
                         Console.WriteLine("Account not found!");
                         if (YNChoice("Check another account (y/n)?"))
                         {
-                            SearchAccount();
+                            Withdraw();
                         }
                         else
                         {

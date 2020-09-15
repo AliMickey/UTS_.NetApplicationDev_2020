@@ -7,7 +7,7 @@
 
 OR 
 
-1. Clone the repo.
+1. Clone the repo/Extact folder.
 2. Open in Visual Studio 2019.
 3. Run the code (F5).
 
