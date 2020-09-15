@@ -10,3 +10,6 @@ OR
 2. Open in Visual Studio 2019.
 3. Run the code (F5).
 
+
+Test credentials: a|a
+Test account number: 1
