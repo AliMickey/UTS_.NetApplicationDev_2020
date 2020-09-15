@@ -1,7 +1,0 @@
-fName|a
-lName|b
-address|c
-phone|4
-email|13558768@student.uts.edu.au
-accountNo|1
-balance|5654

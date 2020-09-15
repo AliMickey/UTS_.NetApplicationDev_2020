@@ -32,7 +32,7 @@ namespace Assignment1
                 Bank bank = new Bank();
                 String userName;
                 String password;
-                while (valid == false)
+                while (!valid)
                 {
                     Console.Write("USER NAME: ");
                     userName = Console.ReadLine();
@@ -150,6 +150,7 @@ namespace Assignment1
                     }
                     else
                     {
+                        // Specification unclear whether to show an error or just go to menu.
                         //Console.WriteLine("Invalid input, try again.");
                         MainMenu();
                     }
@@ -179,7 +180,7 @@ namespace Assignment1
             Console.Write("Address: ");
             string address = Console.ReadLine();
 
-            // Validation to check if length constraints and whether it is an integer.
+            // Validation to check length constraints and whether it is an integer.
             Console.Write("Phone: ");
             string phoneTemp = Console.ReadLine();
             while (phoneTemp.Length > 10 || phoneTemp.Length < 1 || !phoneTemp.All(char.IsDigit))
@@ -232,6 +233,7 @@ namespace Assignment1
             {
                 try
                 {
+                    // Check input validity.
                     Console.Write("Account Number: ");
                     string number = Console.ReadLine();
                     if (Int32.TryParse(number, out _) && (number.Length > 0 && number.Length < 11))
@@ -284,6 +286,7 @@ namespace Assignment1
             {
                 try
                 {
+                    // Check input validity.
                     Console.Write("Account Number: ");
                     string number = Console.ReadLine();
                     if (Int32.TryParse(number, out _) && (number.Length > 0 && number.Length < 11))
@@ -295,17 +298,18 @@ namespace Assignment1
                             Console.WriteLine("Account found!");
                             Console.Write("Enter the amount: $");
                             string amountTemp = Console.ReadLine();
+                            // Check input validity.
                             while (!Int32.TryParse(amountTemp, out _) | amountTemp.Length == 0)
                             {
                                 Console.WriteLine("Invalid input, try again.");
                                 Console.Write("Enter the amount: $");
                                 amountTemp = Console.ReadLine();
                             }
-                            // Replace the balance line in the account file with the updated balance information. 
-                            // Add a log into account file.
                             int amount = Convert.ToInt32(amountTemp);
                             int balance = BalanceUpdate(currentAccount, amount, true);
+                            // Replace the balance line in the account file with the updated balance information. 
                             ReplaceLine("balance|" + balance, currentAccount, 6);
+                            // Add a log into account file.
                             WriteToAccountFile(currentAccount, "Deposit ", amount, balance);
                             Console.WriteLine("Deposit Successful!");
                             Console.ReadKey();
@@ -345,6 +349,7 @@ namespace Assignment1
             {
                 try
                 {
+                    // Check input validity.
                     Console.Write("Account Number: ");
                     string number = Console.ReadLine();
                     if (Int32.TryParse(number, out _) && (number.Length > 0 && number.Length < 11))
@@ -356,6 +361,7 @@ namespace Assignment1
                             Console.WriteLine("Account found!");
                             Console.Write("Enter the amount: $");
                             string amountTemp = Console.ReadLine();
+                            // Check input validity.
                             while ((!Int32.TryParse(amountTemp, out _) | amountTemp.Length == 0) || Convert.ToInt32(amountTemp) == 0)
                             {
                                 Console.WriteLine("Invalid input, try again.");
@@ -373,8 +379,8 @@ namespace Assignment1
                             else
                             {
                                 // Replace the balance line in the account file with the updated balance information. 
-                                // Add a log into account file.
                                 ReplaceLine("balance|" + balance, currentAccount, 6);
+                                // Add a log into account file.
                                 WriteToAccountFile(currentAccount, "Withdraw", amount, balance);
                                 Console.WriteLine("Withdraw Successful!");
                                 Console.ReadKey();
@@ -415,6 +421,7 @@ namespace Assignment1
             {
                 try
                 {
+                    // Check input validity.
                     Console.Write("Account Number: ");
                     string number = Console.ReadLine();
                     if (Int32.TryParse(number, out _) && (number.Length > 0 && number.Length < 11))
@@ -424,7 +431,6 @@ namespace Assignment1
                         {
                             DisplayAccount(currentAccount);
                             Console.WriteLine();
-                            //string[] accountDetails = GetAccount(currentAccount);
                             string[] accountDetails = File.ReadAllLines(currentAccount);
                             // If transaction history exists display last 5 transactions.
                             if (accountDetails.Count() > 7)
@@ -433,8 +439,10 @@ namespace Assignment1
                                 Console.WriteLine("Date         Type       Amount        Balance");
                                 for (int i = accountDetails.Count() - 1; i > accountDetails.Count() - 5; i--)
                                 {
+                                    // If line contains a transaction.
                                     if (accountDetails[i].Contains("Deposit") || accountDetails[i].Contains("Withdraw"))
                                     {
+                                        // Print details in correct format and order.
                                         string[] tempDetails = accountDetails[i].Split('|');
                                         Console.Write(tempDetails[0] + " - " + tempDetails[1] + " - $" + tempDetails[2]);
                                         for (int j = tempDetails[2].Length; j < 11; j++) {
@@ -478,7 +486,6 @@ namespace Assignment1
                     Console.WriteLine(e);
                 }
             }
-
         }
 
         public void Delete()
@@ -493,6 +500,7 @@ namespace Assignment1
             {
                 try
                 {
+                    // Check input validity.
                     Console.Write("Account Number: ");
                     string number = Console.ReadLine();
                     if (Int32.TryParse(number, out _) && (number.Length > 0 && number.Length < 11))
@@ -581,7 +589,7 @@ namespace Assignment1
         }
         public void ReplaceLine(string text, string file, int lineNumber)
         {
-            // Replace the line with provided arguments.
+            // Replace the line in file with provided arguments.
             string[] tempArray = File.ReadAllLines(file);
             List<string> tempList = tempArray.ToList();
             tempList.RemoveAt(lineNumber);
@@ -614,7 +622,7 @@ namespace Assignment1
 
         public string GetAccountLocation(string accNo)
         {
-            // Get the account dir location.
+            // Get the account directory location.
             string[] accounts = Directory.GetFiles("accounts");
             foreach (string i in accounts)
             {
@@ -668,6 +676,7 @@ namespace Assignment1
 
         public string[] GetAccount(string accLocation)
         {
+            // Return an array consisting of provided account.
             string[] accountFile = File.ReadAllLines(accLocation);
             for (int j = 0; j < accountFile.Count(); j++)
             {
@@ -678,6 +687,7 @@ namespace Assignment1
 
         public void WriteToAccountFile(string accNo, string type, int amount, int balance)
         {
+            // Write transaction data to file.
             string date = DateTime.Now.ToString("dd.MM.yyyy");
             using StreamWriter file = new StreamWriter(accNo, true);
             file.WriteLine("{0}|{1}|{2}|{3}", date, type, amount, balance);
@@ -685,6 +695,7 @@ namespace Assignment1
 
         public void SendEmail(string address, string[] details)
         {
+            // Send email using smtp with a temporary email to provided address with details.
             try
             {
                 string password = "utsnetprogtemp";
@@ -709,20 +720,17 @@ namespace Assignment1
         public class RegexUtilities
         {
             // https://docs.microsoft.com/en-us/dotnet/standard/base-types/how-to-verify-that-strings-are-in-valid-email-format
+            // Check email domain validity.
             public static bool IsValidEmail(string email)
             {
                 if (string.IsNullOrWhiteSpace(email))
                     return false;
                 try
                 {
-                    // Normalize the domain
                     email = Regex.Replace(email, @"(@)(.+)$", DomainMapper, RegexOptions.None, TimeSpan.FromMilliseconds(200));
-                    // Examines the domain part of the email and normalizes it.
                     string DomainMapper(Match match)
                     {
-                        // Use IdnMapping class to convert Unicode domain names.
                         var idn = new IdnMapping();
-                        // Pull out and process domain name (throws ArgumentException on invalid)
                         var domainName = idn.GetAscii(match.Groups[2].Value);
                         return match.Groups[1].Value + domainName;
                     }
