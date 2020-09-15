@@ -435,7 +435,7 @@ namespace Assignment1
                             // If transaction history exists display last 5 transactions.
                             if (accountDetails.Count() > 7)
                             {
-                                Console.WriteLine("Last 5 Transactions:");
+                                Console.WriteLine("Last 5 Transactions: (Latest at top)");
                                 Console.WriteLine("Date         Type       Amount        Balance");
                                 for (int i = accountDetails.Count() - 1; i > accountDetails.Count() - 5; i--)
                                 {
