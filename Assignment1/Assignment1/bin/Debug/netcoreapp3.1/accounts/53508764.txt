@@ -1,7 +1,0 @@
-fName|a
-lName|a
-address|a
-phone|434
-email|alimickey2000@gmail.com
-accountNo|53508764
-balance|0
