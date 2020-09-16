@@ -204,14 +204,14 @@ namespace Assignment1
             if (YNChoice("Is the information correct? (y/n)"))
             {
                 // Add provided information to file with '|' as delimiter in a set format and order.
-                int accNo = GenerateAccountNumber();
-                string[] tempText = { "fName|" + fName, "lName|" + lName, "address|" + address, "phone|" + phone, "email|" + email, "accountNo|" + accNo, "balance|0" };
-                File.WriteAllLines("accounts/" + accNo + ".txt", tempText);
+                int accNumber = GenerateAccountNumber();
+                string[] tempText = { "fName|" + fName, "lName|" + lName, "address|" + address, "phone|" + phone, "email|" + email, "accountNo|" + accNumber, "balance|0" };
+                File.WriteAllLines("accounts/" + accNumber + ".txt", tempText);
                 Console.WriteLine();
                 Console.WriteLine("Account Created! Details will be provided by email.\n");
-                Console.WriteLine("Account Number is: {0}", accNo);
+                Console.WriteLine("Account Number is: {0}", accNumber);
                 Console.WriteLine("Please wait, sending email...");
-                SendEmail(email, GetAccount("accounts/" + accNo + ".txt"));
+                SendEmail(email, GetAccount(accNumber + ""), "");
             }
             else
             {
@@ -241,7 +241,7 @@ namespace Assignment1
                         string currentAccount = GetAccountLocation(number);
                         if (currentAccount != "Null")
                         {
-                            DisplayAccount(currentAccount);
+                            DisplayAccount(number);
                             Console.WriteLine();
                             if (YNChoice("Check another account (y/n)?"))
                             {
@@ -270,6 +270,7 @@ namespace Assignment1
                 catch (Exception e)
                 {
                     Console.WriteLine(e);
+                    Console.ReadKey();
                 }
             }
         }
@@ -310,7 +311,7 @@ namespace Assignment1
                             // Replace the balance line in the account file with the updated balance information. 
                             ReplaceLine("balance|" + balance, currentAccount, 6);
                             // Add a log into account file.
-                            WriteToAccountFile(currentAccount, "Deposit ", amount, balance);
+                            SetTransaction(currentAccount, "Deposit ", amount, balance);
                             Console.WriteLine("Deposit Successful!");
                             Console.ReadKey();
                             MainMenu();
@@ -333,6 +334,7 @@ namespace Assignment1
                 catch (Exception e)
                 {
                     Console.WriteLine(e);
+                    Console.ReadKey();
                 }
             }
         }
@@ -381,7 +383,7 @@ namespace Assignment1
                                 // Replace the balance line in the account file with the updated balance information. 
                                 ReplaceLine("balance|" + balance, currentAccount, 6);
                                 // Add a log into account file.
-                                WriteToAccountFile(currentAccount, "Withdraw", amount, balance);
+                                SetTransaction(currentAccount, "Withdraw", amount, balance);
                                 Console.WriteLine("Withdraw Successful!");
                                 Console.ReadKey();
                                 MainMenu();
@@ -405,6 +407,7 @@ namespace Assignment1
                 catch (Exception e)
                 {
                     Console.WriteLine(e);
+                    Console.ReadKey();
                 }
             }
         }
@@ -423,41 +426,26 @@ namespace Assignment1
                 {
                     // Check input validity.
                     Console.Write("Account Number: ");
-                    string number = Console.ReadLine();
-                    if (Int32.TryParse(number, out _) && (number.Length > 0 && number.Length < 11))
+                    string accNumber = Console.ReadLine();
+                    if (Int32.TryParse(accNumber, out _) && (accNumber.Length > 0 && accNumber.Length < 11))
                     {
-                        string currentAccount = GetAccountLocation(number);
-                        if (currentAccount != "Null")
+                        string accountLocation = GetAccountLocation(accNumber);
+                        if (accountLocation != "Null")
                         {
-                            DisplayAccount(currentAccount);
+                            DisplayAccount(accNumber);
                             Console.WriteLine();
-                            string[] accountDetails = File.ReadAllLines(currentAccount);
+                            string[] account = GetAccount(accNumber);
+                            string transactionDetails = GetTransactions(account);
                             // If transaction history exists display last 5 transactions.
-                            if (accountDetails.Count() > 7)
-                            {
-                                Console.WriteLine("Last 5 Transactions: (Latest at top)");
-                                Console.WriteLine("Date         Type       Amount        Balance");
-                                for (int i = accountDetails.Count() - 1; i > accountDetails.Count() - 5; i--)
-                                {
-                                    // If line contains a transaction.
-                                    if (accountDetails[i].Contains("Deposit") || accountDetails[i].Contains("Withdraw"))
-                                    {
-                                        // Print details in correct format and order.
-                                        string[] tempDetails = accountDetails[i].Split('|');
-                                        Console.Write(tempDetails[0] + " - " + tempDetails[1] + " - $" + tempDetails[2]);
-                                        for (int j = tempDetails[2].Length; j < 11; j++) {
-                                            Console.Write(" ");
-                                        }
-                                        Console.Write("- $" + tempDetails[3]);
-                                        Console.WriteLine();
-                                    }
-                                }
+                            if (account.Count() > 7)
+                            {                                                       
+                                Console.WriteLine(transactionDetails);
                             }
                             Console.WriteLine();
                             if (YNChoice("Email Statement (y/n)?"))
                             {
-                                Console.WriteLine("Please wait, sending email...");
-                                SendEmail(GetAccount(currentAccount)[4], accountDetails);
+                                Console.WriteLine("Please wait, sending email...");                               
+                                SendEmail(account[4], account, transactionDetails);
                                 Console.ReadKey();
                                 MainMenu();
                             }
@@ -484,6 +472,7 @@ namespace Assignment1
                 catch (Exception e)
                 {
                     Console.WriteLine(e);
+                    Console.ReadKey();
                 }
             }
         }
@@ -508,7 +497,7 @@ namespace Assignment1
                         string currentAccount = GetAccountLocation(number);
                         if (currentAccount != "Null")
                         {
-                            DisplayAccount(currentAccount);
+                            DisplayAccount(number);
                             Console.WriteLine();
                             if (YNChoice("Delete (y/n)?"))
                             {
@@ -538,6 +527,7 @@ namespace Assignment1
                 catch (Exception e)
                 {
                     Console.WriteLine(e);
+                    Console.ReadKey();
                 }
             }
         }
@@ -587,6 +577,67 @@ namespace Assignment1
                 }
             }
         }
+
+        public string[] GetAccount(string accountNumber)
+        {
+            // Return an array consisting of provided account trimmed to include only personal data.
+            string[] accountFile = File.ReadAllLines(GetAccountLocation(accountNumber));
+            for (int j = 0; j < 7; j++)
+            {
+                accountFile[j] = accountFile[j].Substring(accountFile[j].IndexOf(@"|") + 1);
+            }
+            return accountFile;
+        }
+
+        public string GetAccountLocation(string accountNumber)
+        {
+            // Get the account directory location.
+            string[] accounts = Directory.GetFiles("accounts");         
+            foreach (string i in accounts)
+            {
+                if (i == "accounts\\" + accountNumber + ".txt")
+                {
+                    return i;
+                }
+            }
+            return ("Null");
+        }
+
+        public void DisplayAccount(string accountNumber)
+        {
+            string[] accountFile = GetAccount(accountNumber);
+            Console.WriteLine();
+            Console.WriteLine("Account found!");
+            Console.WriteLine("╔════════════════════════════════════╗");
+            Console.WriteLine("║          ACCOUNT DETAILS           ║");
+            Console.WriteLine("╠════════════════════════════════════╣");
+            Console.WriteLine("║                                    ║");
+            Console.WriteLine("║                                    ║");
+            Console.WriteLine("║                                    ║");
+            Console.WriteLine("║                                    ║");
+            Console.WriteLine("║                                    ║");
+            Console.WriteLine("║                                    ║");
+            Console.WriteLine("║                                    ║");
+            Console.WriteLine("║                                    ║");
+            Console.WriteLine("╚════════════════════════════════════╝");
+            Console.SetCursorPosition(3, Console.CursorTop - 8);
+            Console.WriteLine("Account No: {0}", accountFile[5]);
+            Console.SetCursorPosition(3, Console.CursorTop);
+            Console.WriteLine("Account Balance: ${0}", accountFile[6]);
+            Console.SetCursorPosition(3, Console.CursorTop);
+            Console.WriteLine("First Name: {0}", accountFile[0]);
+            Console.SetCursorPosition(3, Console.CursorTop);
+            Console.WriteLine("Last Name: {0}", accountFile[1]);
+            Console.SetCursorPosition(3, Console.CursorTop);
+            Console.WriteLine("Address: {0}", accountFile[2]);
+            Console.SetCursorPosition(3, Console.CursorTop);
+            Console.WriteLine("Phone: {0}", accountFile[3]);
+            Console.SetCursorPosition(3, Console.CursorTop);
+            Console.WriteLine("Email: {0}", accountFile[4]);
+            Console.SetCursorPosition(3, Console.CursorTop);
+            Console.WriteLine();
+        }
+
         public void ReplaceLine(string text, string file, int lineNumber)
         {
             // Replace the line in file with provided arguments.
@@ -620,80 +671,38 @@ namespace Assignment1
             }
         }
 
-        public string GetAccountLocation(string accNo)
+        public string GetTransactions(string[] account)
         {
-            // Get the account directory location.
-            string[] accounts = Directory.GetFiles("accounts");
-            foreach (string i in accounts)
+            // Extra spacing for large numbers, Gmail seems to break the formatting for emails.
+            string history = "Last 5 Transactions: (Latest at top)\n\nDate         Type       Amount        Balance\n-----------------------------------------------------\n";
+            for (int i = account.Count() - 1; i > account.Count() - 6; i--)
             {
-                if (i == "accounts\\" + accNo + ".txt")
+                // If line contains a transaction.
+                if (account[i].Contains("Deposit") || account[i].Contains("Withdraw"))
                 {
-                    return i;
+                    // Add details in correct format and order.
+                    string[] tempDetails = account[i].Split('|');
+                    history += tempDetails[0] + "   - " + tempDetails[1] + " - $" + tempDetails[2];
+                    for (int j = tempDetails[2].Length; j < 11; j++)
+                    {
+                        // Add spaces to accomodate for large numbers in fixed length.
+                        history += (" ");
+                    }
+                    history += ("- $" + tempDetails[3] + "\n");             
                 }
             }
-            return ("Null");
+            return history;
         }
 
-        public void DisplayAccount(string accNo)
+        public void SetTransaction(string acccountNumber, string type, int amount, int balance)
         {
-            // Display the account details from a file location.
-            string[] accountFile = File.ReadAllLines(accNo);
-            for (int j = 0; j < accountFile.Count(); j++)
-            {
-                accountFile[j] = accountFile[j].Substring(accountFile[j].IndexOf(@"|") + 1);
-            }
-            Console.WriteLine();
-            Console.WriteLine("Account found!");
-            Console.WriteLine("╔════════════════════════════════════╗");
-            Console.WriteLine("║          ACCOUNT DETAILS           ║");
-            Console.WriteLine("╠════════════════════════════════════╣");
-            Console.WriteLine("║                                    ║");
-            Console.WriteLine("║                                    ║");
-            Console.WriteLine("║                                    ║");
-            Console.WriteLine("║                                    ║");
-            Console.WriteLine("║                                    ║");
-            Console.WriteLine("║                                    ║");
-            Console.WriteLine("║                                    ║");
-            Console.WriteLine("║                                    ║");
-            Console.WriteLine("╚════════════════════════════════════╝");
-            Console.SetCursorPosition(3, Console.CursorTop - 8);
-            Console.WriteLine("Account No: {0}", accountFile[5]);
-            Console.SetCursorPosition(3, Console.CursorTop);
-            Console.WriteLine("Account Balance: ${0}", accountFile[6]);
-            Console.SetCursorPosition(3, Console.CursorTop);
-            Console.WriteLine("First Name: {0}", accountFile[0]);
-            Console.SetCursorPosition(3, Console.CursorTop);
-            Console.WriteLine("Last Name: {0}", accountFile[1]);
-            Console.SetCursorPosition(3, Console.CursorTop);
-            Console.WriteLine("Address: {0}", accountFile[2]);
-            Console.SetCursorPosition(3, Console.CursorTop);
-            Console.WriteLine("Phone: {0}", accountFile[3]);
-            Console.SetCursorPosition(3, Console.CursorTop);
-            Console.WriteLine("Email: {0}", accountFile[4]);
-            Console.SetCursorPosition(3, Console.CursorTop);
-            Console.WriteLine();
-        }
-
-        public string[] GetAccount(string accLocation)
-        {
-            // Return an array consisting of provided account.
-            string[] accountFile = File.ReadAllLines(accLocation);
-            for (int j = 0; j < accountFile.Count(); j++)
-            {
-                accountFile[j] = accountFile[j].Substring(accountFile[j].IndexOf(@"|") + 1);
-            }
-            return accountFile;
-        }
-
-        public void WriteToAccountFile(string accNo, string type, int amount, int balance)
-        {
-            // Write transaction data to file.
+            // Write transaction data to file in format.
             string date = DateTime.Now.ToString("dd.MM.yyyy");
-            using StreamWriter file = new StreamWriter(accNo, true);
+            using StreamWriter file = new StreamWriter(acccountNumber, true);
             file.WriteLine("{0}|{1}|{2}|{3}", date, type, amount, balance);
         }
 
-        public void SendEmail(string address, string[] details)
+        public void SendEmail(string address, string[] details, string transaction)
         {
             // Send email using smtp with a temporary email to provided address with details.
             try
@@ -704,7 +713,7 @@ namespace Assignment1
                 mail.From = new MailAddress("utsnetprog@gmail.com");
                 mail.To.Add(address);
                 mail.Subject = "Account Details";
-                mail.Body = "Please find following details for your new bank account. \n\n Account Number: " + details[5] + "\n First Name: " + details[0] + "\n Last Name: " + details[1] + "\n Address: " + details[2] + "\n Phone: " + details[3] + "\n Email: " + details[4] + "\n Balance: $" + details[6];
+                mail.Body = "Please find following details for your new bank account. \n\n Account Number: " + details[5] + "\n First Name: " + details[0] + "\n Last Name: " + details[1] + "\n Address: " + details[2] + "\n Phone: " + details[3] + "\n Email: " + details[4] + "\n Balance: $" + details[6] + "\n\n" + transaction;
                 SmtpServer.Port = 587;
                 SmtpServer.Credentials = new System.Net.NetworkCredential("utsnetprog@gmail.com", password);
                 SmtpServer.EnableSsl = true;
@@ -714,9 +723,10 @@ namespace Assignment1
             catch (SmtpException e)
             {
                 Console.WriteLine("Mail send error, try again later.\n{0}", e);
-
+                Console.ReadKey();
             }
         }
+
         public class RegexUtilities
         {
             // https://docs.microsoft.com/en-us/dotnet/standard/base-types/how-to-verify-that-strings-are-in-valid-email-format
