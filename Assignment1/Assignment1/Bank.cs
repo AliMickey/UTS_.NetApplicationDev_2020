@@ -429,8 +429,7 @@ namespace Assignment1
                     string accNumber = Console.ReadLine();
                     if (Int32.TryParse(accNumber, out _) && (accNumber.Length > 0 && accNumber.Length < 11))
                     {
-                        string accountLocation = GetAccountLocation(accNumber);
-                        if (accountLocation != "Null")
+                        if (GetAccountLocation(accNumber) != "Null")
                         {
                             DisplayAccount(accNumber);
                             Console.WriteLine();
@@ -674,7 +673,7 @@ namespace Assignment1
         public string GetTransactions(string[] account)
         {
             // Extra spacing for large numbers, Gmail seems to break the formatting for emails.
-            string history = "Last 5 Transactions: (Latest at top)\n\nDate         Type       Amount        Balance\n-----------------------------------------------------\n";
+            string history = "Last 5 Transactions: (Latest at top)\n\nDate         Type         Amount        Balance\n-----------------------------------------------------\n";
             for (int i = account.Count() - 1; i > account.Count() - 6; i--)
             {
                 // If line contains a transaction.
@@ -682,7 +681,7 @@ namespace Assignment1
                 {
                     // Add details in correct format and order.
                     string[] tempDetails = account[i].Split('|');
-                    history += tempDetails[0] + "   - " + tempDetails[1] + " - $" + tempDetails[2];
+                    history += tempDetails[0] + "   - " + tempDetails[1] + "   - $" + tempDetails[2];
                     for (int j = tempDetails[2].Length; j < 11; j++)
                     {
                         // Add spaces to accomodate for large numbers in fixed length.
