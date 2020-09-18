@@ -12,5 +12,5 @@ OR
 3. Run the code (F5).
 
 
-Test credentials: a|a.
+Test credentials: a|a - Can create additional users through app.
 Test account number: 1

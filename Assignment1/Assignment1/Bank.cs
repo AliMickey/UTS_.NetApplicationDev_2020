@@ -19,6 +19,7 @@ namespace Assignment1
             Console.WriteLine("║          LOGIN TO START            ║");
             Console.WriteLine("║                                    ║");
             Console.WriteLine("╚════════════════════════════════════╝");
+            CheckFiles();
             Login();
             
         }
@@ -27,7 +28,6 @@ namespace Assignment1
         {
             try
             {
-                CheckFiles();
                 string[] userID = File.ReadAllLines("login.txt");
                 bool valid = false;
                 String userName;
@@ -673,8 +673,9 @@ namespace Assignment1
 
         public string GetTransactions(string[] account)
         {
+            // Construct transaction history string.
             // Extra spacing for large numbers, Gmail seems to break the formatting for emails.
-            string history = "Last 5 Transactions: (Latest at top)\n\nDate         Type         Amount        Balance\n-----------------------------------------------------\n";
+            string history = "Last 5 Transactions: (Latest at top)\n\nDate         Type         Amount        Balance\n--------------------------------------------------------\n";
             for (int i = account.Count() - 1; i > account.Count() - 6; i--)
             {
                 // If line contains a transaction.
@@ -708,20 +709,20 @@ namespace Assignment1
             // Method to create required login file and account directory on first run if it doesn't exist. 
             if (!File.Exists("login.txt"))
             {
-                // Create the file and restart the console app.
+                // Create the file
                 File.Create("login.txt");
                 done = true;
             }
 
             if (!Directory.Exists("accounts"))
             {
-                // Create the directory and restart the console app.
+                // Create the directory
                 Directory.CreateDirectory("accounts");
                 done = true;
-            }
-
+            }         
             if (done)
             {
+                // Restart the console app.  
                 System.Diagnostics.Process.Start("Assignment1.exe");
                 Environment.Exit(0);
             }
@@ -735,7 +736,7 @@ namespace Assignment1
                 string password = "utsnetprogtemp";
                 MailMessage mail = new MailMessage();
                 SmtpClient SmtpServer = new SmtpClient("smtp.gmail.com");
-                mail.From = new MailAddress("utsnetprog@gmail.com");
+                mail.From = new MailAddress("utsnetprog@gmail.com", "Simple Banking System");
                 mail.To.Add(address);
                 mail.Subject = "Account Details";
                 mail.Body = "Please find following details for your new bank account. \n\n Account Number: " + details[5] + "\n First Name: " + details[0] + "\n Last Name: " + details[1] + "\n Address: " + details[2] + "\n Phone: " + details[3] + "\n Email: " + details[4] + "\n Balance: $" + details[6] + "\n\n" + transaction;

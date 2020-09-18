@@ -2,7 +2,7 @@ fName|first
 lName|last
 address|add
 phone|0333
-email|test@fsdfs.com
+email|fdss@hfdsf.com
 accountNo|1
 balance|514
 16.09.2020|Deposit |45|45
