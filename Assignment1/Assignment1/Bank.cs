@@ -27,9 +27,9 @@ namespace Assignment1
         {
             try
             {
+                CheckFiles();
                 string[] userID = File.ReadAllLines("login.txt");
-                Boolean valid = false;
-                Bank bank = new Bank();
+                bool valid = false;
                 String userName;
                 String password;
                 while (!valid)
@@ -238,8 +238,7 @@ namespace Assignment1
                     string number = Console.ReadLine();
                     if (Int32.TryParse(number, out _) && (number.Length > 0 && number.Length < 11))
                     {
-                        string currentAccount = GetAccountLocation(number);
-                        if (currentAccount != "Null")
+                        if (GetAccountLocation(number) != "Null")
                         {
                             DisplayAccount(number);
                             Console.WriteLine();
@@ -292,26 +291,26 @@ namespace Assignment1
                     string number = Console.ReadLine();
                     if (Int32.TryParse(number, out _) && (number.Length > 0 && number.Length < 11))
                     {
-                        string currentAccount = GetAccountLocation(number);
-                        if (currentAccount != "Null")
+                        string accountLocation = GetAccountLocation(number);
+                        if (accountLocation != "Null")
                         {
                             Console.WriteLine();
                             Console.WriteLine("Account found!");
                             Console.Write("Enter the amount: $");
                             string amountTemp = Console.ReadLine();
                             // Check input validity.
-                            while (!Int32.TryParse(amountTemp, out _) | amountTemp.Length == 0)
+                            while (!Int32.TryParse(amountTemp, out _) | amountTemp.Length == 0 || Convert.ToInt32(amountTemp) == 0)
                             {
                                 Console.WriteLine("Invalid input, try again.");
                                 Console.Write("Enter the amount: $");
                                 amountTemp = Console.ReadLine();
                             }
                             int amount = Convert.ToInt32(amountTemp);
-                            int balance = BalanceUpdate(currentAccount, amount, true);
+                            int balance = BalanceUpdate(accountLocation, amount, true);
                             // Replace the balance line in the account file with the updated balance information. 
-                            ReplaceLine("balance|" + balance, currentAccount, 6);
+                            ReplaceLine("balance|" + balance, accountLocation, 6);
                             // Add a log into account file.
-                            SetTransaction(currentAccount, "Deposit ", amount, balance);
+                            SetTransaction(accountLocation, "Deposit ", amount, balance);
                             Console.WriteLine("Deposit Successful!");
                             Console.ReadKey();
                             MainMenu();
@@ -356,8 +355,8 @@ namespace Assignment1
                     string number = Console.ReadLine();
                     if (Int32.TryParse(number, out _) && (number.Length > 0 && number.Length < 11))
                     {
-                        string currentAccount = GetAccountLocation(number);
-                        if (currentAccount != "Null")
+                        string accountLocation = GetAccountLocation(number);
+                        if (accountLocation != "Null")
                         {
                             Console.WriteLine();
                             Console.WriteLine("Account found!");
@@ -371,7 +370,7 @@ namespace Assignment1
                                 amountTemp = Console.ReadLine();
                             }
                             int amount = Convert.ToInt32(amountTemp);
-                            int balance = BalanceUpdate(currentAccount, amount, false);
+                            int balance = BalanceUpdate(accountLocation, amount, false);
                             if (balance == -1)
                             {
                                 Console.WriteLine("You do not have sufficient funds.");
@@ -381,9 +380,9 @@ namespace Assignment1
                             else
                             {
                                 // Replace the balance line in the account file with the updated balance information. 
-                                ReplaceLine("balance|" + balance, currentAccount, 6);
+                                ReplaceLine("balance|" + balance, accountLocation, 6);
                                 // Add a log into account file.
-                                SetTransaction(currentAccount, "Withdraw", amount, balance);
+                                SetTransaction(accountLocation, "Withdraw", amount, balance);
                                 Console.WriteLine("Withdraw Successful!");
                                 Console.ReadKey();
                                 MainMenu();
@@ -493,14 +492,14 @@ namespace Assignment1
                     string number = Console.ReadLine();
                     if (Int32.TryParse(number, out _) && (number.Length > 0 && number.Length < 11))
                     {
-                        string currentAccount = GetAccountLocation(number);
-                        if (currentAccount != "Null")
+                        string accountLocation = GetAccountLocation(number);
+                        if (accountLocation != "Null")
                         {
                             DisplayAccount(number);
                             Console.WriteLine();
                             if (YNChoice("Delete (y/n)?"))
                             {
-                                File.Delete(currentAccount);
+                                File.Delete(accountLocation);
                                 MainMenu();
                             }
                             else
@@ -556,6 +555,7 @@ namespace Assignment1
                 {
                     Console.Write(question + " ");
                     string input = Console.ReadLine();
+                    // Check for validity
                     if (input.Length == 1 && input[0] == 'y')
                     {
                         return true;
@@ -581,6 +581,7 @@ namespace Assignment1
         {
             // Return an array consisting of provided account trimmed to include only personal data.
             string[] accountFile = File.ReadAllLines(GetAccountLocation(accountNumber));
+            // Trim only personal info, not transactions.
             for (int j = 0; j < 7; j++)
             {
                 accountFile[j] = accountFile[j].Substring(accountFile[j].IndexOf(@"|") + 1);
@@ -699,6 +700,31 @@ namespace Assignment1
             string date = DateTime.Now.ToString("dd.MM.yyyy");
             using StreamWriter file = new StreamWriter(acccountNumber, true);
             file.WriteLine("{0}|{1}|{2}|{3}", date, type, amount, balance);
+        }
+
+        public void CheckFiles()
+        {
+            bool done = false;
+            // Method to create required login file and account directory on first run if it doesn't exist. 
+            if (!File.Exists("login.txt"))
+            {
+                // Create the file and restart the console app.
+                File.Create("login.txt");
+                done = true;
+            }
+
+            if (!Directory.Exists("accounts"))
+            {
+                // Create the directory and restart the console app.
+                Directory.CreateDirectory("accounts");
+                done = true;
+            }
+
+            if (done)
+            {
+                System.Diagnostics.Process.Start("Assignment1.exe");
+                Environment.Exit(0);
+            }
         }
 
         public void SendEmail(string address, string[] details, string transaction)
