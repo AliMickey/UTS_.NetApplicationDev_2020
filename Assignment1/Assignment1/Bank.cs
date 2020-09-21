@@ -48,10 +48,10 @@ namespace Assignment1
                             break;
                         }
                         // Backspace removes the '*' and removes last character from password.
-                        if (key.Key == ConsoleKey.Backspace && password.Length > 0)
+                        else if (key.Key == ConsoleKey.Backspace && password.Length > 0)
                         {
                             Console.Write("\b \b");
-                            password = password.Substring(0, password.Length - 1);
+                            password = password[0..^1];
                         }
                         else if (key.Key != ConsoleKey.Backspace)
                         {
@@ -72,7 +72,7 @@ namespace Assignment1
                             break;
                         }
                     }
-                    Console.WriteLine("Invalid credentials!.. Please try again\n");
+                    Console.WriteLine("Invalid credentials!\n");
                     // Append new credentials to file and return to login menu.
                     if (YNChoice("Create a new user (y/n)?"))
                     {
@@ -150,7 +150,7 @@ namespace Assignment1
                     }
                     else
                     {
-                        // Specification unclear whether to show an error or just go to menu.
+                        // Specification unclear whether to show an error and go to menu or just go directly to menu.
                         //Console.WriteLine("Invalid input, try again.");
                         MainMenu();
                     }
