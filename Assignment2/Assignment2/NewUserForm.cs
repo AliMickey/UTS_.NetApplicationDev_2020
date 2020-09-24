@@ -10,12 +10,14 @@ using System.Windows.Forms;
 
 namespace Assignment2
 {
+
     public partial class NewUserForm : Form
     {
         public NewUserForm()
         {
             InitializeComponent();
         }
+
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
@@ -24,6 +26,11 @@ namespace Assignment2
         }
 
         private void btnSubmit_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void NewUserForm_Load(object sender, EventArgs e)
         {
 
         }

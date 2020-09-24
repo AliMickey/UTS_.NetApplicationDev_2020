@@ -169,8 +169,9 @@
             // 
             // btnCancel
             // 
+            this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.Location = new System.Drawing.Point(574, 467);
+            this.btnCancel.Location = new System.Drawing.Point(576, 467);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(98, 32);
             this.btnCancel.TabIndex = 28;
@@ -214,9 +215,12 @@
             // 
             // NewUserForm
             // 
+            this.AcceptButton = this.btnSubmit;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.btnCancel;
             this.ClientSize = new System.Drawing.Size(861, 555);
+            this.ControlBox = false;
             this.Controls.Add(this.boxUserType);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.btnCancel);
@@ -236,6 +240,7 @@
             this.Controls.Add(this.lblNewUser);
             this.Name = "NewUserForm";
             this.Text = "NewUserForm";
+            this.Load += new System.EventHandler(this.NewUserForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

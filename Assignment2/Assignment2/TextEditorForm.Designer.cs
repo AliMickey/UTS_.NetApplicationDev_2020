@@ -30,25 +30,19 @@
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.menuStripTop = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuNew = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuOpen = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.menuSave = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuSaveAs = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.menuLogout = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuCut = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuCopy = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuPaste = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuAbout = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.toolFontSize = new System.Windows.Forms.ToolStripComboBox();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.toolUserName = new System.Windows.Forms.ToolStripLabel();
             this.toolStrip2 = new System.Windows.Forms.ToolStrip();
+            this.toolCut = new System.Windows.Forms.ToolStripButton();
+            this.toolCopy = new System.Windows.Forms.ToolStripButton();
+            this.toolPaste = new System.Windows.Forms.ToolStripButton();
             this.toolNew = new System.Windows.Forms.ToolStripButton();
             this.toolOpen = new System.Windows.Forms.ToolStripButton();
             this.toolSave = new System.Windows.Forms.ToolStripButton();
@@ -56,9 +50,15 @@
             this.toolBold = new System.Windows.Forms.ToolStripButton();
             this.toolItalics = new System.Windows.Forms.ToolStripButton();
             this.toolUnderline = new System.Windows.Forms.ToolStripButton();
-            this.toolCut = new System.Windows.Forms.ToolStripButton();
-            this.toolCopy = new System.Windows.Forms.ToolStripButton();
-            this.toolPaste = new System.Windows.Forms.ToolStripButton();
+            this.menuNew = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuOpen = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuSave = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuSaveAs = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuLogout = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuCut = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuCopy = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuPaste = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuAbout = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.toolStrip2.SuspendLayout();
@@ -90,53 +90,15 @@
             this.menuStripTop.Size = new System.Drawing.Size(37, 20);
             this.menuStripTop.Text = "File";
             // 
-            // menuNew
-            // 
-            this.menuNew.Image = global::Assignment2.Properties.Resources.NewFile_16x;
-            this.menuNew.Name = "menuNew";
-            this.menuNew.ShortcutKeyDisplayString = "Ctrl+N";
-            this.menuNew.Size = new System.Drawing.Size(180, 22);
-            this.menuNew.Text = "New";
-            // 
-            // menuOpen
-            // 
-            this.menuOpen.Image = global::Assignment2.Properties.Resources.OpenFolder_16x;
-            this.menuOpen.Name = "menuOpen";
-            this.menuOpen.ShortcutKeyDisplayString = "Ctrl+O";
-            this.menuOpen.Size = new System.Drawing.Size(180, 22);
-            this.menuOpen.Text = "Open";
-            // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(177, 6);
             // 
-            // menuSave
-            // 
-            this.menuSave.Image = global::Assignment2.Properties.Resources.SaveStatusBar1_16x;
-            this.menuSave.Name = "menuSave";
-            this.menuSave.ShortcutKeyDisplayString = "Ctrl+S";
-            this.menuSave.Size = new System.Drawing.Size(180, 22);
-            this.menuSave.Text = "Save";
-            // 
-            // menuSaveAs
-            // 
-            this.menuSaveAs.Image = global::Assignment2.Properties.Resources.SaveAs_16x;
-            this.menuSaveAs.Name = "menuSaveAs";
-            this.menuSaveAs.Size = new System.Drawing.Size(180, 22);
-            this.menuSaveAs.Text = "Save As";
-            // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
             this.toolStripSeparator2.Size = new System.Drawing.Size(177, 6);
-            // 
-            // menuLogout
-            // 
-            this.menuLogout.Image = global::Assignment2.Properties.Resources.Login_16x;
-            this.menuLogout.Name = "menuLogout";
-            this.menuLogout.Size = new System.Drawing.Size(180, 22);
-            this.menuLogout.Text = "Logout";
             // 
             // toolStripMenuItem2
             // 
@@ -148,30 +110,6 @@
             this.toolStripMenuItem2.Size = new System.Drawing.Size(39, 20);
             this.toolStripMenuItem2.Text = "Edit";
             // 
-            // menuCut
-            // 
-            this.menuCut.Image = global::Assignment2.Properties.Resources.Cut_16x;
-            this.menuCut.Name = "menuCut";
-            this.menuCut.ShortcutKeyDisplayString = "Ctrl+X";
-            this.menuCut.Size = new System.Drawing.Size(180, 22);
-            this.menuCut.Text = "Cut";
-            // 
-            // menuCopy
-            // 
-            this.menuCopy.Image = global::Assignment2.Properties.Resources.Copy_16x;
-            this.menuCopy.Name = "menuCopy";
-            this.menuCopy.ShortcutKeyDisplayString = "Ctrl+C";
-            this.menuCopy.Size = new System.Drawing.Size(180, 22);
-            this.menuCopy.Text = "Copy";
-            // 
-            // menuPaste
-            // 
-            this.menuPaste.Image = global::Assignment2.Properties.Resources.Paste_16x;
-            this.menuPaste.Name = "menuPaste";
-            this.menuPaste.ShortcutKeyDisplayString = "Ctrl+V";
-            this.menuPaste.Size = new System.Drawing.Size(180, 22);
-            this.menuPaste.Text = "Paste";
-            // 
             // toolStripMenuItem3
             // 
             this.toolStripMenuItem3.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -179,14 +117,6 @@
             this.toolStripMenuItem3.Name = "toolStripMenuItem3";
             this.toolStripMenuItem3.Size = new System.Drawing.Size(44, 20);
             this.toolStripMenuItem3.Text = "Help";
-            // 
-            // menuAbout
-            // 
-            this.menuAbout.Image = global::Assignment2.Properties.Resources.InformationSymbol_16x;
-            this.menuAbout.Name = "menuAbout";
-            this.menuAbout.Size = new System.Drawing.Size(180, 22);
-            this.menuAbout.Text = "About...";
-            this.menuAbout.Click += new System.EventHandler(this.menuAbout_Click);
             // 
             // toolStrip1
             // 
@@ -257,6 +187,33 @@
             this.toolStrip2.TabIndex = 2;
             this.toolStrip2.Text = "toolStripLeft";
             // 
+            // toolCut
+            // 
+            this.toolCut.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolCut.Image = global::Assignment2.Properties.Resources.Cut_16x;
+            this.toolCut.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolCut.Name = "toolCut";
+            this.toolCut.Size = new System.Drawing.Size(21, 20);
+            this.toolCut.Text = "Cut";
+            // 
+            // toolCopy
+            // 
+            this.toolCopy.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolCopy.Image = global::Assignment2.Properties.Resources.Copy_16x;
+            this.toolCopy.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolCopy.Name = "toolCopy";
+            this.toolCopy.Size = new System.Drawing.Size(21, 20);
+            this.toolCopy.Text = "Copy";
+            // 
+            // toolPaste
+            // 
+            this.toolPaste.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolPaste.Image = global::Assignment2.Properties.Resources.Paste_16x;
+            this.toolPaste.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolPaste.Name = "toolPaste";
+            this.toolPaste.Size = new System.Drawing.Size(21, 20);
+            this.toolPaste.Text = "Paste";
+            // 
             // toolNew
             // 
             this.toolNew.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -324,38 +281,83 @@
             this.toolUnderline.Size = new System.Drawing.Size(23, 22);
             this.toolUnderline.Text = "Underline";
             // 
-            // toolCut
+            // menuNew
             // 
-            this.toolCut.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolCut.Image = global::Assignment2.Properties.Resources.Cut_16x;
-            this.toolCut.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolCut.Name = "toolCut";
-            this.toolCut.Size = new System.Drawing.Size(21, 20);
-            this.toolCut.Text = "Cut";
+            this.menuNew.Image = global::Assignment2.Properties.Resources.NewFile_16x;
+            this.menuNew.Name = "menuNew";
+            this.menuNew.ShortcutKeyDisplayString = "Ctrl+N";
+            this.menuNew.Size = new System.Drawing.Size(180, 22);
+            this.menuNew.Text = "New";
             // 
-            // toolCopy
+            // menuOpen
             // 
-            this.toolCopy.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolCopy.Image = global::Assignment2.Properties.Resources.Copy_16x;
-            this.toolCopy.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolCopy.Name = "toolCopy";
-            this.toolCopy.Size = new System.Drawing.Size(21, 20);
-            this.toolCopy.Text = "Copy";
+            this.menuOpen.Image = global::Assignment2.Properties.Resources.OpenFolder_16x;
+            this.menuOpen.Name = "menuOpen";
+            this.menuOpen.ShortcutKeyDisplayString = "Ctrl+O";
+            this.menuOpen.Size = new System.Drawing.Size(180, 22);
+            this.menuOpen.Text = "Open";
             // 
-            // toolPaste
+            // menuSave
             // 
-            this.toolPaste.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolPaste.Image = global::Assignment2.Properties.Resources.Paste_16x;
-            this.toolPaste.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolPaste.Name = "toolPaste";
-            this.toolPaste.Size = new System.Drawing.Size(21, 20);
-            this.toolPaste.Text = "Paste";
+            this.menuSave.Image = global::Assignment2.Properties.Resources.SaveStatusBar1_16x;
+            this.menuSave.Name = "menuSave";
+            this.menuSave.ShortcutKeyDisplayString = "Ctrl+S";
+            this.menuSave.Size = new System.Drawing.Size(180, 22);
+            this.menuSave.Text = "Save";
+            // 
+            // menuSaveAs
+            // 
+            this.menuSaveAs.Image = global::Assignment2.Properties.Resources.SaveAs_16x;
+            this.menuSaveAs.Name = "menuSaveAs";
+            this.menuSaveAs.Size = new System.Drawing.Size(180, 22);
+            this.menuSaveAs.Text = "Save As";
+            // 
+            // menuLogout
+            // 
+            this.menuLogout.Image = global::Assignment2.Properties.Resources.Login_16x;
+            this.menuLogout.Name = "menuLogout";
+            this.menuLogout.Size = new System.Drawing.Size(180, 22);
+            this.menuLogout.Text = "Logout";
+            this.menuLogout.Click += new System.EventHandler(this.menuLogout_Click);
+            // 
+            // menuCut
+            // 
+            this.menuCut.Image = global::Assignment2.Properties.Resources.Cut_16x;
+            this.menuCut.Name = "menuCut";
+            this.menuCut.ShortcutKeyDisplayString = "Ctrl+X";
+            this.menuCut.Size = new System.Drawing.Size(144, 22);
+            this.menuCut.Text = "Cut";
+            // 
+            // menuCopy
+            // 
+            this.menuCopy.Image = global::Assignment2.Properties.Resources.Copy_16x;
+            this.menuCopy.Name = "menuCopy";
+            this.menuCopy.ShortcutKeyDisplayString = "Ctrl+C";
+            this.menuCopy.Size = new System.Drawing.Size(144, 22);
+            this.menuCopy.Text = "Copy";
+            // 
+            // menuPaste
+            // 
+            this.menuPaste.Image = global::Assignment2.Properties.Resources.Paste_16x;
+            this.menuPaste.Name = "menuPaste";
+            this.menuPaste.ShortcutKeyDisplayString = "Ctrl+V";
+            this.menuPaste.Size = new System.Drawing.Size(144, 22);
+            this.menuPaste.Text = "Paste";
+            // 
+            // menuAbout
+            // 
+            this.menuAbout.Image = global::Assignment2.Properties.Resources.InformationSymbol_16x;
+            this.menuAbout.Name = "menuAbout";
+            this.menuAbout.Size = new System.Drawing.Size(180, 22);
+            this.menuAbout.Text = "About...";
+            this.menuAbout.Click += new System.EventHandler(this.menuAbout_Click);
             // 
             // TextEditorForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1013, 667);
+            this.ControlBox = false;
             this.Controls.Add(this.toolStrip2);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.menuStrip1);

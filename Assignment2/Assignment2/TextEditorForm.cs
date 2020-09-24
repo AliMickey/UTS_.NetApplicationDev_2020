@@ -22,5 +22,13 @@ namespace Assignment2
             AboutForm aboutForm = new AboutForm();
             aboutForm.Show();
         }
+
+        private void menuLogout_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            Login login = new Login();
+            login.Show();
+            
+        }
     }
 }
