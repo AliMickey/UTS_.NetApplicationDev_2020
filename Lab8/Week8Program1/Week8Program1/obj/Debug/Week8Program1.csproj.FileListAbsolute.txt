@@ -1,0 +1,4 @@
+C:\Users\130410\AppLockerExceptions\32998-31927\Tutorial Lab 8 Programming Questions\Week8Program1\Week9Program1\obj\Debug\Week8Program1.csprojAssemblyReference.cache
+C:\Users\130410\AppLockerExceptions\32998-31927\Tutorial Lab 8 Programming Questions\Week8Program1\Week9Program1\obj\Debug\Week8Program1.csproj.CoreCompileInputs.cache
+C:\Users\130410\AppLockerExceptions\32998-31927\Tutorial Lab 8 Programming Questions\Week8Program1\Week8Program1\obj\Debug\Week8Program1.csprojAssemblyReference.cache
+C:\Users\130410\AppLockerExceptions\32998-31927\Tutorial Lab 8 Programming Questions\Week8Program1\Week8Program1\obj\Debug\Week8Program1.csproj.CoreCompileInputs.cache

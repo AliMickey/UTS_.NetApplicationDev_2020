@@ -10,3 +10,4 @@ D:\Programming\Git\UTS_.NetApplicationDev_Spring_2020\Assignment2\Assignment2\ob
 D:\Programming\Git\UTS_.NetApplicationDev_Spring_2020\Assignment2\Assignment2\obj\Debug\Assignment2.pdb
 D:\Programming\Git\UTS_.NetApplicationDev_Spring_2020\Assignment2\Assignment2\obj\Debug\Assignment2.NewUserForm.resources
 D:\Programming\Git\UTS_.NetApplicationDev_Spring_2020\Assignment2\Assignment2\obj\Debug\Assignment2.TextEditorForm.resources
+D:\Programming\Git\UTS_.NetApplicationDev_Spring_2020\Assignment2\Assignment2\obj\Debug\Assignment2.AboutForm.resources

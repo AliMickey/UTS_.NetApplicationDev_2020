@@ -16,5 +16,11 @@ namespace Assignment2
         {
             InitializeComponent();
         }
+
+        private void menuAbout_Click(object sender, EventArgs e)
+        {
+            AboutForm aboutForm = new AboutForm();
+            aboutForm.Show();
+        }
     }
 }
