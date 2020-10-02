@@ -3,75 +3,71 @@
 Write a program to create a Generic Stack data structure
 which can handle multiple data types. 
 
-Use the class diagram given in the tutorial instruction document as reference.
+Use the class diagram given in the tutorial instruction document.
 */
 
 
 namespace Week8Program1
 {
-    // Create the MyGenericStack class
-    public class MyGenerticStack<T>
+    // Create the MyGenericStack
+    public class MyGenericStack<T>
     {
-        // Write the code for the Properties
-        // 1. To Keep track of the number of elements added to the Stack in LIFO (Last In First Out) order
+        // Properties
+        private int top; // To Keep track of the number of elements added to the Stack in LIFO (Last In First Out) order
+        private T[] stackElements; // an array to store the element in the stack
 
-        // 2. an array to store the element in the stack
-
-        // Write code for the constructor which initializes the stack based on the value of myGenericStackSize, 
+        // constructor which initializes the stack based on the value of myGenericStackSize, 
         // which should be greater than zero
-        public MyGenerticStack(int size)
+        public MyGenericStack(int myGenericStackSize)
         {
-            // Write code to Check if the stack size is >0
-            if (size > 0)
+            // Check if the stack size is >0
+            if (myGenericStackSize > 0)
             {
-               
+                stackElements = new T[myGenericStackSize];
             }
             else
-            {
-                throw new System.ArgumentException("Size too small, must be > 0.");
-            }
-                // Write code to Throw an exception 
-                
+                // Throw an exception 
+                throw new ArgumentException("Stack Size must be greater than zero.");
         }
 
-        //Write code for the Puch() method to add an element in the stack
-        public Push()
+        // The method to add an element in the stack
+        public void Push(T value)
         {
             // Check if the value of top<Size of stack: Stack empty
-            
+            if (top == stackElements.Length - 1)
+                throw new StackOverflowException("Stack is full, cannot push the value");
             // Increment top
-            
+            ++top;
             // Add the value into the stack
-            
+            stackElements[top] = value;
         }
 
-        //Write code for the Pop() method which returns the current value at the location indicated by top
-        public Pop()
+        //The method returns the current value at the location indicated by top
+        public T Pop()
         {
             // Check if the value of top<0: Stack empty
-            
+            if (top == -1)
+                throw new ArgumentOutOfRangeException("Stack is Empty, cannot pop");
             // Decrement top
-            
+            --top;
             // return the value of top +1: the element being deleted
-            
+            return stackElements[top + 1];
         }
 
-        // Write code for Accessor: returns the size of stack
-        public int size { get; set; }
+        // Accessor: returns the size of stack
+        public int Length { get { return stackElements.Length; } }
 
-        // Write code for Accessor: returns the actual number of elements in the stack
-        public int length { get; set; }
+        // Accessor: returns the actual number of elements in the stack
+        public int NoElements { get { return top; } }
     }
 
-
-    // Don't modify the code below:
     class Program
     {
         // Initial static double and string arrays with potential values to be inserted into the stacks
         // The values can be user inputs as well
         private static double[] doubleValues = new double[] { 1.2, 3.4, 5.6, 9.2, 4.5 };
 
-        private static string[] stringValues = new string[] { "Paul", "George", "Alan", "Alex", "Martin"};
+        private static string[] stringValues = new string[] { "Paul", "George", "Alan", "Alex", "Martin" };
 
         // Create a stack of double and string value using the MyGenericStack class
         private static MyGenericStack<double> myDoubleStack;
@@ -85,7 +81,8 @@ namespace Week8Program1
 
             // Insert values into the respective stacks and 
             // check for exceptions which may occur
-            try {
+            try
+            {
                 foreach (double doubleVal in doubleValues)
                 {
                     myDoubleStack.Push(doubleVal);
@@ -95,7 +92,7 @@ namespace Week8Program1
                     myStringStack.Push(stringVal);
                 }
             }
-            catch(StackOverflowException e)
+            catch (StackOverflowException e)
             {
                 Console.WriteLine(e.ToString());
             }
@@ -117,11 +114,11 @@ namespace Week8Program1
                     Console.Write("{0} --> ", myStringStack.Pop());
                 }
             }
-            catch(ArgumentOutOfRangeException e)
+            catch (ArgumentOutOfRangeException e)
             {
                 Console.WriteLine(e.ToString());
-            }            
-            
+            }
+
             Console.ReadKey();
         }
     }

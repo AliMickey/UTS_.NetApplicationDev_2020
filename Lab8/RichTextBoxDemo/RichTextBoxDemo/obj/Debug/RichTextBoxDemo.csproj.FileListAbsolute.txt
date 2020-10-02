@@ -7,3 +7,23 @@ D:\Teaching\Spring 2018\31927 Net programming\Lectures-pptx\Week-9\Tutorial\Tuto
 D:\Teaching\Spring 2018\31927 Net programming\Lectures-pptx\Week-9\Tutorial\Tutorial Lab 8 Programming Solutions\RichTextBoxDemo\RichTextBoxDemo\obj\Debug\RichTextBoxDemo.csproj.GenerateResource.Cache
 D:\Teaching\Spring 2018\31927 Net programming\Lectures-pptx\Week-9\Tutorial\Tutorial Lab 8 Programming Solutions\RichTextBoxDemo\RichTextBoxDemo\obj\Debug\RichTextBoxDemo.exe
 D:\Teaching\Spring 2018\31927 Net programming\Lectures-pptx\Week-9\Tutorial\Tutorial Lab 8 Programming Solutions\RichTextBoxDemo\RichTextBoxDemo\obj\Debug\RichTextBoxDemo.pdb
+C:\Users\130410\AppLockerExceptions\32998-31927\Tutorial Lab 8 Programming Solutions\RichTextBoxDemo\RichTextBoxDemo\bin\Debug\RichTextBoxDemo.exe.config
+C:\Users\130410\AppLockerExceptions\32998-31927\Tutorial Lab 8 Programming Solutions\RichTextBoxDemo\RichTextBoxDemo\bin\Debug\RichTextBoxDemo.exe
+C:\Users\130410\AppLockerExceptions\32998-31927\Tutorial Lab 8 Programming Solutions\RichTextBoxDemo\RichTextBoxDemo\bin\Debug\RichTextBoxDemo.pdb
+C:\Users\130410\AppLockerExceptions\32998-31927\Tutorial Lab 8 Programming Solutions\RichTextBoxDemo\RichTextBoxDemo\obj\Debug\RichTextBoxDemo.csprojAssemblyReference.cache
+C:\Users\130410\AppLockerExceptions\32998-31927\Tutorial Lab 8 Programming Solutions\RichTextBoxDemo\RichTextBoxDemo\obj\Debug\RichTextBoxDemo.Form1.resources
+C:\Users\130410\AppLockerExceptions\32998-31927\Tutorial Lab 8 Programming Solutions\RichTextBoxDemo\RichTextBoxDemo\obj\Debug\RichTextBoxDemo.Properties.Resources.resources
+C:\Users\130410\AppLockerExceptions\32998-31927\Tutorial Lab 8 Programming Solutions\RichTextBoxDemo\RichTextBoxDemo\obj\Debug\RichTextBoxDemo.csproj.GenerateResource.cache
+C:\Users\130410\AppLockerExceptions\32998-31927\Tutorial Lab 8 Programming Solutions\RichTextBoxDemo\RichTextBoxDemo\obj\Debug\RichTextBoxDemo.csproj.CoreCompileInputs.cache
+C:\Users\130410\AppLockerExceptions\32998-31927\Tutorial Lab 8 Programming Solutions\RichTextBoxDemo\RichTextBoxDemo\obj\Debug\RichTextBoxDemo.exe
+C:\Users\130410\AppLockerExceptions\32998-31927\Tutorial Lab 8 Programming Solutions\RichTextBoxDemo\RichTextBoxDemo\obj\Debug\RichTextBoxDemo.pdb
+D:\Programming\Git\UTS_.NetApplicationDev_Spring_2020\Lab8\RichTextBoxDemo\RichTextBoxDemo\bin\Debug\RichTextBoxDemo.exe.config
+D:\Programming\Git\UTS_.NetApplicationDev_Spring_2020\Lab8\RichTextBoxDemo\RichTextBoxDemo\bin\Debug\RichTextBoxDemo.exe
+D:\Programming\Git\UTS_.NetApplicationDev_Spring_2020\Lab8\RichTextBoxDemo\RichTextBoxDemo\bin\Debug\RichTextBoxDemo.pdb
+D:\Programming\Git\UTS_.NetApplicationDev_Spring_2020\Lab8\RichTextBoxDemo\RichTextBoxDemo\obj\Debug\RichTextBoxDemo.csprojAssemblyReference.cache
+D:\Programming\Git\UTS_.NetApplicationDev_Spring_2020\Lab8\RichTextBoxDemo\RichTextBoxDemo\obj\Debug\RichTextBoxDemo.Form1.resources
+D:\Programming\Git\UTS_.NetApplicationDev_Spring_2020\Lab8\RichTextBoxDemo\RichTextBoxDemo\obj\Debug\RichTextBoxDemo.Properties.Resources.resources
+D:\Programming\Git\UTS_.NetApplicationDev_Spring_2020\Lab8\RichTextBoxDemo\RichTextBoxDemo\obj\Debug\RichTextBoxDemo.csproj.GenerateResource.cache
+D:\Programming\Git\UTS_.NetApplicationDev_Spring_2020\Lab8\RichTextBoxDemo\RichTextBoxDemo\obj\Debug\RichTextBoxDemo.csproj.CoreCompileInputs.cache
+D:\Programming\Git\UTS_.NetApplicationDev_Spring_2020\Lab8\RichTextBoxDemo\RichTextBoxDemo\obj\Debug\RichTextBoxDemo.exe
+D:\Programming\Git\UTS_.NetApplicationDev_Spring_2020\Lab8\RichTextBoxDemo\RichTextBoxDemo\obj\Debug\RichTextBoxDemo.pdb
