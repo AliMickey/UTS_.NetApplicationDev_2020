@@ -12,9 +12,11 @@ namespace Assignment2
 {
     public partial class Login : Form
     {
+        UserList users = new UserList();
         public Login()
         {
             InitializeComponent();
+            users.LoadUsers("login.txt");
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -30,10 +32,13 @@ namespace Assignment2
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            TextEditorForm texteditorform = new TextEditorForm();
-            texteditorform.Show();
-
+            if (users.UserExists(txtUsername.Text, txtPassword.Text))
+            {
+                this.Hide();
+                TextEditorForm texteditorform = new TextEditorForm();
+                texteditorform.Show();
+            }
+            MessageBox.Show("Invalid Credentials\n\nPlease Try Again", "Error");
         }
     }
 }
