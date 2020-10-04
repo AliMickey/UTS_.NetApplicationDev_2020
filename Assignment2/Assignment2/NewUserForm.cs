@@ -27,7 +27,9 @@ namespace Assignment2
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
-
+            UserList users = new UserList();
+            users.NewUser(txtUsername.Text, txtUsername.Text, boxUserType.Text, txtFName.Text, txtLName.Text, dateDOB.Text);
+            Console.WriteLine("Yes");
         }
 
         private void NewUserForm_Load(object sender, EventArgs e)

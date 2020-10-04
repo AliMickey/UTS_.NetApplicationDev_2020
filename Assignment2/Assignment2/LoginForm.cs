@@ -38,7 +38,10 @@ namespace Assignment2
                 TextEditorForm texteditorform = new TextEditorForm();
                 texteditorform.Show();
             }
-            MessageBox.Show("Invalid Credentials\n\nPlease Try Again", "Error");
+            else
+            {
+                MessageBox.Show("Invalid Credentials\n\nPlease Try Again", "Error");
+            } 
         }
     }
 }

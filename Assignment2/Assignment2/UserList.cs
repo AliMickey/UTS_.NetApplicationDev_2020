@@ -17,11 +17,10 @@ namespace Assignment2
 		public void LoadUsers(string fileLocation)
 		{
 			StreamReader file = new StreamReader(fileLocation);
-			User userTemp;
 
 			while (!file.EndOfStream)
 			{
-				userTemp = new User();
+				User userTemp = new User();
 				string line = file.ReadLine();
 				userTemp.LoadUser(line);
 				users.Add(userTemp);
@@ -40,5 +39,16 @@ namespace Assignment2
             }
 			return false;
 		}	
+
+		public void NewUser(string username, string password, string type, string fName, string lName, string DOB)
+        {
+			User tempUser = new User();
+			string tempLine = ("\n" + username + "," + password + "," + type + "," + fName + "," + lName + "," + DOB);
+
+			tempUser.LoadUser(tempLine);
+			users.Add(tempUser);
+			using StreamWriter file = new StreamWriter("login.txt", true);
+			file.WriteLine(tempLine);
+		}
 	}
 }

@@ -43,7 +43,7 @@
             this.lblUserType = new System.Windows.Forms.Label();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnSubmit = new System.Windows.Forms.Button();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dateDOB = new System.Windows.Forms.DateTimePicker();
             this.boxUserType = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
@@ -190,15 +190,15 @@
             this.btnSubmit.UseVisualStyleBackColor = true;
             this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
             // 
-            // dateTimePicker1
+            // dateDOB
             // 
-            this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(622, 298);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 23);
-            this.dateTimePicker1.TabIndex = 29;
-            this.dateTimePicker1.Value = new System.DateTime(2020, 9, 24, 11, 20, 47, 0);
+            this.dateDOB.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateDOB.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateDOB.Location = new System.Drawing.Point(622, 298);
+            this.dateDOB.Name = "dateDOB";
+            this.dateDOB.Size = new System.Drawing.Size(200, 23);
+            this.dateDOB.TabIndex = 29;
+            this.dateDOB.Value = new System.DateTime(2020, 9, 24, 11, 20, 47, 0);
             // 
             // boxUserType
             // 
@@ -222,7 +222,7 @@
             this.ClientSize = new System.Drawing.Size(861, 555);
             this.ControlBox = false;
             this.Controls.Add(this.boxUserType);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.dateDOB);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSubmit);
             this.Controls.Add(this.lblUserType);
@@ -263,7 +263,7 @@
         private System.Windows.Forms.Label lblUserType;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnSubmit;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dateDOB;
         private System.Windows.Forms.ComboBox boxUserType;
     }
 }
