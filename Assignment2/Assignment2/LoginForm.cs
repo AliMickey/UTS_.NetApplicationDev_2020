@@ -12,7 +12,7 @@ namespace Assignment2
 {
     public partial class Login : Form
     {
-        UserList users = new UserList();
+        readonly UserList users = new UserList();
         public Login()
         {
             InitializeComponent();
@@ -26,6 +26,7 @@ namespace Assignment2
 
         private void btnNewUser_Click(object sender, EventArgs e)
         {
+            Hide();
             NewUserForm newuserform = new NewUserForm();
             newuserform.Show();
         }
@@ -34,7 +35,7 @@ namespace Assignment2
         {
             if (users.UserExists(txtUsername.Text, txtPassword.Text))
             {
-                this.Hide();
+                Hide();
                 TextEditorForm texteditorform = new TextEditorForm();
                 texteditorform.Show();
             }

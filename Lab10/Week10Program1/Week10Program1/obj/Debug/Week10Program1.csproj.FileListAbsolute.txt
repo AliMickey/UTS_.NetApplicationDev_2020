@@ -1,0 +1,14 @@
+F:\UTS\Teaching\Spring 2018\Spring 2018\31927 Net programming\Lectures-pptx\Week-10\Tutorial\Tutorial lab 9ProgrammingQuestions\Week10Program1\Week10Program1\obj\Debug\Week10Program1.csprojAssemblyReference.cache
+F:\UTS\Teaching\Spring 2018\Spring 2018\31927 Net programming\Lectures-pptx\Week-10\Tutorial\Tutorial lab 9ProgrammingQuestions\Week10Program1\Week10Program1\obj\Debug\Week10Program1.csproj.CoreCompileInputs.cache
+F:\UTS\Teaching\Spring 2018\Spring 2018\31927 Net programming\Lectures-pptx\Week-10\Tutorial\Tutorial lab 9ProgrammingQuestions\Week10Program1\Week10Program1\bin\Debug\Week10Program1.exe.config
+F:\UTS\Teaching\Spring 2018\Spring 2018\31927 Net programming\Lectures-pptx\Week-10\Tutorial\Tutorial lab 9ProgrammingQuestions\Week10Program1\Week10Program1\bin\Debug\Week10Program1.exe
+F:\UTS\Teaching\Spring 2018\Spring 2018\31927 Net programming\Lectures-pptx\Week-10\Tutorial\Tutorial lab 9ProgrammingQuestions\Week10Program1\Week10Program1\bin\Debug\Week10Program1.pdb
+F:\UTS\Teaching\Spring 2018\Spring 2018\31927 Net programming\Lectures-pptx\Week-10\Tutorial\Tutorial lab 9ProgrammingQuestions\Week10Program1\Week10Program1\obj\Debug\Week10Program1.exe
+F:\UTS\Teaching\Spring 2018\Spring 2018\31927 Net programming\Lectures-pptx\Week-10\Tutorial\Tutorial lab 9ProgrammingQuestions\Week10Program1\Week10Program1\obj\Debug\Week10Program1.pdb
+C:\Users\ad312\Downloads\Tutorial lab 9ProgrammingSolution\Week10Program1\Week10Program1\bin\Debug\Week10Program1.exe.config
+C:\Users\ad312\Downloads\Tutorial lab 9ProgrammingSolution\Week10Program1\Week10Program1\bin\Debug\Week10Program1.exe
+C:\Users\ad312\Downloads\Tutorial lab 9ProgrammingSolution\Week10Program1\Week10Program1\bin\Debug\Week10Program1.pdb
+C:\Users\ad312\Downloads\Tutorial lab 9ProgrammingSolution\Week10Program1\Week10Program1\obj\Debug\Week10Program1.csprojAssemblyReference.cache
+C:\Users\ad312\Downloads\Tutorial lab 9ProgrammingSolution\Week10Program1\Week10Program1\obj\Debug\Week10Program1.csproj.CoreCompileInputs.cache
+C:\Users\ad312\Downloads\Tutorial lab 9ProgrammingSolution\Week10Program1\Week10Program1\obj\Debug\Week10Program1.exe
+C:\Users\ad312\Downloads\Tutorial lab 9ProgrammingSolution\Week10Program1\Week10Program1\obj\Debug\Week10Program1.pdb

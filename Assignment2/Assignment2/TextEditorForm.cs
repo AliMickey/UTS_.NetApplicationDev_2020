@@ -25,7 +25,7 @@ namespace Assignment2
 
         private void menuLogout_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Close();
             Login login = new Login();
             login.Show();
             

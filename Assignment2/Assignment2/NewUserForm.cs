@@ -20,16 +20,38 @@ namespace Assignment2
 
 
         private void btnCancel_Click(object sender, EventArgs e)
-        {
-            this.Close();
-            
+        {          
+            Login loginForm = new Login();
+            loginForm.Show();
+            Close();
         }
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
-            UserList users = new UserList();
-            users.NewUser(txtUsername.Text, txtUsername.Text, boxUserType.Text, txtFName.Text, txtLName.Text, dateDOB.Text);
-            Console.WriteLine("Yes");
+            string username = txtUsername.Text;
+            string password = txtPassword.Text;
+            string type = boxUserType.Text;
+            string fName = txtFName.Text;
+            string lName = txtLName.Text;
+            string dob = dateDOB.Text;
+            if (password != txtPassword2.Text)
+            {
+                MessageBox.Show("Passwords Do Not Match\n\nPlease Try Again.", "Error");
+            }
+            else if (String.IsNullOrEmpty(username) && String.IsNullOrEmpty(password) &&
+                String.IsNullOrEmpty(type) && String.IsNullOrEmpty(fName) &&
+                String.IsNullOrEmpty(lName) && String.IsNullOrEmpty(dob))
+            {
+                UserList users = new UserList();
+                users.NewUser(username, password, type, fName, lName, dob);
+                Login loginForm = new Login();
+                loginForm.Show();
+                Close();           
+            }
+            else
+            {
+                MessageBox.Show("Invalid Input/s\n\nPlease Try Again.", "Error");
+            }            
         }
 
         private void NewUserForm_Load(object sender, EventArgs e)
