@@ -326,7 +326,7 @@
             this.toolPaste});
             this.toolStrip2.Location = new System.Drawing.Point(0, 49);
             this.toolStrip2.Name = "toolStrip2";
-            this.toolStrip2.Size = new System.Drawing.Size(24, 618);
+            this.toolStrip2.Size = new System.Drawing.Size(32, 618);
             this.toolStrip2.TabIndex = 2;
             this.toolStrip2.Text = "toolStripLeft";
             // 
@@ -336,8 +336,9 @@
             this.toolCut.Image = global::Assignment2.Properties.Resources.Cut_16x;
             this.toolCut.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolCut.Name = "toolCut";
-            this.toolCut.Size = new System.Drawing.Size(21, 20);
+            this.toolCut.Size = new System.Drawing.Size(29, 20);
             this.toolCut.Text = "Cut";
+            this.toolCut.Click += new System.EventHandler(this.toolCut_Click);
             // 
             // toolCopy
             // 
@@ -345,8 +346,9 @@
             this.toolCopy.Image = global::Assignment2.Properties.Resources.Copy_16x;
             this.toolCopy.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolCopy.Name = "toolCopy";
-            this.toolCopy.Size = new System.Drawing.Size(21, 20);
+            this.toolCopy.Size = new System.Drawing.Size(29, 20);
             this.toolCopy.Text = "Copy";
+            this.toolCopy.Click += new System.EventHandler(this.toolCopy_Click);
             // 
             // toolPaste
             // 
@@ -354,8 +356,9 @@
             this.toolPaste.Image = global::Assignment2.Properties.Resources.Paste_16x;
             this.toolPaste.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolPaste.Name = "toolPaste";
-            this.toolPaste.Size = new System.Drawing.Size(21, 20);
+            this.toolPaste.Size = new System.Drawing.Size(29, 20);
             this.toolPaste.Text = "Paste";
+            this.toolPaste.Click += new System.EventHandler(this.toolPaste_Click);
             // 
             // richTxtBox
             // 

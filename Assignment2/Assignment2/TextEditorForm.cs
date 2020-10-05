@@ -12,9 +12,11 @@ namespace Assignment2
 {
     public partial class TextEditorForm : Form
     {
-        public TextEditorForm()
+        private string clipboard;
+        public TextEditorForm(string username)
         {
             InitializeComponent();
+            toolUserName.Text = "User Name: " + username;
         }
 
         private void menuAbout_Click(object sender, EventArgs e)
@@ -93,6 +95,28 @@ namespace Assignment2
             Font currentFont = richTxtBox.SelectionFont;
             FontStyle newFontStyle = (FontStyle)(currentFont.Style | FontStyle.Bold);
             richTxtBox.SelectionFont = new Font(currentFont.FontFamily, Int32.Parse(toolFontSize.SelectedItem.ToString()), newFontStyle);
+        }
+
+        private void toolCut_Click(object sender, EventArgs e)
+        {
+            // Copy selected text to clipboard string and clear selected text.
+            clipboard = richTxtBox.SelectedText;
+            richTxtBox.SelectedText = "";
+        }
+
+        private void toolCopy_Click(object sender, EventArgs e)
+        {
+            // Copy selected text to clipboard string.
+            clipboard = richTxtBox.SelectedText;
+        }
+
+        private void toolPaste_Click(object sender, EventArgs e)
+        {
+            // Get current typing location.
+            var cursor = richTxtBox.SelectionStart;
+            // Insert clipboard string and move cursor to end of string.
+            richTxtBox.Text = richTxtBox.Text.Insert(cursor, clipboard);
+            richTxtBox.SelectionStart = cursor + clipboard.Length;
         }
     }
 }

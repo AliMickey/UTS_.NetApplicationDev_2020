@@ -36,7 +36,7 @@ namespace Assignment2
             if (users.UserExists(txtUsername.Text, txtPassword.Text))
             {
                 Hide();
-                TextEditorForm texteditorform = new TextEditorForm();
+                TextEditorForm texteditorform = new TextEditorForm(txtUsername.Text);
                 texteditorform.Show();
             }
             else
