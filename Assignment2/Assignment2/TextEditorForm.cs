@@ -122,7 +122,26 @@ namespace Assignment2
 
         private void toolNew_Click(object sender, EventArgs e)
         {
-
+            // If file is empty clear it out in case.
+            if (richTxtBox.Text == "")
+            {
+                richTxtBox.Clear();
+            }
+            else
+            {
+                // Ask user to save or not.
+                DialogResult result1 = MessageBox.Show("Do you want to save changes?", "Warning", MessageBoxButtons.YesNoCancel);
+                // Save the file by calling save method.
+                if (result1 == DialogResult.Yes)
+                {
+                    toolSave_Click(sender, e);
+                }
+                // Clear the file out.
+                if (result1 == DialogResult.No)
+                {
+                    richTxtBox.Clear();
+                }
+            }  
         }
 
         private void toolOpen_Click(object sender, EventArgs e)
