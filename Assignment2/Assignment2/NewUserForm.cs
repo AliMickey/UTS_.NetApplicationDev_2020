@@ -21,6 +21,7 @@ namespace Assignment2
 
         private void btnCancel_Click(object sender, EventArgs e)
         {          
+            // Make new instance of login page and close this form.
             Login loginForm = new Login();
             loginForm.Show();
             Close();
@@ -34,13 +35,14 @@ namespace Assignment2
             string fName = txtFName.Text;
             string lName = txtLName.Text;
             string dob = dateDOB.Text;
+            dob = dob.Replace("/", "-");
             if (password != txtPassword2.Text)
             {
                 MessageBox.Show("Passwords Do Not Match\n\nPlease Try Again.", "Error");
             }
-            else if (String.IsNullOrEmpty(username) && String.IsNullOrEmpty(password) &&
+            else if (!(String.IsNullOrEmpty(username) && String.IsNullOrEmpty(password) &&
                 String.IsNullOrEmpty(type) && String.IsNullOrEmpty(fName) &&
-                String.IsNullOrEmpty(lName) && String.IsNullOrEmpty(dob))
+                String.IsNullOrEmpty(lName) && String.IsNullOrEmpty(dob)))
             {
                 UserList users = new UserList();
                 users.NewUser(username, password, type, fName, lName, dob);

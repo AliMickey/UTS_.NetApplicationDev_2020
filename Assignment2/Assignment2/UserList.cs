@@ -7,7 +7,7 @@ namespace Assignment2
 {
 	public class UserList
 	{
-		private List<User> users;
+		private readonly List<User> users;
 
 		public UserList()
 		{
@@ -32,7 +32,7 @@ namespace Assignment2
         {
 			foreach (User user in users)
             {
-				if ((user.GetUsername() == username) && (user.GetPassword() == password))
+				if ((user.Username == username) && (user.Password == password))
 				{
 					return true;
                 }
@@ -44,9 +44,9 @@ namespace Assignment2
 		{
 			foreach (User user in users)
 			{
-				if (user.GetUsername() == username)
+				if (user.Username == username)
 				{
-					return user.GetAccountType();
+					return user.AccountType;
 				}
 			}
 			return "";
@@ -55,8 +55,7 @@ namespace Assignment2
 		public void NewUser(string username, string password, string type, string fName, string lName, string DOB)
         {
 			User tempUser = new User();
-			string tempLine = ("\n" + username + "," + password + "," + type + "," + fName + "," + lName + "," + DOB);
-
+			string tempLine = (username + "," + password + "," + type + "," + fName + "," + lName + "," + DOB);
 			tempUser.LoadUser(tempLine);
 			users.Add(tempUser);
 			using StreamWriter file = new StreamWriter("login.txt", true);

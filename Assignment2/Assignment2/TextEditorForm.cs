@@ -122,5 +122,22 @@ namespace Assignment2
             richTxtBox.Text = richTxtBox.Text.Insert(cursor, clipboard);
             richTxtBox.SelectionStart = cursor + clipboard.Length;
         }
+
+        private void toolOpen_Click(object sender, EventArgs e)
+        {
+            // https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.richtextbox.loadfile?view=netcore-3.1
+            OpenFileDialog openFile = new OpenFileDialog();
+
+            // Initialize the OpenFileDialog to look for RTF files.
+            openFile.DefaultExt = "*.rtf";
+            openFile.Filter = "RTF Files|*.rtf";
+
+            // Determine whether the user selected a file from the OpenFileDialog.
+            if (openFile.ShowDialog() == DialogResult.OK && openFile.FileName.Length > 0)
+            {
+                // Load the contents of the file into the RichTextBox.
+                richTxtBox.LoadFile(openFile.FileName);
+            }
+        }
     }
 }

@@ -228,6 +228,7 @@
             this.toolOpen.Name = "toolOpen";
             this.toolOpen.Size = new System.Drawing.Size(23, 22);
             this.toolOpen.Text = "Open";
+            this.toolOpen.Click += new System.EventHandler(this.toolOpen_Click);
             // 
             // toolSave
             // 
@@ -326,7 +327,7 @@
             this.toolPaste});
             this.toolStrip2.Location = new System.Drawing.Point(0, 49);
             this.toolStrip2.Name = "toolStrip2";
-            this.toolStrip2.Size = new System.Drawing.Size(32, 618);
+            this.toolStrip2.Size = new System.Drawing.Size(24, 618);
             this.toolStrip2.TabIndex = 2;
             this.toolStrip2.Text = "toolStripLeft";
             // 

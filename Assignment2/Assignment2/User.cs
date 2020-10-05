@@ -6,7 +6,7 @@ namespace Assignment2
 	public class User
 	{
 
-		String username, password, type, fName, lName, dateOfBirth;
+		private string username, password, type, fName, lName, dateOfBirth;
 
 		public User()
 		{
@@ -29,19 +29,8 @@ namespace Assignment2
 			dateOfBirth = lines[5];
 		}
 
-		public string GetUsername()
-        {
-			return username;
-        }
-
-		public string GetPassword()
-        {
-			return password;
-        }
-
-		public string GetAccountType()
-        {
-			return type;
-        }
-	}
+		public string Username => username;
+        public string Password => password;
+        public string AccountType => type;
+    }
 }
