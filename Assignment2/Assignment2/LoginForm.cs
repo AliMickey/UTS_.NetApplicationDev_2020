@@ -10,7 +10,8 @@ namespace Assignment2
 {
     public partial class Login : Form
     {
-        readonly UserList users = new UserList();
+        public static UserList users = new UserList();
+
         public Login()
         {
             InitializeComponent();

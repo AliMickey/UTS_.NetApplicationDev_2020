@@ -27,7 +27,12 @@ namespace Assignment2
 			dateOfBirth = lines[5];
 		}
 
-		public string Username => username;
+        public override string ToString()
+        {
+			return username + "," + password + "," + type + "," + fName + "," + lName + "," + dateOfBirth;
+        }
+
+        public string Username => username;
         public string Password => password;
         public string AccountType => type;
     }

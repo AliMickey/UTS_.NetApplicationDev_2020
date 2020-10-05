@@ -38,11 +38,10 @@ namespace Assignment2
             }
             else
             {
-                UserList users = new UserList();
-                users.NewUser(username, password, type, fName, lName, dob);
+                Login.users.NewUser(username, password, type, fName, lName, dob);
                 Login loginForm = new Login();
                 loginForm.Show();
-                Close();              
+                Close();
             }            
         }
     }

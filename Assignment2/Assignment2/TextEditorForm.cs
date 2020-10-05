@@ -33,11 +33,13 @@ namespace Assignment2
 
         private void menuLogout_Click(object sender, EventArgs e)
         {
-            // Close form and go back to login form.
+            // Close form, save users to file and go back to login form.
+            // Don't really understand why saving users is required here as per specification since no user changes occur in text editor.
+            // ("Save all users back to “login.txt”, when a user logs out of the text editor")
+            Login.users.SaveUsers();
             Close();
             Login login = new Login();
             login.Show();
-
         }
 
         private void toolBold_Click(object sender, EventArgs e)
