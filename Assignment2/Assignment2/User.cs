@@ -38,5 +38,10 @@ namespace Assignment2
         {
 			return password;
         }
+
+		public string GetAccountType()
+        {
+			return type;
+        }
 	}
 }

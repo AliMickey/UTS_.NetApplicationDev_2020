@@ -38,7 +38,19 @@ namespace Assignment2
                 }
             }
 			return false;
-		}	
+		}
+
+		public string UserType(string username)
+		{
+			foreach (User user in users)
+			{
+				if (user.GetUsername() == username)
+				{
+					return user.GetAccountType();
+				}
+			}
+			return "";
+		}
 
 		public void NewUser(string username, string password, string type, string fName, string lName, string DOB)
         {

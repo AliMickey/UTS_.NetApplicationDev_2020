@@ -13,10 +13,14 @@ namespace Assignment2
     public partial class TextEditorForm : Form
     {
         private string clipboard;
-        public TextEditorForm(string username)
+        public TextEditorForm(string username, string type)
         {
             InitializeComponent();
             toolUserName.Text = "User Name: " + username;
+            if (type == "View")
+            {
+                richTxtBox.ReadOnly = true;
+            }
         }
 
         private void menuAbout_Click(object sender, EventArgs e)
