@@ -33,7 +33,6 @@ namespace Assignment2
 				newFile.Close();
 
 			}
-
 		}
 
 		public bool UserExists(string username, string password)

@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Assignment2
@@ -16,7 +9,6 @@ namespace Assignment2
         {
             InitializeComponent();
         }
-
 
         private void btnCancel_Click(object sender, EventArgs e)
         {          
@@ -33,31 +25,25 @@ namespace Assignment2
             string type = boxUserType.Text;
             string fName = txtFName.Text;
             string lName = txtLName.Text;
-            string dob = dateDOB.Text;
-            dob = dob.Replace("/", "-");
+            string dob = dateDOB.Text.Replace("/", "-");
             if (password != txtPassword2.Text)
             {
                 MessageBox.Show("Passwords Do Not Match\n\nPlease Try Again.", "Error");
             }
-            else if (!String.IsNullOrEmpty(username) && !String.IsNullOrEmpty(password) &&
-                !String.IsNullOrEmpty(type) && !String.IsNullOrEmpty(fName) &&
-                !String.IsNullOrEmpty(lName) && !String.IsNullOrEmpty(dob))
+            else if (String.IsNullOrEmpty(username) || String.IsNullOrEmpty(password) ||
+                String.IsNullOrEmpty(type) || String.IsNullOrEmpty(fName) ||
+                String.IsNullOrEmpty(lName) || String.IsNullOrEmpty(dob))
+            {
+                MessageBox.Show("Invalid Input/s\n\nPlease Try Again.", "Error");
+            }
+            else
             {
                 UserList users = new UserList();
                 users.NewUser(username, password, type, fName, lName, dob);
                 Login loginForm = new Login();
                 loginForm.Show();
-                Close();           
-            }
-            else
-            {
-                MessageBox.Show("Invalid Input/s\n\nPlease Try Again.", "Error");
+                Close();              
             }            
-        }
-
-        private void NewUserForm_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

@@ -7,12 +7,16 @@ namespace Assignment2
 {
     public partial class TextEditorForm : Form
     {
+        // Track current file for location.
         private string currentFile;
         public TextEditorForm(string username, string type)
         {
             InitializeComponent();
+            // Set default font size.
             toolFontSize.SelectedIndex = 2;
+            // Set username to current user.
             toolUserName.Text = "User Name: " + username;
+            // Make textbox read-only if user type is view.
             if (type == "View")
             {
                 richTxtBox.ReadOnly = true;
@@ -22,16 +26,18 @@ namespace Assignment2
 
         private void menuAbout_Click(object sender, EventArgs e)
         {
+            // Open about form.
             AboutForm aboutForm = new AboutForm();
             aboutForm.Show();
         }
 
         private void menuLogout_Click(object sender, EventArgs e)
         {
+            // Close form and go back to login form.
             Close();
             Login login = new Login();
             login.Show();
-            
+
         }
 
         private void toolBold_Click(object sender, EventArgs e)
@@ -93,6 +99,7 @@ namespace Assignment2
 
         private void toolFontSize_SelectedIndexChanged(object sender, EventArgs e)
         {
+            // When font size selection changed, change selected and future text to new font.
             Font currentFont = richTxtBox.SelectionFont;
             FontStyle newFontStyle = (FontStyle)(currentFont.Style);
             richTxtBox.SelectionFont = new Font(currentFont.FontFamily, Int32.Parse(toolFontSize.SelectedItem.ToString()), newFontStyle);
@@ -132,12 +139,13 @@ namespace Assignment2
                 {
                     toolSave_Click(sender, e);
                 }
+
                 // Clear the file out.
-                if (result1 == DialogResult.No)
+                else if (result1 == DialogResult.No)
                 {
                     richTxtBox.Clear();
                 }
-            }  
+            }
         }
 
         private void toolOpen_Click(object sender, EventArgs e)
@@ -154,19 +162,22 @@ namespace Assignment2
             {
                 // Load the contents of the file into the RichTextBox.
                 currentFile = openFile.FileName;
-                richTxtBox.LoadFile(currentFile);       
+                richTxtBox.LoadFile(currentFile);
             }
         }
 
         private void toolSave_Click(object sender, EventArgs e)
         {
+            // Check if file exists.
             if (File.Exists(currentFile))
             {
+                // Save to same file without asking.
                 richTxtBox.SaveFile(currentFile);
             }
 
             else
             {
+                // Ask for a file location.
                 SaveFileDialog saveFile = new SaveFileDialog();
                 saveFile.DefaultExt = "*.rtf";
                 saveFile.Filter = "RTF Files|*.rtf";
@@ -175,8 +186,10 @@ namespace Assignment2
                 saveFile.RestoreDirectory = true;
                 if (saveFile.ShowDialog() == DialogResult.OK)
                 {
+                    // Save the file.
                     currentFile = saveFile.FileName;
                     richTxtBox.SaveFile(currentFile);
+                    // Update title bar text.
                     Text = "Text Editor - " + currentFile;
                 }
             }
@@ -184,6 +197,7 @@ namespace Assignment2
 
         private void toolSaveAs_Click(object sender, EventArgs e)
         {
+            // Ask for a file location.
             SaveFileDialog saveFile = new SaveFileDialog();
             saveFile.DefaultExt = "*.rtf";
             saveFile.Filter = "RTF Files|*.rtf";
@@ -192,9 +206,11 @@ namespace Assignment2
             saveFile.RestoreDirectory = true;
             if (saveFile.ShowDialog() == DialogResult.OK)
             {
+                // Save and open the new file.
                 currentFile = saveFile.FileName;
                 richTxtBox.SaveFile(currentFile);
                 richTxtBox.LoadFile(currentFile);
+                // Update title bar text.
                 Text = "Text Editor - " + currentFile;
             }
         }
