@@ -10,7 +10,6 @@ using System.Windows.Forms;
 
 namespace Assignment2
 {
-
     public partial class NewUserForm : Form
     {
         public NewUserForm()
@@ -40,9 +39,9 @@ namespace Assignment2
             {
                 MessageBox.Show("Passwords Do Not Match\n\nPlease Try Again.", "Error");
             }
-            else if (!(String.IsNullOrEmpty(username) && String.IsNullOrEmpty(password) &&
-                String.IsNullOrEmpty(type) && String.IsNullOrEmpty(fName) &&
-                String.IsNullOrEmpty(lName) && String.IsNullOrEmpty(dob)))
+            else if (!String.IsNullOrEmpty(username) && !String.IsNullOrEmpty(password) &&
+                !String.IsNullOrEmpty(type) && !String.IsNullOrEmpty(fName) &&
+                !String.IsNullOrEmpty(lName) && !String.IsNullOrEmpty(dob))
             {
                 UserList users = new UserList();
                 users.NewUser(username, password, type, fName, lName, dob);

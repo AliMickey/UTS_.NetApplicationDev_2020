@@ -2,10 +2,8 @@
 
 namespace Assignment2
 {
-
 	public class User
 	{
-
 		private string username, password, type, fName, lName, dateOfBirth;
 
 		public User()

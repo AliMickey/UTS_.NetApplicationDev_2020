@@ -298,6 +298,7 @@
             // 
             // toolFontSize
             // 
+            this.toolFontSize.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.toolFontSize.Items.AddRange(new object[] {
             "8",
             "9",
