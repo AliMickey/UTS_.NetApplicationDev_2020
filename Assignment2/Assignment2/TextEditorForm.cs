@@ -17,6 +17,7 @@ namespace Assignment2
         public TextEditorForm(string username, string type)
         {
             InitializeComponent();
+            toolFontSize.SelectedIndex = 2;
             toolUserName.Text = "User Name: " + username;
             if (type == "View")
             {
@@ -98,7 +99,7 @@ namespace Assignment2
         private void toolFontSize_SelectedIndexChanged(object sender, EventArgs e)
         {
             Font currentFont = richTxtBox.SelectionFont;
-            FontStyle newFontStyle = (FontStyle)(currentFont.Style | FontStyle.Bold);
+            FontStyle newFontStyle = (FontStyle)(currentFont.Style);
             richTxtBox.SelectionFont = new Font(currentFont.FontFamily, Int32.Parse(toolFontSize.SelectedItem.ToString()), newFontStyle);
         }
 
