@@ -96,47 +96,51 @@
             this.menuNew.Image = global::Assignment2.Properties.Resources.NewFile_16x;
             this.menuNew.Name = "menuNew";
             this.menuNew.ShortcutKeyDisplayString = "Ctrl+N";
-            this.menuNew.Size = new System.Drawing.Size(146, 22);
+            this.menuNew.Size = new System.Drawing.Size(180, 22);
             this.menuNew.Text = "New";
+            this.menuNew.Click += new System.EventHandler(this.toolNew_Click);
             // 
             // menuOpen
             // 
             this.menuOpen.Image = global::Assignment2.Properties.Resources.OpenFolder_16x;
             this.menuOpen.Name = "menuOpen";
             this.menuOpen.ShortcutKeyDisplayString = "Ctrl+O";
-            this.menuOpen.Size = new System.Drawing.Size(146, 22);
+            this.menuOpen.Size = new System.Drawing.Size(180, 22);
             this.menuOpen.Text = "Open";
+            this.menuOpen.Click += new System.EventHandler(this.toolOpen_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(143, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(177, 6);
             // 
             // menuSave
             // 
             this.menuSave.Image = global::Assignment2.Properties.Resources.SaveStatusBar1_16x;
             this.menuSave.Name = "menuSave";
             this.menuSave.ShortcutKeyDisplayString = "Ctrl+S";
-            this.menuSave.Size = new System.Drawing.Size(146, 22);
+            this.menuSave.Size = new System.Drawing.Size(180, 22);
             this.menuSave.Text = "Save";
+            this.menuSave.Click += new System.EventHandler(this.toolSave_Click);
             // 
             // menuSaveAs
             // 
             this.menuSaveAs.Image = global::Assignment2.Properties.Resources.SaveAs_16x;
             this.menuSaveAs.Name = "menuSaveAs";
-            this.menuSaveAs.Size = new System.Drawing.Size(146, 22);
+            this.menuSaveAs.Size = new System.Drawing.Size(180, 22);
             this.menuSaveAs.Text = "Save As";
+            this.menuSaveAs.Click += new System.EventHandler(this.toolSaveAs_Click);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(143, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(177, 6);
             // 
             // menuLogout
             // 
             this.menuLogout.Image = global::Assignment2.Properties.Resources.Login_16x;
             this.menuLogout.Name = "menuLogout";
-            this.menuLogout.Size = new System.Drawing.Size(146, 22);
+            this.menuLogout.Size = new System.Drawing.Size(180, 22);
             this.menuLogout.Text = "Logout";
             this.menuLogout.Click += new System.EventHandler(this.menuLogout_Click);
             // 
@@ -155,24 +159,27 @@
             this.menuCut.Image = global::Assignment2.Properties.Resources.Cut_16x;
             this.menuCut.Name = "menuCut";
             this.menuCut.ShortcutKeyDisplayString = "Ctrl+X";
-            this.menuCut.Size = new System.Drawing.Size(144, 22);
+            this.menuCut.Size = new System.Drawing.Size(180, 22);
             this.menuCut.Text = "Cut";
+            this.menuCut.Click += new System.EventHandler(this.toolCut_Click);
             // 
             // menuCopy
             // 
             this.menuCopy.Image = global::Assignment2.Properties.Resources.Copy_16x;
             this.menuCopy.Name = "menuCopy";
             this.menuCopy.ShortcutKeyDisplayString = "Ctrl+C";
-            this.menuCopy.Size = new System.Drawing.Size(144, 22);
+            this.menuCopy.Size = new System.Drawing.Size(180, 22);
             this.menuCopy.Text = "Copy";
+            this.menuCopy.Click += new System.EventHandler(this.toolCopy_Click);
             // 
             // menuPaste
             // 
             this.menuPaste.Image = global::Assignment2.Properties.Resources.Paste_16x;
             this.menuPaste.Name = "menuPaste";
             this.menuPaste.ShortcutKeyDisplayString = "Ctrl+V";
-            this.menuPaste.Size = new System.Drawing.Size(144, 22);
+            this.menuPaste.Size = new System.Drawing.Size(180, 22);
             this.menuPaste.Text = "Paste";
+            this.menuPaste.Click += new System.EventHandler(this.toolPaste_Click);
             // 
             // toolStripMenuItem3
             // 
@@ -219,6 +226,7 @@
             this.toolNew.Size = new System.Drawing.Size(23, 22);
             this.toolNew.Text = "New";
             this.toolNew.ToolTipText = "New";
+            this.toolNew.Click += new System.EventHandler(this.toolNew_Click);
             // 
             // toolOpen
             // 
@@ -238,6 +246,7 @@
             this.toolSave.Name = "toolSave";
             this.toolSave.Size = new System.Drawing.Size(23, 22);
             this.toolSave.Text = "Save";
+            this.toolSave.Click += new System.EventHandler(this.toolSave_Click);
             // 
             // toolSaveAs
             // 
@@ -247,6 +256,7 @@
             this.toolSaveAs.Name = "toolSaveAs";
             this.toolSaveAs.Size = new System.Drawing.Size(23, 22);
             this.toolSaveAs.Text = "Save As";
+            this.toolSaveAs.Click += new System.EventHandler(this.toolSaveAs_Click);
             // 
             // toolStripSeparator3
             // 
@@ -337,7 +347,7 @@
             this.toolCut.Image = global::Assignment2.Properties.Resources.Cut_16x;
             this.toolCut.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolCut.Name = "toolCut";
-            this.toolCut.Size = new System.Drawing.Size(29, 20);
+            this.toolCut.Size = new System.Drawing.Size(21, 20);
             this.toolCut.Text = "Cut";
             this.toolCut.Click += new System.EventHandler(this.toolCut_Click);
             // 
@@ -347,7 +357,7 @@
             this.toolCopy.Image = global::Assignment2.Properties.Resources.Copy_16x;
             this.toolCopy.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolCopy.Name = "toolCopy";
-            this.toolCopy.Size = new System.Drawing.Size(29, 20);
+            this.toolCopy.Size = new System.Drawing.Size(21, 20);
             this.toolCopy.Text = "Copy";
             this.toolCopy.Click += new System.EventHandler(this.toolCopy_Click);
             // 
@@ -357,7 +367,7 @@
             this.toolPaste.Image = global::Assignment2.Properties.Resources.Paste_16x;
             this.toolPaste.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolPaste.Name = "toolPaste";
-            this.toolPaste.Size = new System.Drawing.Size(29, 20);
+            this.toolPaste.Size = new System.Drawing.Size(21, 20);
             this.toolPaste.Text = "Paste";
             this.toolPaste.Click += new System.EventHandler(this.toolPaste_Click);
             // 

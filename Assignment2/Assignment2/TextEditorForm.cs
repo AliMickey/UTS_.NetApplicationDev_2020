@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,7 +13,7 @@ namespace Assignment2
 {
     public partial class TextEditorForm : Form
     {
-        private string clipboard;
+        private string currentFile;
         public TextEditorForm(string username, string type)
         {
             InitializeComponent();
@@ -103,24 +104,25 @@ namespace Assignment2
 
         private void toolCut_Click(object sender, EventArgs e)
         {
-            // Copy selected text to clipboard string and clear selected text.
-            clipboard = richTxtBox.SelectedText;
-            richTxtBox.SelectedText = "";
+            // Copy selected text to clipboard and clear selected text.
+            richTxtBox.Cut();
         }
 
         private void toolCopy_Click(object sender, EventArgs e)
         {
-            // Copy selected text to clipboard string.
-            clipboard = richTxtBox.SelectedText;
+            // Copy selected text to clipboard.
+            richTxtBox.Copy();
         }
 
         private void toolPaste_Click(object sender, EventArgs e)
         {
-            // Get current typing location.
-            var cursor = richTxtBox.SelectionStart;
-            // Insert clipboard string and move cursor to end of string.
-            richTxtBox.Text = richTxtBox.Text.Insert(cursor, clipboard);
-            richTxtBox.SelectionStart = cursor + clipboard.Length;
+            // Paste clipboard.
+            richTxtBox.Paste();
+        }
+
+        private void toolNew_Click(object sender, EventArgs e)
+        {
+
         }
 
         private void toolOpen_Click(object sender, EventArgs e)
@@ -136,7 +138,49 @@ namespace Assignment2
             if (openFile.ShowDialog() == DialogResult.OK && openFile.FileName.Length > 0)
             {
                 // Load the contents of the file into the RichTextBox.
-                richTxtBox.LoadFile(openFile.FileName);
+                currentFile = openFile.FileName;
+                richTxtBox.LoadFile(currentFile);       
+            }
+        }
+
+        private void toolSave_Click(object sender, EventArgs e)
+        {
+            if (File.Exists(currentFile))
+            {
+                richTxtBox.SaveFile(currentFile);
+            }
+
+            else
+            {
+                SaveFileDialog saveFile = new SaveFileDialog();
+                saveFile.DefaultExt = "*.rtf";
+                saveFile.Filter = "RTF Files|*.rtf";
+
+                saveFile.FilterIndex = 2;
+                saveFile.RestoreDirectory = true;
+                if (saveFile.ShowDialog() == DialogResult.OK)
+                {
+                    currentFile = saveFile.FileName;
+                    richTxtBox.SaveFile(currentFile);
+                    Text = "Text Editor - " + currentFile;
+                }
+            }
+        }
+
+        private void toolSaveAs_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog saveFile = new SaveFileDialog();
+            saveFile.DefaultExt = "*.rtf";
+            saveFile.Filter = "RTF Files|*.rtf";
+
+            saveFile.FilterIndex = 2;
+            saveFile.RestoreDirectory = true;
+            if (saveFile.ShowDialog() == DialogResult.OK)
+            {
+                currentFile = saveFile.FileName;
+                richTxtBox.SaveFile(currentFile);
+                richTxtBox.LoadFile(currentFile);
+                Text = "Text Editor - " + currentFile;
             }
         }
     }
