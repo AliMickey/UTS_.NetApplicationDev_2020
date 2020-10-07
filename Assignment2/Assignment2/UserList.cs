@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Threading;
-
 
 namespace Assignment2
 {
@@ -54,6 +52,18 @@ namespace Assignment2
 			foreach (User user in users)
 			{
 				if ((user.Username == username) && (user.Password == password))
+				{
+					return true;
+				}
+			}
+			return false;
+		}
+
+		public bool UserNameExists(string username)
+        {
+			foreach (User user in users)
+			{
+				if ((user.Username == username))
 				{
 					return true;
 				}

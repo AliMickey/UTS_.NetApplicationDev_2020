@@ -26,7 +26,11 @@ namespace Assignment2
             string fName = txtFName.Text;
             string lName = txtLName.Text;
             string dob = dateDOB.Text.Replace("/", "-");
-            if (password != txtPassword2.Text)
+            if (Login.users.UserNameExists(username))
+            {
+                MessageBox.Show("Username Already Exists\n\nPlease Try Again.", "Error");
+            }
+            else if (password != txtPassword2.Text)
             {
                 MessageBox.Show("Passwords Do Not Match\n\nPlease Try Again.", "Error");
             }
