@@ -11,10 +11,9 @@ namespace Assignment2
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
-        {          
-            // Make new instance of login page and close this form.
-            Login loginForm = new Login();
-            loginForm.Show();
+        {
+            // Call custom class and show the same instance of login form.
+            FormProvider.Log.Show();
             Close();
         }
 
@@ -43,8 +42,7 @@ namespace Assignment2
             else
             {
                 Login.users.NewUser(username, password, type, fName, lName, dob);
-                Login loginForm = new Login();
-                loginForm.Show();
+                FormProvider.Log.Show();
                 Close();
             }            
         }

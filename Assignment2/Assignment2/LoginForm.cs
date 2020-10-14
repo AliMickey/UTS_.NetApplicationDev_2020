@@ -20,7 +20,8 @@ namespace Assignment2
 
         private void btnNewUser_Click(object sender, EventArgs e)
         {
-            Hide();
+            // Call custom class to hide the login form.
+            FormProvider.Log.Hide();
             NewUserForm newuserform = new NewUserForm();
             newuserform.Show();
         }
@@ -37,6 +38,12 @@ namespace Assignment2
             {
                 MessageBox.Show("Invalid Credentials\n\nPlease Try Again", "Error");
             } 
+        }
+
+        public void UpdateAndShow()
+        { 
+            users.LoadUsers("login.txt");
+            Show();
         }
     }
 }

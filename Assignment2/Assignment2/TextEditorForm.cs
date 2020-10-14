@@ -38,8 +38,7 @@ namespace Assignment2
             // ("Save all users back to “login.txt”, when a user logs out of the text editor")
             Login.users.SaveUsers();
             Close();
-            Login login = new Login();
-            login.Show();
+            FormProvider.Log.Show();
         }
 
         private void toolBold_Click(object sender, EventArgs e)
