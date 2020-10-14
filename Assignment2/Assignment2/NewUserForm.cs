@@ -46,5 +46,19 @@ namespace Assignment2
                 Close();
             }            
         }
+
+        private void btnPassVisible_Click(object sender, EventArgs e)
+        {
+            if (txtPassword.PasswordChar == '*')
+            {
+                txtPassword.PasswordChar = '\0';
+                txtPassword2.PasswordChar = '\0';
+            }
+            else
+            {
+                txtPassword.PasswordChar = '*';
+                txtPassword2.PasswordChar = '*';
+            }          
+        }
     }
 }

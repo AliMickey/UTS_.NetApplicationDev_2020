@@ -36,6 +36,7 @@
             this.btnExit = new System.Windows.Forms.Button();
             this.lblUsername = new System.Windows.Forms.Label();
             this.lblPassword = new System.Windows.Forms.Label();
+            this.btnPassVisible = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblLogin
@@ -61,6 +62,7 @@
             this.txtPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPassword.Location = new System.Drawing.Point(227, 221);
             this.txtPassword.Name = "txtPassword";
+            this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(200, 30);
             this.txtPassword.TabIndex = 6;
             // 
@@ -118,6 +120,16 @@
             this.lblPassword.TabIndex = 11;
             this.lblPassword.Text = "Password:";
             // 
+            // btnPassVisible
+            // 
+            this.btnPassVisible.Image = global::Assignment2.Properties.Resources.Visible_16x;
+            this.btnPassVisible.Location = new System.Drawing.Point(443, 221);
+            this.btnPassVisible.Name = "btnPassVisible";
+            this.btnPassVisible.Size = new System.Drawing.Size(28, 30);
+            this.btnPassVisible.TabIndex = 32;
+            this.btnPassVisible.UseVisualStyleBackColor = true;
+            this.btnPassVisible.Click += new System.EventHandler(this.btnPassVisible_Click);
+            // 
             // Login
             // 
             this.AcceptButton = this.btnLogin;
@@ -125,6 +137,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnExit;
             this.ClientSize = new System.Drawing.Size(555, 415);
+            this.Controls.Add(this.btnPassVisible);
             this.Controls.Add(this.lblPassword);
             this.Controls.Add(this.lblUsername);
             this.Controls.Add(this.btnExit);
@@ -150,6 +163,7 @@
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.Label lblUsername;
         private System.Windows.Forms.Label lblPassword;
+        private System.Windows.Forms.Button btnPassVisible;
     }
 }
 

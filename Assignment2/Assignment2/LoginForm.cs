@@ -45,5 +45,17 @@ namespace Assignment2
             users.LoadUsers("login.txt");
             Show();
         }
+
+        private void btnPassVisible_Click(object sender, EventArgs e)
+        {
+            if (txtPassword.PasswordChar == '*')
+            {
+                txtPassword.PasswordChar = '\0';
+            }
+            else
+            {
+                txtPassword.PasswordChar = '*';
+            }
+        }
     }
 }

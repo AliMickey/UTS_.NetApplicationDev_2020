@@ -45,6 +45,7 @@
             this.btnSubmit = new System.Windows.Forms.Button();
             this.dateDOB = new System.Windows.Forms.DateTimePicker();
             this.boxUserType = new System.Windows.Forms.ComboBox();
+            this.btnPassVisible = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblNewUser
@@ -82,6 +83,7 @@
             this.txtPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPassword.Location = new System.Drawing.Point(224, 232);
             this.txtPassword.Name = "txtPassword";
+            this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(200, 30);
             this.txtPassword.TabIndex = 13;
             // 
@@ -108,6 +110,7 @@
             this.txtPassword2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPassword2.Location = new System.Drawing.Point(224, 298);
             this.txtPassword2.Name = "txtPassword2";
+            this.txtPassword2.PasswordChar = '*';
             this.txtPassword2.Size = new System.Drawing.Size(200, 30);
             this.txtPassword2.TabIndex = 16;
             // 
@@ -214,6 +217,16 @@
             this.boxUserType.Size = new System.Drawing.Size(200, 24);
             this.boxUserType.TabIndex = 30;
             // 
+            // btnPassVisible
+            // 
+            this.btnPassVisible.Image = global::Assignment2.Properties.Resources.Visible_16x;
+            this.btnPassVisible.Location = new System.Drawing.Point(430, 232);
+            this.btnPassVisible.Name = "btnPassVisible";
+            this.btnPassVisible.Size = new System.Drawing.Size(28, 30);
+            this.btnPassVisible.TabIndex = 31;
+            this.btnPassVisible.UseVisualStyleBackColor = true;
+            this.btnPassVisible.Click += new System.EventHandler(this.btnPassVisible_Click);
+            // 
             // NewUserForm
             // 
             this.AcceptButton = this.btnSubmit;
@@ -222,6 +235,7 @@
             this.CancelButton = this.btnCancel;
             this.ClientSize = new System.Drawing.Size(861, 555);
             this.ControlBox = false;
+            this.Controls.Add(this.btnPassVisible);
             this.Controls.Add(this.boxUserType);
             this.Controls.Add(this.dateDOB);
             this.Controls.Add(this.btnCancel);
@@ -265,5 +279,6 @@
         private System.Windows.Forms.Button btnSubmit;
         private System.Windows.Forms.DateTimePicker dateDOB;
         private System.Windows.Forms.ComboBox boxUserType;
+        private System.Windows.Forms.Button btnPassVisible;
     }
 }
