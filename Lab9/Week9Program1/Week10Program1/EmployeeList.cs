@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Week10Program1
+namespace Week9Program1
 {
     class EmployeeList
     {

@@ -1,5 +1,5 @@
 ﻿using System;
-namespace Week10Program1
+namespace Week9Program1
 {
     class Employee : IComparable<Employee>
     {

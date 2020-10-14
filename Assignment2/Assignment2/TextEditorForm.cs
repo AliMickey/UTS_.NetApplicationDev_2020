@@ -157,12 +157,20 @@ namespace Assignment2
 
             // Initialize the OpenFileDialog to look for RTF files.
             openFile.DefaultExt = "*.rtf";
-            openFile.Filter = "RTF Files|*.rtf";
+            openFile.Filter = "RTF Files|*.rtf|TXT Files|*.txt";
 
-            // Determine whether the user selected a file from the OpenFileDialog.
-            if (openFile.ShowDialog() == DialogResult.OK && openFile.FileName.Length > 0)
+            //Determine whether the user selected a file from the OpenFileDialog and it is a normal txt file.
+            if (openFile.ShowDialog() == DialogResult.OK && openFile.FileName.Length > 0 && Path.GetExtension(openFile.FileName) == ".txt")
             {
-                // Load the contents of the file into the RichTextBox.
+                // Read each line in txt into text box.
+                currentFile = openFile.FileName;
+                string text = File.ReadAllText(currentFile);
+                richTxtBox.Text = text;               
+            }
+            // Determine whether the user selected a file from the OpenFileDialog and it is a rtf file.
+            else if (openFile.ShowDialog() == DialogResult.OK && openFile.FileName.Length > 0)
+            {
+                // Load the contents of the rtf file into the RichTextBox.
                 currentFile = openFile.FileName;
                 richTxtBox.LoadFile(currentFile);
             }
@@ -176,14 +184,12 @@ namespace Assignment2
                 // Save to same file without asking.
                 richTxtBox.SaveFile(currentFile);
             }
-
             else
             {
                 // Ask for a file location.
                 SaveFileDialog saveFile = new SaveFileDialog();
                 saveFile.DefaultExt = "*.rtf";
                 saveFile.Filter = "RTF Files|*.rtf";
-
                 saveFile.FilterIndex = 2;
                 saveFile.RestoreDirectory = true;
                 if (saveFile.ShowDialog() == DialogResult.OK)

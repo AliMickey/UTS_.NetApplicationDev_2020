@@ -1,0 +1,7 @@
+F:\UTS\Teaching\Spring 2018\Spring 2018\31927 Net programming\Lectures-pptx\Week-11\Tutorial\Tutorial lab 10ProgrammingQuestion\Week11Program2\Week11Program2\bin\Debug\Week11Program2.exe.config
+F:\UTS\Teaching\Spring 2018\Spring 2018\31927 Net programming\Lectures-pptx\Week-11\Tutorial\Tutorial lab 10ProgrammingQuestion\Week11Program2\Week11Program2\bin\Debug\Week11Program2.exe
+F:\UTS\Teaching\Spring 2018\Spring 2018\31927 Net programming\Lectures-pptx\Week-11\Tutorial\Tutorial lab 10ProgrammingQuestion\Week11Program2\Week11Program2\bin\Debug\Week11Program2.pdb
+F:\UTS\Teaching\Spring 2018\Spring 2018\31927 Net programming\Lectures-pptx\Week-11\Tutorial\Tutorial lab 10ProgrammingQuestion\Week11Program2\Week11Program2\obj\Debug\Week11Program2.csprojAssemblyReference.cache
+F:\UTS\Teaching\Spring 2018\Spring 2018\31927 Net programming\Lectures-pptx\Week-11\Tutorial\Tutorial lab 10ProgrammingQuestion\Week11Program2\Week11Program2\obj\Debug\Week11Program2.csproj.CoreCompileInputs.cache
+F:\UTS\Teaching\Spring 2018\Spring 2018\31927 Net programming\Lectures-pptx\Week-11\Tutorial\Tutorial lab 10ProgrammingQuestion\Week11Program2\Week11Program2\obj\Debug\Week11Program2.exe
+F:\UTS\Teaching\Spring 2018\Spring 2018\31927 Net programming\Lectures-pptx\Week-11\Tutorial\Tutorial lab 10ProgrammingQuestion\Week11Program2\Week11Program2\obj\Debug\Week11Program2.pdb

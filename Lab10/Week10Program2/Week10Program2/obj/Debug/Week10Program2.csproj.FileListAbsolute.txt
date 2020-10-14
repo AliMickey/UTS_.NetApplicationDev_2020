@@ -1,0 +1,2 @@
+C:\Users\130410\AppLockerExceptions\32998-31927\Tutorial lab 10ProgrammingQuestion\Week10Program2\Week10Program2\obj\Debug\Week10Program2.csprojAssemblyReference.cache
+C:\Users\130410\AppLockerExceptions\32998-31927\Tutorial lab 10ProgrammingQuestion\Week10Program2\Week10Program2\obj\Debug\Week10Program2.csproj.CoreCompileInputs.cache
