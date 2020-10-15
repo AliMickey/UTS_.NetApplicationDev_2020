@@ -18,6 +18,7 @@ namespace Assignment2
 
 		public void LoadUser(string fileLine)
 		{
+			// Assign line parameters to respective variables.
 			string[] lines = fileLine.Split(',');
 			username = lines[0];
 			password = lines[1];
@@ -32,6 +33,7 @@ namespace Assignment2
 			return username + "," + password + "," + type + "," + fName + "," + lName + "," + dateOfBirth;
         }
 
+		// Accessors
         public string Username => username;
         public string Password => password;
         public string AccountType => type;

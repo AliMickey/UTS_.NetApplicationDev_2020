@@ -123,7 +123,7 @@
             // btnPassVisible
             // 
             this.btnPassVisible.Image = global::Assignment2.Properties.Resources.Visible_16x;
-            this.btnPassVisible.Location = new System.Drawing.Point(443, 221);
+            this.btnPassVisible.Location = new System.Drawing.Point(433, 221);
             this.btnPassVisible.Name = "btnPassVisible";
             this.btnPassVisible.Size = new System.Drawing.Size(28, 30);
             this.btnPassVisible.TabIndex = 32;

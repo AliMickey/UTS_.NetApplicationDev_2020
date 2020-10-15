@@ -33,19 +33,19 @@ namespace Week10Program1
     {
         static void Main(string[] args)
         {
-            AddOperations operation = new AddOperations(add);
+            AddOperations operation = new AddOperations(MathOperations.add);
 
             Console.WriteLine("Executing the Multicast Delegate:");
-            operation += sub;
-            operation += mult;
-            operation += div;
-            operation += mod;
+            operation += new AddOperations(MathOperations.sub);
+            operation += new AddOperations(MathOperations.mult);
+            operation += new AddOperations(MathOperations.div);
+            operation += new AddOperations(MathOperations.mod);
 
             operation(5, 4);
 
             Console.WriteLine("\nExecuting the Multicast Delegate after removing some operations:");
-            operation -= sub;
-            operation -= div;
+            operation -= new AddOperations(MathOperations.sub);
+            operation -= new AddOperations(MathOperations.div);
 
             operation(5, 4);
 

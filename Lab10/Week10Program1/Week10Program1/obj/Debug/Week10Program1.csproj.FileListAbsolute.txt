@@ -1,2 +1,12 @@
 C:\Users\130410\AppLockerExceptions\32998-31927\Tutorial lab 10ProgrammingQuestion\Week10Program1\Week11Program1\obj\Debug\Week10Program1.csprojAssemblyReference.cache
 C:\Users\130410\AppLockerExceptions\32998-31927\Tutorial lab 10ProgrammingQuestion\Week10Program1\Week11Program1\obj\Debug\Week10Program1.csproj.CoreCompileInputs.cache
+D:\Programming\Git\UTS_.NetApplicationDev_Spring_2020\Lab10\Week10Program1\Week10Program1\obj\Debug\Week10Program1.csprojAssemblyReference.cache
+D:\Programming\Git\UTS_.NetApplicationDev_Spring_2020\Lab10\Week10Program1\Week10Program1\obj\Debug\Week10Program1.csproj.CoreCompileInputs.cache
+D:\Programming\Git\UTS_.NetApplicationDev_Spring_2020\Lab10\Week10Program1\Week10Program1\bin\Debug\Week10Program1.exe.config
+D:\Programming\Git\UTS_.NetApplicationDev_Spring_2020\Lab10\Week10Program1\Week10Program1\bin\Debug\Week10Program1.exe
+D:\Programming\Git\UTS_.NetApplicationDev_Spring_2020\Lab10\Week10Program1\Week10Program1\bin\Debug\Week10Program1.pdb
+D:\Programming\Git\UTS_.NetApplicationDev_Spring_2020\Lab10\Week10Program1\Week10Program1\bin\Debug\System.ValueTuple.dll
+D:\Programming\Git\UTS_.NetApplicationDev_Spring_2020\Lab10\Week10Program1\Week10Program1\bin\Debug\System.ValueTuple.xml
+D:\Programming\Git\UTS_.NetApplicationDev_Spring_2020\Lab10\Week10Program1\Week10Program1\obj\Debug\Week10Program1.csproj.CopyComplete
+D:\Programming\Git\UTS_.NetApplicationDev_Spring_2020\Lab10\Week10Program1\Week10Program1\obj\Debug\Week10Program1.exe
+D:\Programming\Git\UTS_.NetApplicationDev_Spring_2020\Lab10\Week10Program1\Week10Program1\obj\Debug\Week10Program1.pdb

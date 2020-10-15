@@ -1,0 +1,11 @@
+F:\UTS\Teaching\Spring 2018\Spring 2018\31927 Net programming\Lectures-pptx\Week-12\Tutorial\Tutorial lab 11ProgrammingSolution\IenumerableDemo\IenumerableDemo\obj\Debug\IenumerableDemo.csprojAssemblyReference.cache
+F:\UTS\Teaching\Spring 2018\Spring 2018\31927 Net programming\Lectures-pptx\Week-12\Tutorial\Tutorial lab 11ProgrammingSolution\IenumerableDemo\IenumerableDemo\obj\Debug\IenumerableDemo.csproj.CoreCompileInputs.cache
+F:\UTS\Teaching\Spring 2018\Spring 2018\31927 Net programming\Lectures-pptx\Week-12\Tutorial\Tutorial lab 11ProgrammingSolution\IenumerableDemo\IenumerableDemo\bin\Debug\IenumerableDemo.exe.config
+F:\UTS\Teaching\Spring 2018\Spring 2018\31927 Net programming\Lectures-pptx\Week-12\Tutorial\Tutorial lab 11ProgrammingSolution\IenumerableDemo\IenumerableDemo\bin\Debug\IenumerableDemo.exe
+F:\UTS\Teaching\Spring 2018\Spring 2018\31927 Net programming\Lectures-pptx\Week-12\Tutorial\Tutorial lab 11ProgrammingSolution\IenumerableDemo\IenumerableDemo\bin\Debug\IenumerableDemo.pdb
+F:\UTS\Teaching\Spring 2018\Spring 2018\31927 Net programming\Lectures-pptx\Week-12\Tutorial\Tutorial lab 11ProgrammingSolution\IenumerableDemo\IenumerableDemo\obj\Debug\IenumerableDemo.exe
+F:\UTS\Teaching\Spring 2018\Spring 2018\31927 Net programming\Lectures-pptx\Week-12\Tutorial\Tutorial lab 11ProgrammingSolution\IenumerableDemo\IenumerableDemo\obj\Debug\IenumerableDemo.pdb
+F:\UTS\Teaching\Spring 2018\Spring 2018\31927 Net programming\Lectures-pptx\Week-12\Tutorial\Tutorial lab 11ProgrammingQuestion\IenumerableDemo\IenumerableDemo\obj\Debug\IenumerableDemo.csprojAssemblyReference.cache
+F:\UTS\Teaching\Spring 2018\Spring 2018\31927 Net programming\Lectures-pptx\Week-12\Tutorial\Tutorial lab 11ProgrammingQuestion\IenumerableDemo\IenumerableDemo\obj\Debug\IenumerableDemo.csproj.CoreCompileInputs.cache
+F:\UTS\Teaching\Spring 2018\Spring 2018\31927 Net programming\Lectures-pptx\Week-12\Tutorial\Tutorial lab 11ProgrammingQuestion\IenumerableDemo\IenumerableDemo\obj\Debug\IenumerableDemo.exe
+F:\UTS\Teaching\Spring 2018\Spring 2018\31927 Net programming\Lectures-pptx\Week-12\Tutorial\Tutorial lab 11ProgrammingQuestion\IenumerableDemo\IenumerableDemo\obj\Debug\IenumerableDemo.pdb
