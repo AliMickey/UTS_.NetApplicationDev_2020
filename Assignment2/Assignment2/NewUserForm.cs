@@ -63,7 +63,7 @@ namespace Assignment2
 
         private void NewUserForm_FormClosed(object sender, FormClosedEventArgs e)
         {
-            Application.Exit();
+            FormProvider.Log.Show();
         }
     }
 }

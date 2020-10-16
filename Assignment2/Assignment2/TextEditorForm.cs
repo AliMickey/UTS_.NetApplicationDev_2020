@@ -224,7 +224,7 @@ namespace Assignment2
 
         private void TextEditorForm_FormClosed(object sender, FormClosedEventArgs e)
         {
-            Application.Exit();
+            FormProvider.Log.Show();
         }
     }
 }
