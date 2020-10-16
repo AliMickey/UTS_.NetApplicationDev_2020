@@ -234,7 +234,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnCancel;
             this.ClientSize = new System.Drawing.Size(861, 555);
-            this.ControlBox = false;
             this.Controls.Add(this.btnPassVisible);
             this.Controls.Add(this.boxUserType);
             this.Controls.Add(this.dateDOB);
@@ -255,6 +254,7 @@
             this.Controls.Add(this.lblNewUser);
             this.Name = "NewUserForm";
             this.Text = "NewUserForm";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.NewUserForm_FormClosed);
             this.ResumeLayout(false);
             this.PerformLayout();
 

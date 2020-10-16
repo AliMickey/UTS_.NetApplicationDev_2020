@@ -38,7 +38,9 @@ namespace Assignment2
 
 		public void SaveUsers() 
         {
+			// Clear out file.
 			File.WriteAllText("login.txt", String.Empty);
+			// Add all users back into file.
             using StreamWriter file = new StreamWriter("login.txt");
             foreach (User user in users)
             {
@@ -49,6 +51,7 @@ namespace Assignment2
 
 		public bool UserExists(string username, string password)
 		{
+			// Check if user exists with password in list.
 			foreach (User user in users)
 			{
 				if ((user.Username == username) && (user.Password == password))
@@ -61,6 +64,7 @@ namespace Assignment2
 
 		public bool UserNameExists(string username)
         {
+			// Check if username exists.
 			foreach (User user in users)
 			{
 				if ((user.Username == username))
@@ -73,6 +77,7 @@ namespace Assignment2
 
 		public string UserType(string username)
 		{
+			// Get account type.
 			foreach (User user in users)
 			{
 				if (user.Username == username)

@@ -37,5 +37,8 @@ namespace Assignment2
         public string Username => username;
         public string Password => password;
         public string AccountType => type;
-    }
+		public string FirstName => fName;
+		public string LastName => lName;
+		public string DOB => dateOfBirth;
+	}
 }

@@ -221,5 +221,10 @@ namespace Assignment2
                 Text = "Text Editor - " + currentFile;
             }
         }
+
+        private void TextEditorForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

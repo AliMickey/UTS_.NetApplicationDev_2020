@@ -148,6 +148,7 @@
             this.Controls.Add(this.lblLogin);
             this.Name = "Login";
             this.Text = "Login";
+            this.VisibleChanged += new System.EventHandler(this.Login_VisibleChanged);
             this.ResumeLayout(false);
             this.PerformLayout();
 

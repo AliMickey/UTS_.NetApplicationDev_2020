@@ -28,9 +28,10 @@ namespace Assignment2
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
+            // If user exists, launch the text editor.
             if (users.UserExists(txtUsername.Text, txtPassword.Text))
             {
-                Hide();
+                FormProvider.Log.Hide();
                 TextEditorForm texteditorform = new TextEditorForm(txtUsername.Text, users.UserType(txtUsername.Text));
                 texteditorform.Show();
             }
@@ -38,12 +39,6 @@ namespace Assignment2
             {
                 MessageBox.Show("Invalid Credentials\n\nPlease Try Again", "Error");
             } 
-        }
-
-        public void UpdateAndShow()
-        { 
-            users.LoadUsers("login.txt");
-            Show();
         }
 
         private void btnPassVisible_Click(object sender, EventArgs e)
@@ -56,6 +51,12 @@ namespace Assignment2
             {
                 txtPassword.PasswordChar = '*';
             }
+        }
+
+        private void Login_VisibleChanged(object sender, EventArgs e)
+        {
+            txtUsername.Clear();
+            txtPassword.Clear();
         }
     }
 }

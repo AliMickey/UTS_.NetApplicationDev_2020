@@ -60,5 +60,10 @@ namespace Assignment2
                 txtPassword2.PasswordChar = '*';
             }          
         }
+
+        private void NewUserForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

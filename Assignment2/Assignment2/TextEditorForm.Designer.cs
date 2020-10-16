@@ -385,7 +385,6 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1013, 667);
-            this.ControlBox = false;
             this.Controls.Add(this.richTxtBox);
             this.Controls.Add(this.toolStrip2);
             this.Controls.Add(this.toolStrip1);
@@ -393,6 +392,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "TextEditorForm";
             this.Text = "Text Editor";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.TextEditorForm_FormClosed);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.toolStrip1.ResumeLayout(false);
