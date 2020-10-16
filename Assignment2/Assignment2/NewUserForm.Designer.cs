@@ -253,6 +253,7 @@
             this.Controls.Add(this.txtUsername);
             this.Controls.Add(this.lblNewUser);
             this.Name = "NewUserForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "NewUserForm";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.NewUserForm_FormClosed);
             this.ResumeLayout(false);

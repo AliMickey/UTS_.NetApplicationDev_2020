@@ -57,6 +57,7 @@ namespace Assignment2
         {
             txtUsername.Clear();
             txtPassword.Clear();
+            txtPassword.PasswordChar = '*';
         }
     }
 }

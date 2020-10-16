@@ -190,22 +190,8 @@ namespace Assignment2
             }
             else
             {
-                // Ask for a file location.
-                SaveFileDialog saveFile = new SaveFileDialog
-                {
-                    DefaultExt = "*.rtf",
-                    Filter = "RTF Files|*.rtf",
-                    FilterIndex = 2,
-                    RestoreDirectory = true
-                };
-                if (saveFile.ShowDialog() == DialogResult.OK)
-                {
-                    // Save the file.
-                    currentFile = saveFile.FileName;
-                    richTxtBox.SaveFile(currentFile);
-                    // Update title bar text.
-                    Text = "Text Editor - " + currentFile;
-                }
+                // Save as dialog.
+                toolSaveAs_Click(sender, e);
             }
         }
 
