@@ -152,27 +152,32 @@ namespace Assignment2
         private void toolOpen_Click(object sender, EventArgs e)
         {
             // https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.richtextbox.loadfile?view=netcore-3.1
-            OpenFileDialog openFile = new OpenFileDialog();
-
-            // Initialize the OpenFileDialog to look for RTF files.
-            openFile.DefaultExt = "*.rtf";
-            openFile.Filter = "RTF Files|*.rtf|TXT Files|*.txt";
-
-            //Determine whether the user selected a file from the OpenFileDialog and it is a normal txt file.
-            if (openFile.ShowDialog() == DialogResult.OK && openFile.FileName.Length > 0 && Path.GetExtension(openFile.FileName) == ".txt")
+            OpenFileDialog openFile = new OpenFileDialog
             {
-                // Read each line in txt into text box.
-                currentFile = openFile.FileName;
-                string text = File.ReadAllText(currentFile);
-                richTxtBox.Text = text;               
-            }
-            // Determine whether the user selected a file from the OpenFileDialog and it is a rtf file.
-            else if (openFile.ShowDialog() == DialogResult.OK && openFile.FileName.Length > 0)
+                // Initialize the OpenFileDialog to look for RTF files.
+                DefaultExt = "*.rtf",
+                Filter = "RTF Files|*.rtf|TXT Files|*.txt"
+            };
+
+            // Determine whether the user selected a file from the OpenFileDialog.
+            if (openFile.ShowDialog() == DialogResult.OK && openFile.FileName.Length > 0)
             {
-                // Load the contents of the rtf file into the RichTextBox.
-                currentFile = openFile.FileName;
-                richTxtBox.LoadFile(currentFile);
-            }
+                // If it is a rtf file.
+                if (Path.GetExtension(openFile.FileName) == ".rtf"){
+                    // Load the contents of the rtf file into the RichTextBox.
+                    currentFile = openFile.FileName;
+                    richTxtBox.LoadFile(currentFile);
+                }
+
+                // If it is a txt file.
+                else if (Path.GetExtension(openFile.FileName) == ".txt")
+                {
+                    // Read each line in txt into text box.
+                    currentFile = openFile.FileName;
+                    string text = File.ReadAllText(currentFile);
+                    richTxtBox.Text = text;
+                }
+            }       
         }
 
         private void toolSave_Click(object sender, EventArgs e)
@@ -205,12 +210,13 @@ namespace Assignment2
         private void toolSaveAs_Click(object sender, EventArgs e)
         {
             // Ask for a file location.
-            SaveFileDialog saveFile = new SaveFileDialog();
-            saveFile.DefaultExt = "*.rtf";
-            saveFile.Filter = "RTF Files|*.rtf";
-
-            saveFile.FilterIndex = 2;
-            saveFile.RestoreDirectory = true;
+            SaveFileDialog saveFile = new SaveFileDialog
+            {
+                DefaultExt = "*.rtf",
+                Filter = "RTF Files|*.rtf",
+                FilterIndex = 2,
+                RestoreDirectory = true
+            };
             if (saveFile.ShowDialog() == DialogResult.OK)
             {
                 // Save and open the new file.
