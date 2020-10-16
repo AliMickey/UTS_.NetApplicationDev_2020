@@ -191,11 +191,13 @@ namespace Assignment2
             else
             {
                 // Ask for a file location.
-                SaveFileDialog saveFile = new SaveFileDialog();
-                saveFile.DefaultExt = "*.rtf";
-                saveFile.Filter = "RTF Files|*.rtf";
-                saveFile.FilterIndex = 2;
-                saveFile.RestoreDirectory = true;
+                SaveFileDialog saveFile = new SaveFileDialog
+                {
+                    DefaultExt = "*.rtf",
+                    Filter = "RTF Files|*.rtf",
+                    FilterIndex = 2,
+                    RestoreDirectory = true
+                };
                 if (saveFile.ShowDialog() == DialogResult.OK)
                 {
                     // Save the file.

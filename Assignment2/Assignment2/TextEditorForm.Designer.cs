@@ -60,6 +60,7 @@
             this.toolCopy = new System.Windows.Forms.ToolStripButton();
             this.toolPaste = new System.Windows.Forms.ToolStripButton();
             this.richTxtBox = new System.Windows.Forms.RichTextBox();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.toolStrip2.SuspendLayout();
@@ -374,9 +375,12 @@
             // 
             // richTxtBox
             // 
+            this.richTxtBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.richTxtBox.Location = new System.Drawing.Point(27, 52);
             this.richTxtBox.Name = "richTxtBox";
-            this.richTxtBox.Size = new System.Drawing.Size(974, 543);
+            this.richTxtBox.Size = new System.Drawing.Size(974, 603);
             this.richTxtBox.TabIndex = 3;
             this.richTxtBox.Text = "";
             // 
@@ -438,5 +442,6 @@
         private System.Windows.Forms.ToolStripButton toolCopy;
         private System.Windows.Forms.ToolStripButton toolPaste;
         private System.Windows.Forms.RichTextBox richTxtBox;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
     }
 }
