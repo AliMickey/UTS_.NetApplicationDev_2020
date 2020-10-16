@@ -7,14 +7,14 @@
     <framework targetVersion="4.7.2" profile="Full" supportedRuntime="4.0.30319" />
   </compatibleFrameworks>
   <dependency>
-    <dependentAssembly dependencyType="install" codebase="Assignment2.exe.manifest" size="3474">
+    <dependentAssembly dependencyType="install" codebase="Assignment2.exe.manifest" size="3949">
       <assemblyIdentity name="Assignment2.exe" version="1.0.0.1" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>1bvQOL9P1Jqbr6+3O9qdIntU4CeR8xXyI9Y1wiBTq/E=</dsig:DigestValue>
+        <dsig:DigestValue>SIhG23pAwejSU461J7abi/xl8VBcxjAn+y4tCJBMPDo=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

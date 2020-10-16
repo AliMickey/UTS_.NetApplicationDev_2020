@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AboutForm));
             this.lblInfo = new System.Windows.Forms.Label();
             this.btnOk = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -65,6 +66,7 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.btnOk);
             this.Controls.Add(this.lblInfo);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AboutForm";
             this.Text = "AboutForm";
             this.ResumeLayout(false);
