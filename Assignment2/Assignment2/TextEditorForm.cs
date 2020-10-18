@@ -16,6 +16,7 @@ namespace Assignment2
             toolFontSize.SelectedIndex = 2;
             // Set username to current user.
             toolUserName.Text = "User Name: " + username;
+            Console.WriteLine(username);
             // Make textbox read-only if user type is view.
             if (type == "View")
             {

@@ -20,10 +20,10 @@ namespace Assignment2
 
         private void btnNewUser_Click(object sender, EventArgs e)
         {
-            // Call custom class to hide the login form.
-            FormProvider.Log.Hide();
             NewUserForm newuserform = new NewUserForm();
             newuserform.Show();
+            // Call custom class to hide the login form.
+            FormProvider.Log.Hide();
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
@@ -31,9 +31,9 @@ namespace Assignment2
             // If user exists, launch the text editor.
             if (users.UserExists(txtUsername.Text, txtPassword.Text))
             {
-                FormProvider.Log.Hide();
                 TextEditorForm texteditorform = new TextEditorForm(txtUsername.Text, users.UserType(txtUsername.Text));
                 texteditorform.Show();
+                FormProvider.Log.Hide();
             }
             else
             {
