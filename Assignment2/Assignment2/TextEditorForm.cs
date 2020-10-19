@@ -51,6 +51,7 @@ namespace Assignment2
                 style &= ~FontStyle.Bold;
                 toolBold.Font = new Font(toolBold.Font, FontStyle.Regular);
             }
+
             // Otherwise make it bold.
             else
             {
@@ -70,6 +71,7 @@ namespace Assignment2
                 style &= ~FontStyle.Italic;
                 toolItalics.Font = new Font(toolItalics.Font, FontStyle.Regular);
             }
+
             // Otherwise make it italics.
             else
             {
@@ -89,6 +91,7 @@ namespace Assignment2
                 style &= ~FontStyle.Underline;
                 toolUnderline.Font = new Font(toolUnderline.Font, FontStyle.Regular);
             }
+
             // Otherwise make it underlined.
             else
             {
@@ -132,6 +135,7 @@ namespace Assignment2
             {
                 richTxtBox.Clear();
             }
+
             else
             {
                 // Ask user to save or not.
@@ -189,6 +193,7 @@ namespace Assignment2
                 // Save to same file without asking.
                 richTxtBox.SaveFile(currentFile);
             }
+
             else
             {
                 // Save as dialog.
@@ -206,6 +211,7 @@ namespace Assignment2
                 FilterIndex = 2,
                 RestoreDirectory = true
             };
+
             if (saveFile.ShowDialog() == DialogResult.OK)
             {
                 // Save and open the new file.

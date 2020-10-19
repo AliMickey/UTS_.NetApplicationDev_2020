@@ -11,4 +11,4 @@ OR
 3. Run the code (F5).
 
 
-Test credentials: a|a - Can create additional users through app.
+Can create users through app.

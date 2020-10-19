@@ -53,7 +53,7 @@
             // 
             this.lblNewUser.AutoSize = true;
             this.lblNewUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNewUser.Location = new System.Drawing.Point(354, 59);
+            this.lblNewUser.Location = new System.Drawing.Point(374, 49);
             this.lblNewUser.Name = "lblNewUser";
             this.lblNewUser.Size = new System.Drawing.Size(142, 31);
             this.lblNewUser.TabIndex = 1;
@@ -199,10 +199,12 @@
             this.dateDOB.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateDOB.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateDOB.Location = new System.Drawing.Point(622, 298);
+            this.dateDOB.MaxDate = new System.DateTime(2020, 10, 19, 0, 0, 0, 0);
+            this.dateDOB.MinDate = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
             this.dateDOB.Name = "dateDOB";
             this.dateDOB.Size = new System.Drawing.Size(200, 23);
             this.dateDOB.TabIndex = 29;
-            this.dateDOB.Value = new System.DateTime(2020, 9, 24, 11, 20, 47, 0);
+            this.dateDOB.Value = new System.DateTime(2020, 10, 19, 0, 0, 0, 0);
             // 
             // boxUserType
             // 
@@ -234,7 +236,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnCancel;
-            this.ClientSize = new System.Drawing.Size(861, 555);
+            this.ClientSize = new System.Drawing.Size(861, 530);
             this.Controls.Add(this.btnPassVisible);
             this.Controls.Add(this.boxUserType);
             this.Controls.Add(this.dateDOB);

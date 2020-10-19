@@ -46,7 +46,6 @@ namespace Assignment2
             {
                 file.WriteLine(user.ToString());
             }
-
         }
 
 		public bool UserExists(string username, string password)

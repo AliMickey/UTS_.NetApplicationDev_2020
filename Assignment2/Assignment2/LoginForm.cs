@@ -35,6 +35,7 @@ namespace Assignment2
                 texteditorform.Show();
                 FormProvider.Log.Hide();
             }
+
             else
             {
                 MessageBox.Show("Invalid Credentials\n\nPlease Try Again", "Error");
@@ -47,6 +48,7 @@ namespace Assignment2
             {
                 txtPassword.PasswordChar = '\0';
             }
+
             else
             {
                 txtPassword.PasswordChar = '*';

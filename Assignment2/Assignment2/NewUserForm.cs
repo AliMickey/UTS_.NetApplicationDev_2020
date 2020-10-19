@@ -25,20 +25,27 @@ namespace Assignment2
             string fName = txtFName.Text;
             string lName = txtLName.Text;
             string dob = dateDOB.Text.Replace("/", "-");
+            // Check for unique username.
             if (Login.users.UserNameExists(username))
             {
                 MessageBox.Show("Username Already Exists\n\nPlease Try Again.", "Error");
             }
+
+            // Check if both passwords match.
             else if (password != txtPassword2.Text)
             {
                 MessageBox.Show("Passwords Do Not Match\n\nPlease Try Again.", "Error");
             }
+
+            // Check if any fields are empty.
             else if (String.IsNullOrEmpty(username) || String.IsNullOrEmpty(password) ||
                 String.IsNullOrEmpty(type) || String.IsNullOrEmpty(fName) ||
                 String.IsNullOrEmpty(lName) || String.IsNullOrEmpty(dob))
             {
                 MessageBox.Show("Invalid Input/s\n\nPlease Try Again.", "Error");
             }
+
+            // Make the new user and show the login form.
             else
             {
                 Login.users.NewUser(username, password, type, fName, lName, dob);
@@ -47,6 +54,7 @@ namespace Assignment2
             }            
         }
 
+        // Show or hide password based on switch.
         private void btnPassVisible_Click(object sender, EventArgs e)
         {
             if (txtPassword.PasswordChar == '*')
@@ -54,6 +62,7 @@ namespace Assignment2
                 txtPassword.PasswordChar = '\0';
                 txtPassword2.PasswordChar = '\0';
             }
+
             else
             {
                 txtPassword.PasswordChar = '*';
